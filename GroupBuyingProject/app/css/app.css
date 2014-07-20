@@ -1,0 +1,249 @@
+/* app css stylesheet */
+
+/* Header Style */
+header {
+  position:fixed;
+  width:100%;
+  top: 0;
+}
+.miniProfile {
+    position:fixed;
+    top: 0;
+    right: 0;
+}
+body {
+    font-family: sans-serif;
+    background-image: url("/app/img/background.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.tabs {
+    padding-top:5px;
+}
+.tabs > li {
+  display: inline;
+}
+.tabs > li > a {
+  padding: 10px 10px 10px 10px;
+  box-shadow: 
+    inset 0px -3px 1px #a0a0a0;
+  border-radius: 0 0 10px 10px;
+  cursor:pointer;
+  background-color: white;
+  transition: padding 0.2s;
+}
+.tabs > li > a:hover {
+  color: #828282;
+  padding: 10px 10px 20px 10px;
+}
+.tabs > li:before {
+}       
+.tabs > li:last-child:after { 
+}
+.tabs > li:nth-child(1):before {
+}
+
+/* Content Style */
+.content {
+    margin:auto; 
+    display:table;
+}
+.sideBar {
+
+}
+.dropArea {
+    min-width: 100px;
+    min-height: 310px;
+    padding: 10px 10px 10px 10px;
+    /*border: 1px solid #dddddd;*/
+    border-radius: 10px;
+    /*background-color:#dddddd;*/
+
+
+    background-color: white;
+    background-image: linear-gradient(45deg, #dddddd 25%, transparent 25%, transparent 50%, #dddddd 50%, #dddddd 75%, transparent 75%);
+
+    -webkit-background-size: 10px 10px;
+    -moz-background-size: 10px 10px;
+    -o-background-size: 10px 10px;
+    -ms-background-size: 10px 10px;
+    background-size: 50px 50px;
+}
+.labelSidebar {
+    max-width: 100px;
+    float: right;
+}
+/*.dropField {
+    border: 1px solid;
+    min-width: 100px;
+    min-height: 100px;
+    background-color: #828282;
+}*/
+.profile {
+    max-width:300px;
+    max-height:310px;
+    box-shadow: 1px 1px 1px 1px #828282;
+    border-radius: 100px 10px 100px 10px;
+}
+.mini_Profile {
+    max-width:50px;
+    max-height:50px;
+    box-shadow: 1px 1px 1px 1px #828282;
+    border-radius: 25px 25px 25px 25px;
+}
+.mainContentGroup {
+    width:90%;
+}
+.contentGroup {
+    vertical-align:top;
+    margin:auto;
+}
+input[class~="action"] {
+    /*background: linear-gradient(top, rgba(53,86,129, 0.1) 0%, rgba(53,86,129, 0.5) 100%);
+    background: -webkit-linear-gradient(top, rgba(53,86,129, 0.1) 0%, rgba(53,86,129, 0.5) 100%);
+    background: -ms-linear-gradient(top, rgba(53,86,129, 0.1) 0%, rgba(53,86,129, 0.5) 100%);
+    background: -o-linear-gradient(top, rgba(53,86,129, 0.1) 0%, rgba(53,86,129, 0.5) 100%);
+    background: -moz-linear-gradient(top, rgba(53,86,129, 0.1) 0%, rgba(53,86,129, 0.5) 100%);*/
+    background-color: #f1f1f1;
+    border-radius: 5px 5px 5px 5px;
+    border:1px solid #555555;
+    color: #555555;
+    padding: 5px 5px 5px 5px;
+    font-size: medium;
+    min-width:150px;
+    outline:none;
+}
+input[class~="action"]:active {
+    background: linear-gradient(top, #828282 0%, #f1f1f1 100%);
+    background: -webkit-linear-gradient(top, #828282 0%, #f1f1f1 100%);
+    background: -ms-linear-gradient(top, #828282 0%, #f1f1f1 100%);
+    background: -o-linear-gradient(top, #828282 0%, #f1f1f1 100%);
+    background: -moz-linear-gradient(top, #828282 0%, #f1f1f1 100%);
+}
+a[class~="action"]
+{
+    color: #0000aa;
+    text-decoration:underline;
+}
+.action {
+    cursor:pointer;
+}
+.textInput
+{
+    background-color: white;
+    border-width: 0 0 1px 0;
+    border-color: #5d5d5d;
+    color: #5d5d5d;
+    padding: 2px 2px 2px 2px;
+    min-width: 100px;
+    outline:none;
+}
+h1 {
+    color: #828282;
+    font-weight: 300;
+    border-radius: 20px;
+    padding: 0px 10px 0px 10px;
+}
+.label {
+    color: #5d5d5d;
+    padding-right:10px;
+    /*font-weight: bold;*/
+    font-family: fantasy;
+}
+.labelValue {
+    color: #000000;
+    font-family: monospace;
+    font-size: large;
+}
+.smallProductImage {
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;    /* Circle */
+    margin: 5px 5px 0px 5px;
+    box-shadow: 1px 1px 1px 1px #828282;
+}
+.productImage {
+    /*max-width: 300px;*/
+    max-height: 150px;
+    box-shadow: 1px 1px 1px 1px #828282;
+    border-radius: 5px 5px 5px 5px;
+    margin: 5px 5px 0px 5px;
+}
+.cardLabelValue {
+    float: right;
+    max-width: 300px;
+}
+.card {
+    padding: 5px 5px 5px 5px;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid #828282;
+    border-radius: 10px;
+    /*background: -webkit-linear-gradient(top, rgba(53,86,129, 0.1) 0%, rgba(53,86,129, 0.5) 100%);
+    background: -moz-linear-gradient(top, rgba(53,86,129, 0.1) 0%, rgba(53,86,129, 0.5) 100%);
+    background: -o-linear-gradient(top, rgba(53,86,129, 0.1) 0%, rgba(53,86,129, 0.5) 100%);
+    background: -ms-linear-gradient(top, rgba(53,86,129, 0.1) 0%, rgba(53,86,129, 0.5) 100%);
+    background: linear-gradient(top, rgba(53,86,129, 0.1) 0%, rgba(53,86,129, 0.5) 100%);*/
+    margin: 0px 20px 20px 0px;
+    display: inline-block;
+}
+.bigCard {
+    -webkit-transition: -webkit-transform 250ms ease-out;
+    -moz-transition: -moz-transform 250ms ease-out;
+    -o-transition: -0-transform 250ms ease-out;
+    -ms-transition: -ms-transform 250ms ease-out;
+    transition: transform 250ms ease-out;
+}
+.bigCard:hover {
+    -webkit-transform: scale(1.1, 1.1);
+    -moz-transform: scale(1.1, 1.1);
+    -o-transform: scale(1.1, 1.1);
+    -ms-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+    box-shadow: 1px 1px 1px 1px #828282;
+}
+.smallCard {
+    -webkit-transition: -webkit-transform 250ms ease-out;
+    -moz-transition: -moz-transform 250ms ease-out;
+    -o-transition: -o-transform 250ms ease-out;
+    -ms-transition: -ms-transform 250ms ease-out;
+    transition: transform 250ms ease-out;
+}
+.smallCard:hover {
+    -webkit-transform: scale(1.1, 1.1);
+    -moz-transform: scale(1.1, 1.1);
+    -o-transform: scale(1.1, 1.1);
+    -ms-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+    box-shadow: 1px 1px 1px 1px #828282;
+}
+.smallInput {
+    background-color: transparent;
+    border-width: 0 0 1px 0;
+    border-color: #5d5d5d;
+    color: #5d5d5d;
+    padding: 2px 2px 2px 2px;
+    max-width: 100px;
+    outline:none;
+}
+.bigInput {
+    background-color: transparent;
+    border-width: 0 0 1px 0;
+    border-color: #5d5d5d;
+    color: #5d5d5d;
+    padding: 2px 2px 2px 2px;
+    min-width: 500px;
+    outline:none;
+}
+.success {
+    color: green;
+}
+.error {
+    color: red;
+}
+/* Footer Style */
+footer {
+  position:fixed;
+  bottom:0;
+  height:2em;   /* Height of the footer */
+}

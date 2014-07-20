@@ -1,0 +1,51 @@
+﻿<form data-ng-submit="RegisterClick()">
+    <table class="contentGroup">
+        <tr>
+            <td colspan="2">
+                <img src="./img/{{selectedProfile.url}}" class="content profile"/>
+            </td>
+        </tr><tr>
+            <td>
+                <span class="label">Profile:</span>
+            </td><td>
+                <select class="textInput labelValue" data-ng-model="selectedProfile" data-ng-init="selectedProfile = profiles[0]"
+                    data-ng-options="profile.name for profile in profiles"/>
+            </td>
+        </tr><tr>
+            <td>
+                <span class="label">User Name:</span>
+            </td><td>
+                <input type="text" class="textInput labelValue" placeholder="User Name" maxlength="20" data-ng-model="userName" data-focus="true" />
+            </td>
+        </tr><tr>
+            <td>
+                <span class="label">Password:</span>
+            </td><td>
+                <input type="password" class="textInput labelValue" placeholder="Password" maxlength="20" data-ng-model="password" />
+        </tr><tr>
+            <td>
+                <span class="label">Email:</span>
+            </td><td>
+                <input type="text" class="textInput labelValue" placeholder="Email" maxlength="30" data-ng-model="email"/>
+        </tr><tr>
+            <td>
+                <span class="label">Role:</span>
+            </td><td>
+                <select class="textInput labelValue" data-ng-model="selectedRole" data-ng-init="selectedRole = roles[0]"
+                    data-ng-options="role for role in roles"/>
+            </td>
+        </tr><tr>
+            <td colspan="2">
+                <input type="submit" class="action content" value="Register" />
+            </td>
+        </tr><tr>
+            <td colspan="2">
+                <a class="content action" data-link-navigate="LogInPage">[LogIn]</a>
+            </td>
+        </tr><tr>
+            <td colspan="2">
+                <span class="content error">{{ message }}</span>
+            </td>
+        </tr>
+    </table>
+</form>

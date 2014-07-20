@@ -1,0 +1,7 @@
+D:\workspaces\VisualStudioWorkspaces\GroupBuyingProject\GroupBuyingProject\bin\GroupBuyingProject.dll
+D:\workspaces\VisualStudioWorkspaces\GroupBuyingProject\GroupBuyingProject\bin\GroupBuyingProject.pdb
+D:\workspaces\VisualStudioWorkspaces\GroupBuyingProject\GroupBuyingProject\obj\Debug\GroupBuyingProject.dll
+D:\workspaces\VisualStudioWorkspaces\GroupBuyingProject\GroupBuyingProject\obj\Debug\GroupBuyingProject.pdb
+D:\workspaces\VisualStudioWorkspaces\GroupBuyingProject\GroupBuyingProject\obj\Debug\GroupBuyingProject.csprojResolveAssemblyReference.cache
+D:\workspaces\VisualStudioWorkspaces\GroupBuyingProject\GroupBuyingProject\bin\GroupBuyingLib.dll
+D:\workspaces\VisualStudioWorkspaces\GroupBuyingProject\GroupBuyingProject\bin\GroupBuyingLib.pdb

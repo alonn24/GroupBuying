@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="27cad14f-6e8f-48f5-9bd7-c4c34697566b" name="UserLogIn" linkedPackageId="ed8abc21-2309-469c-b534-f7d1b7c4146b" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="5dc5338a-cb9a-48f2-b56e-8dad1eae6952">
+      <profileInstance Id="59f04fa8-4826-4113-8aa0-a53cae6a3597" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="a0edaf37-b3c9-475a-8e86-cf83569f849c">
+      <profileInstance Id="d6c632f2-2067-42c5-850d-a7ff3beeeb79" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="1aa154ac-66f4-47c9-a8de-07c265aba243" name="Product Manager" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="59ec131b-5086-4eb1-98bf-12853df40001" />
+        <targetEnds>
+          <association Id="de5fe47a-fde0-4707-85f6-b5a429f79ad8" isDerived="false" sourceEndRoleName="Product Manager" targetEndRoleName="הזנת פרטי משתמש לזיהוי" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="d2dd6c8c-1cf5-421e-9df3-0e6296dd6406" LastKnownName="הזנת פרטי משתמש לזיהוי" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="58949f6d-e508-4eb3-979f-6672edcc922b" name="Product Manager" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="763f7f1e-c11d-4ee6-b127-83a2f95420d8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b6ed6680-2ba1-4f48-b655-9d966465d218" name="הזנת פרטי משתמש לזיהוי" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4a342ada-0cd6-4d82-a6a7-051b7d2040e1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="22812442-defc-42d5-a832-3c95e2c4790a" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="ae4e288a-e4ec-443f-8653-a92849fcfca7" name="Registered User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="76d7d46c-e948-457a-a2cf-fcd045de8010" />
+        <targetEnds>
+          <association Id="66863c90-bc83-4773-88d3-773043065739" isDerived="false" sourceEndRoleName="Registered User" targetEndRoleName="הזנת פרטי משתמש לזיהוי" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="d2dd6c8c-1cf5-421e-9df3-0e6296dd6406" LastKnownName="הזנת פרטי משתמש לזיהוי" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="852579d1-f6ce-4382-9bd7-b003ae30cb92" name="Registered User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8c86e4c4-43e9-4b7a-8594-b471eb734e7d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="48194d14-20d5-4e19-bd91-9581268047c1" name="הזנת פרטי משתמש לזיהוי" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4306bff0-1d49-4573-93b6-0b617bd85c48" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="cfe4b488-3557-4294-a1b3-db5b2e87b8ba" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="42f00332-5ba7-4a29-829c-f8d7dd4e3e03" name="Anonymous User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="fd272f88-2d09-4760-b6c1-b3eabff56e11" />
+        <targetEnds>
+          <association Id="53314236-32a6-4a56-92d4-fe3ed7b66663" isDerived="false" sourceEndRoleName="Anonymous User" targetEndRoleName="הזנת פרטי משתמש לרישום" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="7a9cd41e-6ffb-4f49-a420-23f87d90966d" LastKnownName="הזנת פרטי משתמש לרישום" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4201d1d6-536d-46c5-b7ab-7792570733cb" name="Anonymous User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="61841749-20c6-4ade-8363-d038bdb95207" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d0524ea9-4491-46fd-b02b-39c6c644992d" name="הזנת פרטי משתמש לרישום" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="97013b7c-a33b-44ba-8cad-3bc34df08cd3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="8fdb2bb6-ab95-409b-8307-a53035f14caa" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="d2dd6c8c-1cf5-421e-9df3-0e6296dd6406" name="הזנת פרטי משתמש לזיהוי" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f5404c9a-9cb2-455d-b207-5e6633f27531" />
+        <additions>
+          <include Id="f3da0a48-1652-4efd-831a-ac41539861c7">
+            <useCaseMoniker Id="84233cfe-ac88-48f8-96ca-8d0e0e08f41c" LastKnownName="זיהוי משתמש במערכת" />
+            <elementDefinition Id="1ea89f52-0301-4f60-bcac-00a860a80c52" />
+          </include>
+          <include Id="5bce179f-3c6b-441f-b98d-a3adb0456ef9">
+            <useCaseMoniker Id="bd93f09e-8f44-4b80-a2bb-9c9dd775ca04" LastKnownName="כניסה למסך ראשי" />
+            <elementDefinition Id="6296eb78-d401-4f9d-bbe2-0ee82c09eff4" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="7a9cd41e-6ffb-4f49-a420-23f87d90966d" name="הזנת פרטי משתמש לרישום" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7b9301cb-18d7-4a17-a232-65842600585b" />
+        <additions>
+          <include Id="d0a8dc61-e571-4b4b-998d-7ce405562b3b">
+            <useCaseMoniker Id="bd93f09e-8f44-4b80-a2bb-9c9dd775ca04" LastKnownName="כניסה למסך ראשי" />
+            <elementDefinition Id="8ea112c7-9027-42ae-a706-54bf5fa2da76" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="84233cfe-ac88-48f8-96ca-8d0e0e08f41c" name="זיהוי משתמש במערכת" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5b47f04f-b481-4a24-82c1-bbebe422ac63" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="bd93f09e-8f44-4b80-a2bb-9c9dd775ca04" name="כניסה למסך ראשי" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="926e2c62-6748-4d7f-8837-15a24d7ac9a7" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="ed8abc21-2309-469c-b534-f7d1b7c4146b" name="GroupBuyingModel">
+    <elementDefinition Id="6c0036fd-6ec0-4f40-9b60-fd495d3d647a" />
+  </package>
+</useCaseModelRoot>

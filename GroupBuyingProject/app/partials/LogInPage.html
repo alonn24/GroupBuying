@@ -1,0 +1,60 @@
+﻿<form data-ng-hide="user.authorized" data-ng-submit="LogInClick()">
+    <table class="contentGroup">
+        <tr>
+            <td colspan="2">
+                <img src="./img/Unknown.jpg" class="content profile"/>
+            </td>
+        </tr><tr>
+            <td>
+                <span class="label">User Name:</span>
+            </td><td>
+                <input type="text" class="textInput labelValue" placeholder="User Name" maxlength="20" data-ng-model="userName" data-focus="true" />
+            </td>
+        </tr><tr>
+            <td>
+                <span class="label">Password:</span>
+            </td><td>
+                <input type="password" class="textInput labelValue" placeholder="Password" maxlength="20" data-ng-model="password" />
+            </td>
+        </tr><tr>
+            <td colspan="2">
+                <input type="submit" class="action content" value="Log In" />
+            </td>
+        </tr><tr>
+            <td colspan="2">
+                <a class="content action" data-link-navigate="Register">[Register]</a>
+            </td>
+         </tr><tr>
+             <td colspan="2">
+                <span class="content error">{{ message }}</span>
+            </td>
+         </tr>
+    </table>
+</form>
+<div data-ng-show="user.authorized">
+    <table class="mainContentGroup">
+        <tr>
+            <td class="contentGroup mainContentGroup">
+                <h1>{{user.userName}}'s details</h1>
+                <span class="label">Email:</span><span class="labelValue"> {{user.email}}</span><br />
+                <span class="label">Role:</span><span class="labelValue"> {{user.role}}</span>
+            </td><td rowspan="2">
+                <img src="./img/{{user.profile}}" class="content profile"/>
+                <a class="content action" data-ng-click="LogOutClick()">[Log Out]</a>
+            </td>
+        </tr><tr ng-hide="orders.length == 0">
+            <td class="contentGroup">
+                <h1>{{user.userName}}'s orders</h1>
+                <div class="card smallCard" ng-repeat="order in orders" data-ng-dblclick="OrderLinkClick(order)"
+                     title="Double click to watch order {{order.OrderId}} details.">
+                    <span class="content label" >Product Id: {{order.Product.ProductId}}</span>
+                    <span class="content label">{{order.Date}}</span>
+                    <div>
+                        <img class="smallProductImage" src="./img/products/{{order.Product.Image}}"><br />
+                        <span class="content label">{{order.Quantity}}</span>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

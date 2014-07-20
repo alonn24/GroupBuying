@@ -1,0 +1,59 @@
+<div class="label" data-ng-show="products.length == 0 && selecedProducts.length == 0">
+    There are no products in the system.
+</div>
+<div data-ng-hide="products.length == 0 && selectedProducts == 0">
+    <h1>Products</h1>
+    <span class="success" >{{ successMessage }}</span>
+    <span class="error">{{ errorMessage }} </span>
+    <table class="mainContentGroup">
+        <tr>
+            <td>
+                <span class="label">Search:</span><input type="text" class="bigInput labelValue" data-ng-model="searchQuery" data-focus="true">
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td class="contentGroup mainContentGroup" data-drop="true" ng-model='products' jqyoui-droppable="{multiple:true, applyFilter: 'filterProducts'}" data-jqyoui-options="{revert: 'invalid'}">
+                <div class="card bigCard" data-ng-repeat="product in products | filter:searchQuery"
+                     title="Double click to watch product {{product.ProductId}} details." data-ng-dblclick="ProductClick(product.ProductId)"
+                     data-drag="true" ng-model="products" data-jqyoui-options="{revert: 'invalid'}"
+                     jqyoui-draggable="{index: {{$index}}, applyFilter: 'filterProducts', animate:true}">
+                    <span class="content label">Product Id: {{product.ProductId}}</span>
+                    <table>
+                        <tr>
+                            <td>
+                                <span class="label">Seller: </span><span class="labelValue cardLabelValue">{{product.Seller.UserName}}</span><br/>
+                                <span class="label">Title: </span><span class="labelValue cardLabelValue">{{product.Title}}</span><br/>
+                                <span class="label">Price Range: </span><span class="labelValue cardLabelValue">{{product.MinPrice}} - {{product.MaxPrice}} NIS</span><br/>
+                            </td>
+                        </tr><tr>
+                        <td>
+                            <img class="productImage" src="./img/products/{{product.Image}}"/>
+                        </td>
+                    </tr>
+                    </table>
+                </div>
+            </td>
+            <td class="contentGroup sideBar" data-ng-show="user.authorized">
+                <h1>Cart</h1>
+                <input class="action" data-ng-show="selectedProducts.length > 0" type="button" value="Order"
+                       data-ng-click="OrderClick()">
+                <div  class="dropArea" data-drop="true" ng-model='selectedProducts'
+                    jqyoui-droppable="{multiple:true}" data-jqyoui-options="{revert: 'invalid'}">
+                    <span class="labelValue" data-ng-show="selectedProducts.length == 0">To order, drop products here.</span>
+                    <div class="card smallCard" ng-repeat="product in selectedProducts"
+                            data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+                            ng-model="selectedProducts" jqyoui-draggable="{index: {{$index}},animate:true}">
+                        <span class="content label" >Product {{product.ProductId}}</span>
+                        <img class="smallProductImage" src="./img/products/{{product.Image}}"><br/>
+                        <input class="smallInput content" type="number" data-ng-model="product.quantity" />
+                        <span class="content"><input class="" type="checkbox" data-ng-model="product.shipping"><span class="label">Shipping</span></span>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
