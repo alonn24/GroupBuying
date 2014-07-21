@@ -5,3 +5,10 @@ D:\workspaces\VisualStudioWorkspaces\GroupBuyingProject\GroupBuyingProject\obj\D
 D:\workspaces\VisualStudioWorkspaces\GroupBuyingProject\GroupBuyingProject\obj\Debug\GroupBuyingProject.csprojResolveAssemblyReference.cache
 D:\workspaces\VisualStudioWorkspaces\GroupBuyingProject\GroupBuyingProject\bin\GroupBuyingLib.dll
 D:\workspaces\VisualStudioWorkspaces\GroupBuyingProject\GroupBuyingProject\bin\GroupBuyingLib.pdb
+D:\workspaces\VisualStudioWorkspaces\GroupBuying\GroupBuyingProject\bin\GroupBuyingProject.dll
+D:\workspaces\VisualStudioWorkspaces\GroupBuying\GroupBuyingProject\bin\GroupBuyingProject.pdb
+D:\workspaces\VisualStudioWorkspaces\GroupBuying\GroupBuyingProject\bin\GroupBuyingLib.dll
+D:\workspaces\VisualStudioWorkspaces\GroupBuying\GroupBuyingProject\bin\GroupBuyingLib.pdb
+D:\workspaces\VisualStudioWorkspaces\GroupBuying\GroupBuyingProject\obj\Debug\GroupBuyingProject.csprojResolveAssemblyReference.cache
+D:\workspaces\VisualStudioWorkspaces\GroupBuying\GroupBuyingProject\obj\Debug\GroupBuyingProject.dll
+D:\workspaces\VisualStudioWorkspaces\GroupBuying\GroupBuyingProject\obj\Debug\GroupBuyingProject.pdb

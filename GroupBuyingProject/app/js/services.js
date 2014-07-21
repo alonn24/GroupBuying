@@ -5,7 +5,7 @@
 // Demonstrate how to register services
 // In this case it is a simple value service.
 angular.module('myApp.services', [])
-.factory('userService', ['$rootScope', '$resource', '$q', function ($rootScope, $resource, $q) {
+.factory('userService', ['$rootScope', '$resource', '$cookies', '$q', function ($rootScope, $resource, $cookies, $q) {
   return {
       model: {
           userName: '',
@@ -35,8 +35,9 @@ angular.module('myApp.services', [])
                           model.email = data.Email;
                           model.profile = data.Profile;
                           deferred.resolve();
-                          //userService.LogIn(data.UserName, $scope.password, data.Role, data.Authorized, data.Email, data.Profile);
-                          //$scope.LoadUserOrders();
+                          // Set cookies
+                          $cookies.userName = _userName;
+                          $cookies.password = _password;
                       } else {
                           deferred.reject('The user is not authorized.');
                       }
@@ -59,6 +60,9 @@ angular.module('myApp.services', [])
           this.model.role = '';
           this.model.email = '';
           this.model.profile = '';
+          // Set cookies
+          $cookies.userName = '';
+          $cookies.password = '';
       },
       GetUserOrders: function() {
           // Return promise

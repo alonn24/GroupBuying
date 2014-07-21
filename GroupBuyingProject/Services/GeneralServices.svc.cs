@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
-using System.ServiceModel;
+using System.ServiceModel.Activation;
 using System.Text;
+using System.Web;
 using GroupBuyingLib.BL;
 using GroupBuyingLib.Model;
 using GroupBuyingLib.Model.OrderLib;
@@ -13,8 +14,19 @@ namespace GroupBuyingProject.Services
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "GeneralServices" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select GeneralServices.svc or GeneralServices.svc.cs at the Solution Explorer and start debugging.
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class GeneralServices : IGeneralServices
     {
+        private bool isAuthorized() {
+            HttpRequest request = HttpContext.Current.Request;
+            string userName = request.Cookies["userName"].Value;
+            string password = request.Cookies["password"].Value;
+            return (userName != null && userName != "" &&
+                password != null && password != "");
+
+            
+        }
+
         #region User APIs
         /// <summary>
         /// Retrive authenticated user data, null oterwise
@@ -45,6 +57,7 @@ namespace GroupBuyingProject.Services
         /// <returns></returns>
         public List<Order> GetUserOrders(string userId, string password)
         {
+            //bool b = this.isAuthorized();
             List<Order> list = new UserFacade().GetUserOrders(userId, password);
             return list;
         }

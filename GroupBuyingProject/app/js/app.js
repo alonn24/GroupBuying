@@ -4,6 +4,7 @@
 angular.module('myApp', [
   'ngRoute',
   'ngResource',
+  'ngCookies',
   'ngDragDrop',
   'myApp.filters',
   'myApp.services',
