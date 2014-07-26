@@ -44,7 +44,6 @@
     <Compile Include="BL\ProductFacade.cs" />
     <Compile Include="BL\UserFacade.cs" />
     <Compile Include="DAL\DataProvider.cs" />
-    <Compile Include="DAL\DummyData.cs" />
     <Compile Include="DAL\OrderDAL.cs" />
     <Compile Include="DAL\ProductDAL.cs" />
     <Compile Include="DAL\UserDAL.cs" />

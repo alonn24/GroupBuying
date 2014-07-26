@@ -12,6 +12,13 @@ namespace GroupBuyingLib.DAL
 {
     class OrderDAL
     {
+        /// <summary>
+        /// Convert row to order
+        /// </summary>
+        /// <param name="row"></param>
+        /// <param name="buyer"></param>
+        /// <param name="product"></param>
+        /// <returns></returns>
         public static Order FromRow(DataRow row, User buyer, Product product)
         {
             Order returnOrder = new Order(
@@ -19,6 +26,7 @@ namespace GroupBuyingLib.DAL
                 buyer,
                 product);
             returnOrder.Date = (DateTime)row["OrderDate"];
+            returnOrder.Quantity = (int)row["Quantity"];
 
             return returnOrder;
         }
@@ -29,10 +37,40 @@ namespace GroupBuyingLib.DAL
         /// <returns></returns>
         public List<Order> GetUserOrders(string userName)
         {
-            List<Order> orders = DummyData.GetOrdersFromDB();
-            if (orders != null)
-                return orders.Where(order => order.User.UserName == userName).ToList();
-            return null;
+            List<Order> orders = new List<Order>(); // Return value
+
+            // Get tables
+            DataTable Products = DataProvider.Instance.getTable("Products");
+            DataTable Users = DataProvider.Instance.getTable("Users");
+            DataTable Orders = DataProvider.Instance.getTable("Orders");
+
+            // Get orders with users
+            var query = from seller in Users.AsEnumerable()
+                        from buyer in Users.AsEnumerable()
+                        from product in Products.AsEnumerable()
+                        from order in Orders.AsEnumerable()
+                        where order.Field<String>("Buyer") == userName &&
+                        seller.Field<String>("UserName") == product.Field<String>("Seller") &&
+                        buyer.Field<String>("UserName") == order.Field<String>("Buyer") &&
+                        product.Field<int>("ProductId") == order.Field<int>("ProductId")
+                        select new
+                        {
+                            Product = product,
+                            Seller = seller,
+                            Buyer = buyer,
+                            Order = order
+                        };
+            // Create objects
+            foreach (var queryObj in query)
+            {
+                User seller = UserDAL.FromRow(queryObj.Seller);
+                Product product = ProductDAL.FromRow(queryObj.Product, seller);
+                User buyer = UserDAL.FromRow(queryObj.Buyer);
+                Order order = FromRow(queryObj.Order, buyer, product);
+                orders.Add(order);
+            }
+
+            return orders;
         }
     }
 }

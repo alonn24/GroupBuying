@@ -13,7 +13,7 @@ namespace GroupBuyingLib.DAL
     class ProductDAL
     {
         /// <summary>
-        /// Conver row to product
+        /// Convert row to product
         /// </summary>
         /// <param name="row"></param>
         /// <returns></returns>
