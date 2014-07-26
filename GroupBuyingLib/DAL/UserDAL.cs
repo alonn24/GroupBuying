@@ -46,10 +46,10 @@ namespace GroupBuyingLib.DAL
                                          where user.Field<String>("UserName") ==  username &&
                                                      user.Field<String>("Password") == password
                                          select user;
-            //DataView view = query.AsDataView();
+            // Get single
             DataRow first = query.SingleOrDefault<DataRow>();
             
-            // If user exists
+            // If exists
             if (first != null)
                 returnUser = FromRow(first);
 

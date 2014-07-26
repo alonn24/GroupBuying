@@ -64,8 +64,30 @@ namespace GroupBuyingLib.DAL
         /// <returns></returns>
         public List<Product> GetUserProducts(string userid)
         {
-            List<Product> products = DummyData.GetProductsFromDB();
-            return products.Where(product => product.Seller.UserName == userid).ToList();
+            List<Product> products = new List<Product>();   // Return value
+
+            // Get products table
+            DataTable Products = DataProvider.Instance.getTable("Products");
+            DataTable Users = DataProvider.Instance.getTable("Users");
+
+            // Get products with users
+            var query = from user in Users.AsEnumerable()
+                        from product in Products.AsEnumerable()
+                        where user.Field<String>("UserName") == userid &&
+                        product.Field<String>("Seller") == user.Field<String>("UserName")
+                        select new
+                        {
+                            Product = product,
+                            User = user
+                        };
+            // Create objects
+            foreach (var queryObj in query)
+            {
+                User seller = UserDAL.FromRow(queryObj.User);
+                products.Add(FromRow(queryObj.Product, seller));
+            }
+
+            return products;
         }
 
         /// <summary>
@@ -74,8 +96,37 @@ namespace GroupBuyingLib.DAL
         /// <param name="productId"></param>
         /// <returns></returns>
         public Product GetProductById(int productId) {
-            List<Product> products = DummyData.GetProductsFromDB();
-            return products.FirstOrDefault(product => product.ProductId == productId);
+            Product returnProduct = null;   // Return value
+
+            // Get products table
+            DataTable Products = DataProvider.Instance.getTable("Products");
+            DataTable Users = DataProvider.Instance.getTable("Users");
+
+            // Get products with users
+            var query = from user in Users.AsEnumerable()
+                        from product in Products.AsEnumerable()
+                        where product.Field<int>("ProductId") == productId &&
+                        product.Field<String>("Seller") == user.Field<String>("UserName")
+                        select new
+                        {
+                            Product = product,
+                            User = user
+                        };
+
+            // Get single
+            
+            var first = query.SingleOrDefault();
+
+            // If exists
+            if (first != null) {
+                User seller = UserDAL.FromRow(first.User);
+                returnProduct = FromRow(first.Product, seller);
+            }
+
+            return returnProduct;
+
+            /*List<Product> products = DummyData.GetProductsFromDB();
+            return products.FirstOrDefault(product => product.ProductId == productId);*/
         }
 
         /// <summary>
