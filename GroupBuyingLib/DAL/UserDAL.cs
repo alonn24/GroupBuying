@@ -14,6 +14,24 @@ namespace GroupBuyingLib.DAL
     public class UserDAL
     {
         /// <summary>
+        /// Convert row to user object
+        /// </summary>
+        /// <param name="row"></param>
+        /// <returns></returns>
+        public static User FromRow(DataRow row) {
+            User returnUser = null;   // Return value
+
+            returnUser = new User((string)row["UserName"],
+                    (string)row["Password"],
+                    (string)row["Role"]);
+            returnUser.Email = row["Email"].ToString();
+            returnUser.Profile = (string)row["Profile"];
+            returnUser.Authorized = (bool)row["Authorized"];
+
+            return returnUser;
+        }
+
+        /// <summary>
         /// Get user details from DB
         /// </summary>
         /// <returns></returns>
@@ -28,18 +46,12 @@ namespace GroupBuyingLib.DAL
                                          where user.Field<String>("UserName") ==  username &&
                                                      user.Field<String>("Password") == password
                                          select user;
-            DataView view = query.AsDataView();
+            //DataView view = query.AsDataView();
+            DataRow first = query.SingleOrDefault<DataRow>();
             
-            // If there is only one user, get it
-            if (view.Count == 1) { 
-                DataRowView row = view[0];
-                returnUser = new User((string)row["UserName"], 
-                    (string)row["Password"], 
-                    (string)row["Role"]);
-                returnUser.Email = row["Email"].ToString();
-                returnUser.Profile = (string)row["Profile"];
-                returnUser.Authorized = (bool)row["Authorized"];
-            }
+            // If user exists
+            if (first != null)
+                returnUser = FromRow(first);
 
             return returnUser;
         }
