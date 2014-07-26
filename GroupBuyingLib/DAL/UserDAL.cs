@@ -5,6 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using GroupBuyingLib.Model;
 
+using System.Web;
+using System.Data.OleDb;
+using System.Data;
+
 namespace GroupBuyingLib.DAL
 {
     public class UserDAL
@@ -16,15 +20,42 @@ namespace GroupBuyingLib.DAL
         public User GetUserDetails(string username, string password)
         {
             User returnUser = null;   // Return value
+            
+            String sConnectionString =
+                "Provider=Microsoft.ACE.OLEDB.12.0;" +
+                "Data Source=" + HttpContext.Current.Server.MapPath("../Database.accdb") + ";";
+            
+            OleDbConnection objConn = new OleDbConnection(sConnectionString);
 
-            // Get user from DB and return only the first
-            List<User> users = DummyData.GetUsersFromDB();
-            if (users != null)
-            {
-                List<User> selectedUsers = users.Where(user => user.UserName == username && user.Password == password).ToList();
-                if (selectedUsers.Count == 1)
-                    returnUser = selectedUsers.First();
+            objConn.Open();
+
+            OleDbCommand objCmdSelect = new OleDbCommand("SELECT * FROM Users   ", objConn);
+            OleDbDataAdapter objAdapter1 = new OleDbDataAdapter();
+            objAdapter1.SelectCommand = objCmdSelect;
+            DataSet objDataset1 = new DataSet();
+            objAdapter1.Fill(objDataset1);
+            DataTable Users = objDataset1.Tables[0];
+
+            EnumerableRowCollection<DataRow> query = from user in Users.AsEnumerable()
+                                         where user.Field<String>("UserName") ==  username &&
+                                                     user.Field<String>("Password") == password
+                                         select user;
+
+            
+            // Bind data to DataGrid control.
+            DataView view = query.AsDataView();
+            if (view.Count == 1) { 
+                DataRowView row = view[0];
+                returnUser = new User((string)row["UserName"], 
+                    (string)row["Password"], 
+                    (string)row["Role"]);
+                returnUser.Email = row["Email"].ToString();
+                returnUser.Profile = (string)row["Profile"];
+                returnUser.Authorized = (bool)row["Authorized"];
             }
+
+            objConn.Close();
+
             return returnUser;
         }
     }
