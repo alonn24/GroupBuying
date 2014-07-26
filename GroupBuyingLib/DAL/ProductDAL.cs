@@ -66,7 +66,7 @@ namespace GroupBuyingLib.DAL
         {
             List<Product> products = new List<Product>();   // Return value
 
-            // Get products table
+            // Get tables
             DataTable Products = DataProvider.Instance.getTable("Products");
             DataTable Users = DataProvider.Instance.getTable("Users");
 
@@ -98,7 +98,7 @@ namespace GroupBuyingLib.DAL
         public Product GetProductById(int productId) {
             Product returnProduct = null;   // Return value
 
-            // Get products table
+            // Get tables
             DataTable Products = DataProvider.Instance.getTable("Products");
             DataTable Users = DataProvider.Instance.getTable("Users");
 
@@ -112,9 +112,7 @@ namespace GroupBuyingLib.DAL
                             Product = product,
                             User = user
                         };
-
             // Get single
-            
             var first = query.SingleOrDefault();
 
             // If exists
@@ -124,9 +122,6 @@ namespace GroupBuyingLib.DAL
             }
 
             return returnProduct;
-
-            /*List<Product> products = DummyData.GetProductsFromDB();
-            return products.FirstOrDefault(product => product.ProductId == productId);*/
         }
 
         /// <summary>
@@ -134,10 +129,42 @@ namespace GroupBuyingLib.DAL
         /// </summary>
         /// <param name="productId"></param>
         /// <returns></returns>
-        public List<Order> GetProductOrders(int productId)
-        {
-            List<Order> orders = DummyData.GetOrdersFromDB();
-            return orders.Where(order => order.Product.ProductId == productId).ToList();
+        public List<Order> GetProductOrders(int productId) {
+            List<Order> orders = new List<Order>(); // Return value
+
+            // Get tables
+            DataTable Products = DataProvider.Instance.getTable("Products");
+            DataTable Users = DataProvider.Instance.getTable("Users");
+            DataTable Orders = DataProvider.Instance.getTable("Orders");
+
+            // Get orders with users
+            var query = from seller in Users.AsEnumerable()
+                        from buyer in Users.AsEnumerable()
+                        from product in Products.AsEnumerable()
+                        from order in Orders.AsEnumerable()
+                        where order.Field<int>("ProductId") == productId &&
+                        seller.Field<String>("UserName") == product.Field<String>("Seller") &&
+                        buyer.Field<String>("UserName") == order.Field<String>("Buyer") &&
+                        product.Field<int>("ProductId") == order.Field<int>("ProductId")
+                        select new
+                        {
+                            Product = product,
+                            Seller = seller,
+                            Buyer = buyer,
+                            Order = order
+                        };
+            // Create objects
+            foreach (var queryObj in query)
+            {
+                User seller = UserDAL.FromRow(queryObj.Seller);
+                Product product = FromRow(queryObj.Product, seller);
+                User buyer = UserDAL.FromRow(queryObj.Buyer);
+                Order order = OrderDAL.FromRow(queryObj.Order, buyer, product);
+                orders.Add(order);
+            }
+
+            return orders;
         }
     }
 }
+
