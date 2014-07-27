@@ -35,7 +35,7 @@ namespace GroupBuyingProject.Services
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Bare,
             UriTemplate = "/RegisterUser/{username}/{password}/{role}/{email}/{profile}")]
-        ActionResponse RegisterUser(string username, string password, string role, string email, string profile);
+        ActionResponse<bool> RegisterUser(string username, string password, string role, string email, string profile);
         #endregion
 
         #region Order APIs
@@ -79,7 +79,7 @@ namespace GroupBuyingProject.Services
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Bare,
             UriTemplate = "/OrderProducts/{userid}/{password}/{orders}")]
-        ActionResponse OrderProducts(string userid, string password, string orders);
+        ActionResponse<bool> OrderProducts(string userid, string password, string orders);
 
         /// <summary>
         /// RESTful API to get product details
@@ -99,7 +99,7 @@ namespace GroupBuyingProject.Services
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Bare,
             UriTemplate = "/UpdateProductDetails/{userName}/{password}/{productId}/{title}/{minPrice}/{maxPrice}/{requiredOrders}")]
-        ActionResponse UpdateProductDetails(string userName, string password, string productId, string title, 
+        ActionResponse<bool> UpdateProductDetails(string userName, string password, string productId, string title, 
             string minPrice, string maxPrice, string requiredOrders);
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace GroupBuyingProject.Services
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Bare,
             UriTemplate = "/CreateProduct/{userName}/{password}/{title}/{minPrice}/{maxPrice}/{requiredOrders}")]
-        ActionResponse CreateProduct(string userName, string password, string title,
+        ActionResponse<bool> CreateProduct(string userName, string password, string title,
             string minPrice, string maxPrice, string requiredOrders);
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace GroupBuyingProject.Services
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Bare,
             UriTemplate = "/RemoveProduct/{userName}/{password}/{productId}")]
-        ActionResponse RemoveProduct(string userName, string password, string productId);
+        ActionResponse<bool> RemoveProduct(string userName, string password, string productId);
         #endregion
     }
 }

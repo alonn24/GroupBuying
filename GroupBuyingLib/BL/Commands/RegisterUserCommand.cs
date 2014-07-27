@@ -8,14 +8,14 @@ using GroupBuyingLib.Model;
 
 namespace GroupBuyingLib.BL.Commands
 {
-    public class RegisterUserCommand : ICommand<ActionResponse>
+    public class RegisterUserCommand : ICommand<ActionResponse<bool>>
     {
         private User m_userToRegister;
         /// <summary>
         /// Result
         /// </summary>
-        private ActionResponse m_message;
-        public ActionResponse Result
+        private ActionResponse<bool> m_message;
+        public ActionResponse<bool> Result
         { 
             get { 
                 return m_message;

@@ -89,7 +89,7 @@ angular.module('myApp.controllers', [])
             // Register
             // TODO: problem with selected profile
             var promise = userService.RegisterUser($scope.userName, $scope.password,
-                $scope.selectedRole, $scope.email, $scope.selectedProfile);
+                $scope.selectedRole, $scope.email, $scope.selectedProfile.url);
             // Success
             promise.then(function() {
                 $location.path($scope.nextPage);

@@ -40,7 +40,7 @@ namespace GroupBuyingProject.Services
         /// Register a new user to the system
         /// </summary>
         /// <returns></returns>
-        public ActionResponse RegisterUser(string userName, string password, string role, string email, string profile)
+        public ActionResponse<bool> RegisterUser(string userName, string password, string role, string email, string profile)
         {
             // Deal with HTML encode/decode parameters
             return new UserFacade().RegisterUser(userName, password, role, email, profile);
@@ -88,9 +88,9 @@ namespace GroupBuyingProject.Services
         /// <param name="password"></param>
         /// <param name="orders"></param>
         /// <returns></returns>
-        public ActionResponse OrderProducts(string userId, string password, string orders)
+        public ActionResponse<bool> OrderProducts(string userId, string password, string orders)
         {
-            return new ActionResponse("", true);
+            return new ActionResponse<bool>("", true);
         }
 
         /// <summary>
@@ -104,18 +104,18 @@ namespace GroupBuyingProject.Services
         /// <summary>
         /// Check credentials and update product data
         /// <returns></returns>
-        public ActionResponse UpdateProductDetails(string userName, string password, string productId, string title,
+        public ActionResponse<bool> UpdateProductDetails(string userName, string password, string productId, string title,
             string minPrice, string maxPrice, string requiredOrders) {
-                return new ActionResponse("", true);
+                return new ActionResponse<bool>("", true);
         }
 
         /// <summary>
         /// Check credentials and create new product
         /// </summary>
         /// <returns></returns>
-        public ActionResponse CreateProduct(string userName, string password, string title,
+        public ActionResponse<bool> CreateProduct(string userName, string password, string title,
             string minPrice, string maxPrice, string requiredOrders) {
-                return new ActionResponse("", true);
+                return new ActionResponse<bool>("", true);
         }
 
         /// <summary>
@@ -125,8 +125,8 @@ namespace GroupBuyingProject.Services
         /// <param name="password"></param>
         /// <param name="productId"></param>
         /// <returns></returns>
-        public ActionResponse RemoveProduct(string userName, string password, string productId) {
-            return new ActionResponse("", true);
+        public ActionResponse<bool> RemoveProduct(string userName, string password, string productId) {
+            return new ActionResponse<bool>("", true);
         }
         #endregion
     }

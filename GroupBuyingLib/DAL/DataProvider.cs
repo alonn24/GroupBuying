@@ -49,5 +49,36 @@ namespace GroupBuyingLib.DAL
             }
             return table;
         }
+
+        public void executeCommand(String command, Object[] parameters) {
+            OleDbConnection objConn = new OleDbConnection(sConnectionString);
+            try
+            {
+                objConn.Open();
+                OleDbCommand objCommand = new OleDbCommand(command, objConn);
+                // Add parameters
+                for (int i = 0; i < parameters.Length; i++)
+                {
+                    objCommand.Parameters.Add(new OleDbParameter("@p" + i, parameters[i]));
+                }
+                objCommand.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                objConn.Close();
+            }
+
+/*
+            OleDbCommand command = new OleDbCommand();
+command.Connection = conn;
+command.CommandText= "INSERT INTO myTable (col1, col2) VALUES (@p_col1, @p_col2)";
+command.Parameters.Add ("@p_col1", OleDbType.String).Value = textBox1.Text;
+
+command.ExecuteNonQUery();*/
+        }
     }
 }

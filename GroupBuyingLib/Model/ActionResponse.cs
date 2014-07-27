@@ -8,10 +8,12 @@ using System.Threading.Tasks;
 namespace GroupBuyingLib.Model
 {
     [DataContract]
-    public class ActionResponse
+    public class ActionResponse<T>
     {
         [DataMember]
         public bool Succeed { get; set; }
+        [DataMember]
+        public T Result { get; set; }
         [DataMember]
         public string Message { get; set; }
 
