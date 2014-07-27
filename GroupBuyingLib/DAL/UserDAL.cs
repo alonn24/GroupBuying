@@ -8,6 +8,7 @@ using GroupBuyingLib.Model;
 using System.Web;
 using System.Data.OleDb;
 using System.Data;
+using GroupBuyingLib.BL.Commands;
 
 namespace GroupBuyingLib.DAL
 {
@@ -54,6 +55,40 @@ namespace GroupBuyingLib.DAL
                 returnUser = FromRow(first);
 
             return returnUser;
+        }
+
+        /// <summary>
+        /// Get user details from DB
+        /// </summary>
+        /// <returns></returns>
+        public User GetUserDetails(string username)
+        {
+            User returnUser = null;   // Return value
+            // Get data form
+            DataTable Users = DataProvider.Instance.getTable("Users");
+
+            // Get user from users
+            EnumerableRowCollection<DataRow> query = from user in Users.AsEnumerable()
+                                                     where user.Field<String>("UserName") == username
+                                                     select user;
+            // Get single
+            DataRow first = query.SingleOrDefault<DataRow>();
+
+            // If exists
+            if (first != null)
+                returnUser = FromRow(first);
+
+            return returnUser;
+        }
+
+        public ActionResponse RegisterUser(User user)
+        {
+            // Check that user not exists
+            User existingUser = GetUserDetails(user.UserName);
+            if (existingUser != null)
+                return new ActionResponse("User " + user.UserName + " already exists in the system", false);
+            return new ActionResponse("OK", true);
+
         }
     }
 }

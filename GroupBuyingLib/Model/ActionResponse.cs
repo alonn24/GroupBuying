@@ -19,7 +19,8 @@ namespace GroupBuyingLib.Model
         /// Constructor
         /// </summary>
         public ActionResponse() { }
-        public ActionResponse(bool succeed) {
+        public ActionResponse(string message, bool succeed) {
+            this.Message = message;
             this.Succeed = succeed;
         }
         public ActionResponse(string message)

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using GroupBuyingLib.Model;
 using GroupBuyingLib.DAL;
 using GroupBuyingLib.Model.OrderLib;
+using GroupBuyingLib.BL.Commands;
 
 namespace GroupBuyingLib.BL
 {
@@ -28,9 +29,11 @@ namespace GroupBuyingLib.BL
         /// Perform checks and register a new user
         /// </summary>
         /// <returns>Action success</returns>
-        public bool RegisterUser(string username, string password, string role, string email, string profile)
+        public ActionResponse RegisterUser(string username, string password, string role, string email, string profile)
         {
-            return true;
+            ICommand<ActionResponse> command = new RegisterUserCommand(username, password, role, email, profile);
+            command.execute();
+            return command.Result;
         }
 
         public List<Order> GetUserOrders(string userName, string password)

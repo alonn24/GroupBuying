@@ -23,8 +23,6 @@ namespace GroupBuyingProject.Services
             string password = request.Cookies["password"].Value;
             return (userName != null && userName != "" &&
                 password != null && password != "");
-
-            
         }
 
         #region User APIs
@@ -45,8 +43,7 @@ namespace GroupBuyingProject.Services
         public ActionResponse RegisterUser(string userName, string password, string role, string email, string profile)
         {
             // Deal with HTML encode/decode parameters
-            bool res = new UserFacade().RegisterUser(userName, password, role, email, profile);
-            return new ActionResponse(res);
+            return new UserFacade().RegisterUser(userName, password, role, email, profile);
         }
         #endregion
 
@@ -93,7 +90,7 @@ namespace GroupBuyingProject.Services
         /// <returns></returns>
         public ActionResponse OrderProducts(string userId, string password, string orders)
         {
-            return new ActionResponse(true);
+            return new ActionResponse("", true);
         }
 
         /// <summary>
@@ -109,7 +106,7 @@ namespace GroupBuyingProject.Services
         /// <returns></returns>
         public ActionResponse UpdateProductDetails(string userName, string password, string productId, string title,
             string minPrice, string maxPrice, string requiredOrders) {
-                return new ActionResponse(true);
+                return new ActionResponse("", true);
         }
 
         /// <summary>
@@ -118,7 +115,7 @@ namespace GroupBuyingProject.Services
         /// <returns></returns>
         public ActionResponse CreateProduct(string userName, string password, string title,
             string minPrice, string maxPrice, string requiredOrders) {
-                return new ActionResponse(true);
+                return new ActionResponse("", true);
         }
 
         /// <summary>
@@ -129,7 +126,7 @@ namespace GroupBuyingProject.Services
         /// <param name="productId"></param>
         /// <returns></returns>
         public ActionResponse RemoveProduct(string userName, string password, string productId) {
-            return new ActionResponse(true);
+            return new ActionResponse("", true);
         }
         #endregion
     }
