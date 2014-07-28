@@ -45,7 +45,7 @@ angular.module('myApp.services', [])
                   // Error
                   ,function(responseHeaders){
                       deferred.reject('Error occurred in GetUserData.');
-                      console.error('Error occurred in GetUserData.');
+                      console.error('Error occurred in GetUserData: ' + responseHeaders.data);
                   });
           }
           ServerLogIn(this.model);
@@ -84,7 +84,7 @@ angular.module('myApp.services', [])
               // Error
               ,function(responseHeaders){
                   deferred.reject('Error occurred in GetUserOrders.');
-                  console.error('Error occurred in GetUserOrders.');
+                  console.error('Error occurred in GetUserOrders: ' + responseHeaders.data);
               });
 
           // Return promise
@@ -117,7 +117,7 @@ angular.module('myApp.services', [])
                   // Error
                   ,function(responseHeaders){
                       deferred.reject('Error occurred in RegisterUser.');
-                      console.error('Error occurred in RegisterUser.');
+                      console.error('Error occurred in RegisterUser: ' + responseHeaders.data);
                   });
           }
           RegisterUser(this.model);
@@ -151,7 +151,7 @@ angular.module('myApp.services', [])
                 // Error
                 function(responseHeaders){
                     deferred.reject('Error occurred in RegisterUser.');
-                    console.error('Error occurred in RegisterUser.');
+                    console.error('Error occurred in RegisterUser: ' + responseHeaders.data);
                 });
 
             // Return promise
@@ -196,7 +196,7 @@ angular.module('myApp.services', [])
                 // Error
                 ,function(responseHeaders){
                     deferred.reject('Error occurred in OrderProducts.');
-                    console.error('Error occurred in OrderProducts.');
+                    console.error('Error occurred in OrderProducts: ' + responseHeaders.data);
                 });
 
             // Return promise
@@ -230,7 +230,7 @@ angular.module('myApp.services', [])
                 // Error
                 function(responseHeaders){
                     deferred.reject('Error occurred in GetProductDetails.');
-                    console.error("Error occurred in GetProductDetails.");
+                    console.error('Error occurred in GetProductDetails: ' + responseHeaders.data);
                 });
 
             // Return promise
@@ -263,7 +263,7 @@ angular.module('myApp.services', [])
                 // Error
                 ,function(responseHeaders){
                     deferred.reject('Error occurred in UpdateProduct.');
-                    console.error('Error occurred in UpdateProduct.');
+                    console.error('Error occurred in UpdateProduct: ' + responseHeaders.data);
                 });
 
             // Return promise
@@ -295,7 +295,7 @@ angular.module('myApp.services', [])
                 // Error
                 ,function(responseHeaders){
                     deferred.reject('Error occurred in CreateProduct.');
-                    console.error('Error occurred in CreateProduct.');
+                    console.error('Error occurred in CreateProduct: ' + responseHeaders.data);
                 });
 
             // Return promise
@@ -324,7 +324,7 @@ angular.module('myApp.services', [])
                 // Error
                 ,function(responseHeaders){
                     deferred.reject('Error occurred in RemoveProduct.');
-                    console.error('Error occurred in RemoveProduct.');
+                    console.error('Error occurred in RemoveProduct: ' + responseHeaders.data);
                 });
 
             // Return promise
