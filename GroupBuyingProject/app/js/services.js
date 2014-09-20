@@ -5,129 +5,12 @@
 // Demonstrate how to register services
 // In this case it is a simple value service.
 angular.module('myApp.services', [])
-.factory('userService', ['$rootScope', '$resource', '$cookies', '$q', function ($rootScope, $resource, $cookies, $q) {
-  return {
-      model: {
-          userName: '',
-          password: '',
-          role: '',
-          authorized: false,
-          email: '',
-          profile: ''
-      },
-      LogIn: function (_userName, _password) {
-          // Return promise
-          var deferred = $q.defer();
+.factory('productService', function ($rootScope, $resource, $q, userPermissions) {
 
-          // Log in to the server
-          var ServerLogIn = function(model) {
-              // Set up resource
-              var UserResource = $resource('/Services/GeneralServices.svc/GetUserData/:username/:password');
-              UserResource.get({username: encodeURI(_userName), password: encodeURI(_password)},
-                  // Success
-                  function(data, responseHeaders) {
-                      if(data.Authorized) {
-                          // Save data to model
-                          model.userName = data.UserName;
-                          model.password = _password;
-                          model.role = data.Role;
-                          model.authorized = data.Authorized;
-                          model.email = data.Email;
-                          model.profile = data.Profile;
-                          deferred.resolve();
-                          // Set cookies
-                          $cookies.userName = _userName;
-                          $cookies.password = _password;
-                      } else {
-                          deferred.reject('The user is not authorized.');
-                      }
-                  }
-                  // Error
-                  ,function(responseHeaders){
-                      deferred.reject('Error occurred in GetUserData.');
-                      console.error('Error occurred in GetUserData: ' + responseHeaders.data);
-                  });
-          }
-          ServerLogIn(this.model);
+    function getuserDetails() {
+        return userPermissions.details;
+    }
 
-          // return promise
-          return deferred.promise;
-      },
-      LogOut: function () {
-          this.model.authorized = false;
-          this.model.userName = '';
-          this.model.password = '';
-          this.model.role = '';
-          this.model.email = '';
-          this.model.profile = '';
-          // Set cookies
-          $cookies.userName = '';
-          $cookies.password = '';
-      },
-      GetUserOrders: function() {
-          // Return promise
-          var deferred = $q.defer();
-
-          // Get orders from the server
-          var OrdersResource = $resource('/Services/GeneralServices.svc/GetUserOrders/:username/:password');
-          OrdersResource.query({username: encodeURI(this.model.userName),
-                  password: encodeURI(this.model.password)},
-              // Success
-              function(data, responseHeaders) {
-                  // Format date
-                  for(var i=0; i < data.length; i++) {
-                      var date = new Date(parseInt(data[i].Date.substr(6)));
-                      data[i].Date = date.getDate() + "/" + (date.getMonth()+1) + "/" + date.getFullYear();
-                  }
-                  deferred.resolve(data);
-              }
-              // Error
-              ,function(responseHeaders){
-                  deferred.reject('Error occurred in GetUserOrders.');
-                  console.error('Error occurred in GetUserOrders: ' + responseHeaders.data);
-              });
-
-          // Return promise
-          return deferred.promise;
-      },
-      RegisterUser: function(_username, _password, _role, _email, _profile) {
-          // Return promise
-          var deferred = $q.defer();
-          var RegisterUser = function(model) {
-              // Register to the server
-              var Register = $resource('/Services/GeneralServices.svc/RegisterUser/:username/:password/:role/:email/:profile');
-              Register.get({username: _username, password: _password,
-                      role: _role, email: _email, profile: _profile},
-                  // Success
-                  function(data, responseHeaders) {
-                      // Set user data and advance to next page
-                      if(data && data.Succeed == true) {
-                          // Save data to model
-                          model.userName = _username;
-                          model.password = _password;
-                          model.role = _role;
-                          model.authorized = true;
-                          model.email = _email;
-                          model.profile = _profile.url;
-                          deferred.resolve();
-                      } else {
-                          deferred.reject(data.Message);
-                      }
-                  }
-                  // Error
-                  ,function(responseHeaders){
-                      deferred.reject('Error occurred in RegisterUser.');
-                      console.error('Error occurred in RegisterUser: ' + responseHeaders.data);
-                  });
-          }
-          RegisterUser(this.model);
-
-          // Return promise
-          return deferred.promise;
-      }
-  };
-}])
-.factory('productService', ['$rootScope', '$resource', '$q', 'userService', function ($rootScope, $resource, $q, userService) {
     return {
         GetProducts: function(userName) {
             // Return promise
@@ -181,9 +64,10 @@ angular.module('myApp.services', [])
 
             // Order to server
             var OrderResource = $resource('/Services/GeneralServices.svc/OrderProducts/:username/:password/:orders');
+            var user = getuserDetails();
             OrderResource.get({
-                    username: encodeURI(userService.model.userName),
-                    password: encodeURI(userService.model.password),
+                username: encodeURI(user.userName),
+                password: encodeURI(user.password),
                     orders: orders},
                 // Success
                 function(data, responseHeaders) {
@@ -242,10 +126,11 @@ angular.module('myApp.services', [])
 
             var UpdateProductResource = $resource('/Services/GeneralServices.svc/UpdateProductDetails' +
                 '/:username/:password/:productId/:title/:minPrice/:maxPrice/:requiredOrders');
+            var user = getuserDetails();
             UpdateProductResource.get(
                 {
-                    username: encodeURI(userService.model.userName),
-                    password: encodeURI(userService.model.password),
+                    username: encodeURI(user.userName),
+                    password: encodeURI(user.password),
                     productId: product.ProductId,
                     title: product.Title,
                     minPrice: product.MinPrice,
@@ -275,10 +160,11 @@ angular.module('myApp.services', [])
 
             var CreateProductResource = $resource('/Services/GeneralServices.svc/CreateProduct' +
                 '/:username/:password/:title/:minPrice/:maxPrice/:requiredOrders');
+            var user = getuserDetails();
             CreateProductResource.get(
                 {
-                    username: encodeURI(userService.model.userName),
-                    password: encodeURI(userService.model.password),
+                    username: encodeURI(user.userName),
+                    password: encodeURI(user.password),
                     title: newProduct.Title,
                     minPrice: newProduct.MinPrice,
                     maxPrice: newProduct.MaxPrice,
@@ -307,10 +193,11 @@ angular.module('myApp.services', [])
 
             var RemoveProductResource = $resource('/Services/GeneralServices.svc/RemoveProduct' +
                 '/:username/:password/:productId');
+            var user = getuserDetails();
             RemoveProductResource.get(
                 {
-                    username: encodeURI(userService.model.userName),
-                    password: encodeURI(userService.model.password),
+                    username: encodeURI(user.userName),
+                    password: encodeURI(user.password),
                     productId: productId
                 },
                 // Success
@@ -331,4 +218,4 @@ angular.module('myApp.services', [])
             return deferred.promise;
         }
     }
-}]);
+});

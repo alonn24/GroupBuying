@@ -36,7 +36,7 @@
                     </table>
                 </div>
             </td>
-            <td class="contentGroup sideBar" data-ng-show="user.authorized">
+            <td class="contentGroup sideBar" data-ng-show="getUserDetails().authorized">
                 <h1>Cart</h1>
                 <input class="action" data-ng-show="selectedProducts.length > 0" type="button" value="Order"
                        data-ng-click="OrderClick()">

@@ -34,12 +34,12 @@
             <br/>
             <span class="label">Date End:</span><span class="labelValue">{{ DateEnd }}</span>
         </td>
-    </tr><tr data-ng-show="user.authorized && update">
+    </tr><tr data-ng-show="getUserDetails().authorized && update">
         <td colspan="2">
             <input type="button" class="action" data-ng-click="UpdateClick()" value="Update">
             <input type="button" class="action" data-ng-click="RemoveProduct()" value="Remove">
         </td>
-    </tr><tr data-ng-show="user.authorized && !seller">
+    </tr><tr data-ng-show="getUserDetails().authorized && !seller">
         <td colspan="2">
             <span class="label">Quantity:</span><input data-ng-model="Quantity" class="smallInput labelValue" type="number">
             <input type="checkbox" data-ng-model="Shipping"><span class="label">Shipping</span><br/>

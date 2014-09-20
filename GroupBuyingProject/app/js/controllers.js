@@ -2,18 +2,20 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', [])
+angular.module('myApp.controllers', ['app.common'])
 
 /* User Controller */
 /* ~~~~~~~~~~~~~~~ */
-.controller('userCtrl', ['$scope', '$location', 'userService',
-    function ($scope, $location, userService) {
+.controller('userCtrl', function ($scope, $location, userPermissions, ordersFacade) {
     // Scope Data
     $scope.userName = '';
     $scope.password = '';
-    $scope.user = userService.model;
     $scope.orders = [];
     $scope.productDetailsPage = 'Product';
+
+    $scope.getUserDetails = function () {
+        return userPermissions.details;
+    };
 
     // Event - LogInClick
     //~~~~~~~~~~~~~~~~~~~~
@@ -22,13 +24,10 @@ angular.module('myApp.controllers', [])
         if (!this.userName || !this.password)
             this.message = "Please enter user credentials.";
         else {
-            // Log in
-            var promise = userService.LogIn($scope.userName, $scope.password);
-            // Success
-            promise.then(function() {
+            userPermissions.logIn($scope.userName, $scope.password)
+            .then(function () {
                 $scope.LoadUserOrders();
-            // Error
-            }, function(reason) {
+            }, function (reason) {
                 $scope.message = reason;
             });
         }
@@ -36,7 +35,7 @@ angular.module('myApp.controllers', [])
     // Event - LogOutClick
     //~~~~~~~~~~~~~~~~~~~~~
     $scope.LogOutClick = function () {
-        userService.LogOut();
+        userPermissions.logOut();
     };
     // Event - OrderClick
     //~~~~~~~~~~~~~~~~~~~~~~~
@@ -45,31 +44,26 @@ angular.module('myApp.controllers', [])
     };
     // Loading User Orders
     //~~~~~~~~~~~~~~~~~~~~~
-    $scope.LoadUserOrders = function() {
+    $scope.LoadUserOrders = function () {
+        var user = $scope.getUserDetails();
         // Basic checks
-        if (!this.user.userName || !this.user.password)
-            this.message = "No user name or password.";
-        else {
-            // Get Orders
-            var promise = userService.GetUserOrders()
-            // Success
-            promise.then(function(data) {
-                $scope.orders = data;
-                // Error
-            }, function(reason) {
+        if (user.authorized) {
+            ordersFacade.getUserOrders(user.userName, user.password)
+            .then(function (orders) {
+                $scope.orders = orders;
+            }, function (reason) {
                 $scope.message = reason;
             });
         }
     }
     // Startup code
     //~~~~~~~~~~~~~~
-    if($scope.user.authorized)
-        $scope.LoadUserOrders();
-}])
+    $scope.LoadUserOrders();
+})
+
 /* register Controller */
 /* ~~~~~~~~~~~~~~~~~~~ */
-.controller('registerCtrl', ['$scope', '$location', 'userService',
-    function ($scope, $location, userService) {
+.controller('registerCtrl', function ($scope, $location, userPermissions) {
     // Scope Data    
     $scope.profiles = [
         { name: "Default", url: "Default.jpg" },
@@ -85,27 +79,20 @@ angular.module('myApp.controllers', [])
         if (!this.userName || !this.password || !this.email)
             this.message = "Please enter user details.";
         else {
-            // Get user data from server
-            // Register
-            // TODO: problem with selected profile
-            var promise = userService.RegisterUser($scope.userName, $scope.password,
-                $scope.selectedRole, $scope.email, $scope.selectedProfile.url);
-            // Success
-            promise.then(function() {
+            userPermissions.registerUser($scope.userName, $scope.password,
+                $scope.selectedRole, $scope.email/*, $scope.selectedProfile.url*/)
+            .then(function () {
                 $location.path($scope.nextPage);
-                // Error
-            }, function(reason) {
+            }, function (reason) {
                 $scope.message = reason;
             });
         }
     }
-}])
+})
 /* All products controller */
 /* ~~~~~~~~~~~~~~~~~~~~~~~ */
-.controller('allProductsCtrl', ['$scope', '$location', '$resource', '$filter', 'userService', 'productService',
-    function($scope, $location, $resource, $filter, userService, productService) {
+.controller('allProductsCtrl', function ($scope, $location, $resource, $filter, userPermissions, productService) {
         // Set scope data
-        $scope.user = userService.model;
         $scope.products = [];
         $scope.selectedProducts = [];
         $scope.searchQuery = "";
@@ -121,6 +108,10 @@ angular.module('myApp.controllers', [])
         }, function(reason) {
             $scope.message = reason;
         });
+
+        $scope.getUserDetails = function () {
+            return userPermissions.details;
+        }
 
         // Event - product click
         //~~~~~~~~~~~~~~~~~~~~~~~
@@ -140,8 +131,9 @@ angular.module('myApp.controllers', [])
             delete $scope.errorMessage;
             delete $scope.successMessage;
 
+            var user = $scope.getUserDetails();
             // Basic checks
-            if (!$scope.user.userName || !$scope.user.password)
+            if (!user.userName || !user.password)
                 $scope.errorMessage = "No user name or password.";
             else {
                 var promise = productService.OrderProducts($scope.selectedProducts);
@@ -157,41 +149,12 @@ angular.module('myApp.controllers', [])
                 });
             }
         }
-        // Event - filter products
-        /*$scope.SearchProduct = function(product) {
-            if($scope.searchQuery == "" && $scope.searchPrice == "")
-                return true;
-            else {
-                // Check if price is valid
-                var regex = /[0-9]|\./;
-                var validPrice = regex.test($scope.searchPrice);
-
-                // Split by spaces to search each field
-                var arrQuery = $scope.searchQuery.toLowerCase().split(" ");
-                // Check search fields
-                for(var i = 0; i < arrQuery.length; i++) {
-                    if(product.ProductId.toString().toLowerCase().indexOf(arrQuery[i]) == -1 &&
-                        product.Seller.UserName.toLowerCase().indexOf(arrQuery[i]) == -1 &&
-                        product.Title.toLowerCase().indexOf(arrQuery[i]) == -1)
-                        return false;
-                }
-                // Check price
-                if(validPrice && $scope.searchPrice > 0 &&
-                    product.MinPrice > $scope.searchPrice)
-                    return false;
-
-                // All OK
-                return true;
-            }
-        }*/
     }
-])
+)
 /* All products controller */
 /* ~~~~~~~~~~~~~~~~~~~~~~~ */
-.controller('productCtrl', ['$scope', '$location', '$route', 'userService', 'productService',
-    function($scope, $location, $route, userService, productService) {
+.controller('productCtrl', function ($scope, $location, $route, userPermissions, productService) {
         // Set scope data
-        $scope.user = userService.model;
         $scope.update = false;  // Indicated if the user can update product data
         $scope.seller = false;  // Indicates if the logged on user is the seller
         $scope.Product = {};
@@ -201,6 +164,10 @@ angular.module('myApp.controllers', [])
         $scope.Quantity = 1;        // Default quantity
         $scope.Shipping = false;    // Default shipping
         $scope.productsPage = "Products";
+
+        $scope.getUserDetails = function () {
+            return userPermissions.details;
+        };
 
         // Startup - Get given product url details
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -219,7 +186,7 @@ angular.module('myApp.controllers', [])
                 // Set update indicator
                 $scope.seller = false;
                 $scope.update = false;
-                if ($scope.user.userName == $scope.Product.Seller.UserName) {
+                if ($scope.getUserDetails().userName == $scope.Product.Seller.UserName) {
                     $scope.seller = true;
                     if($scope.Orders.length == 0) {
                         $scope.update = true;
@@ -236,8 +203,9 @@ angular.module('myApp.controllers', [])
             delete $scope.errorMessage;
             delete $scope.successMessage;
 
+            var user = $scope.getUserDetails();
             // Basic checks
-            if (!$scope.user.userName || !$scope.user.password || !$scope.Product.ProductId)
+            if (!user.userName || !user.password || !$scope.Product.ProductId)
                 $scope.errorMessage = "No user name or password.";
             else {
                 var promise = productService.OrderProducts([$scope.Product]);
@@ -258,8 +226,9 @@ angular.module('myApp.controllers', [])
             delete $scope.errorMessage;
             delete $scope.successMessage;
 
+            var user = $scope.getUserDetails();
             // Basic checks
-            if (!$scope.user.userName || !$scope.user.password)
+            if (!user.userName || !user.password)
                 $scope.errorMessage = "No user name or password.";
             else if(!$scope.Product.Title || !$scope.Product.MinPrice ||
                 !$scope.Product.MaxPrice || !$scope.Product.RequiredOrders)
@@ -292,24 +261,26 @@ angular.module('myApp.controllers', [])
                 $scope.errorMessage = reason;
             });
         }
-}])
+})
 /* products manager controller */
 /* ~~~~~~~~~~~~~~~~~~~~~~~ */
-.controller('ProductsManagementCtrl', ['$scope', '$location', 'userService', 'productService',
-    function($scope, $location, userService, productService) {
+.controller('ProductsManagementCtrl', function ($scope, $location, userPermissions, productService) {
         // Set scope data
-        $scope.user = userService.model;
         $scope.products = [];
         $scope.searchQuery = "";
         $scope.productDetailsPage = 'Product';
         $scope.NewProduct = {}; // New product input
         $scope.productImages = ['hundai.jpg', 'ipad.jpg', 'massage.jpg', 'pineapple.jpg', 'watch.jpg', 'wedding.jpg'];
 
+        $scope.getUserDetails = function () {
+            return userPermissions.details;
+        };
+
         // Basic checks
-        if (!$scope.user.userName)
+        if (!$scope.getUserDetails().authorized)
             $scope.errorMessage = "User is not authorized.";
         else {
-            var promise = productService.GetProducts($scope.user.userName);
+            var promise = productService.GetProducts($scope.getUserDetails().userName);
             // Success
             promise.then(function(data) {
                 $scope.products = data;
@@ -345,4 +316,4 @@ angular.module('myApp.controllers', [])
                 });
             }
         }
-}]);
+});

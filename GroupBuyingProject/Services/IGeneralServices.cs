@@ -34,8 +34,8 @@ namespace GroupBuyingProject.Services
         [WebInvoke(Method = "GET",
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Bare,
-            UriTemplate = "/RegisterUser/{username}/{password}/{role}/{email}/{profile}")]
-        ActionResponse<bool> RegisterUser(string username, string password, string role, string email, string profile);
+            UriTemplate = "/RegisterUser/{username}/{password}/{role}/{email}")]
+        ActionResponse<bool> RegisterUser(string username, string password, string role, string email);
         #endregion
 
         #region Order APIs

@@ -1,4 +1,4 @@
-﻿<form data-ng-hide="user.authorized" data-ng-submit="LogInClick()">
+﻿<form data-ng-hide="getUserDetails().authorized" data-ng-submit="LogInClick()">
     <table class="contentGroup">
         <tr>
             <td colspan="2">
@@ -31,20 +31,20 @@
          </tr>
     </table>
 </form>
-<div data-ng-show="user.authorized">
+<div data-ng-show="getUserDetails().authorized">
     <table class="mainContentGroup">
         <tr>
             <td class="contentGroup mainContentGroup">
-                <h1>{{user.userName}}'s details</h1>
-                <span class="label">Email:</span><span class="labelValue"> {{user.email}}</span><br />
-                <span class="label">Role:</span><span class="labelValue"> {{user.role}}</span>
+                <h1>{{getUserDetails().userName}}'s details</h1>
+                <span class="label">Email:</span><span class="labelValue"> {{getUserDetails().email}}</span><br />
+                <span class="label">Role:</span><span class="labelValue"> {{getUserDetails().role}}</span>
             </td><td rowspan="2">
-                <img src="./img/{{user.profile}}" class="content profile"/>
+                <img src="./img/{{getUserDetails().profile}}" class="content profile"/>
                 <a class="content action" data-ng-click="LogOutClick()">[Log Out]</a>
             </td>
         </tr><tr ng-hide="orders.length == 0">
             <td class="contentGroup">
-                <h1>{{user.userName}}'s orders</h1>
+                <h1>{{getUserDetails().userName}}'s orders</h1>
                 <div class="card smallCard" ng-repeat="order in orders" data-ng-dblclick="OrderLinkClick(order)"
                      title="Double click to watch order {{order.OrderId}} details.">
                     <span class="content label" >Product Id: {{order.Product.ProductId}}</span>

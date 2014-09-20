@@ -78,6 +78,9 @@
     <Content Include="app\js\directives.js" />
     <Content Include="app\js\filters.js" />
     <Content Include="app\js\services.js" />
+    <Content Include="app\js\services\OrdersFacade.js" />
+    <Content Include="app\js\services\ServerFacade.js" />
+    <Content Include="app\js\services\UserPermissions.js" />
     <Content Include="app\lib\angular\angular-animate.js" />
     <Content Include="app\lib\angular\angular-animate.min.js" />
     <Content Include="app\lib\angular\angular-cookies.js" />

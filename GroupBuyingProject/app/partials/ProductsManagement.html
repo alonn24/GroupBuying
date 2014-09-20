@@ -1,7 +1,7 @@
 <span class="success" >{{ successMessage }}</span>
 <span class="error">{{ errorMessage }} </span>
 
-<div data-ng-show="user.authorized">
+<div data-ng-show="getUserDetails().authorized">
     <h1>New Product</h1>
     <table class="contentGroup mainContentGroup">
         <tr>
@@ -15,7 +15,7 @@
                 <span class="label">Title:</span>
                 <input type="text" class="textInput labelValue" data-ng-model="NewProduct.Title" data-focus="true"/>
                 <br/>
-                <span class="label">Seller:</span><span class="labelValue">{{ user.userName }}</span>
+                <span class="label">Seller:</span><span class="labelValue">{{ getUserDetails().userName }}</span>
                 <br/>
                 <span class="label">Price Range:</span>
                 <span>
@@ -32,7 +32,7 @@
             </td>
         </tr>
     </table>
-    <h1>{{user.userName}}'s Products</h1>
+    <h1>{{getUserDetails().userName}}'s Products</h1>
     <table class="mainContentGroup">
         <tr>
             <td>
