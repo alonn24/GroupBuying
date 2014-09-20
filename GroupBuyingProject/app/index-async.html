@@ -40,6 +40,7 @@
       'js/controllers.js',
       'js/filters.js',
       'js/directives.js',
+      'js/controllers/LogInController.js',
       'js/services/ServerFacade.js',
       'js/services/UserPermissions.js',
       'js/services/OrdersFacade.js',
@@ -64,18 +65,18 @@
         </ul>
     </header>
     <mini-profile>
-        <div data-ng-hide="getUserDetails().authorized">
+        <div data-ng-hide="miniLogIn.getUserDetails().authorized">
             <span class="label">User Not Signed</span><br/>
             <a class="content action" data-link-navigate="LogInPage">[LogIn]</a>
         </div>
-        <div data-ng-show="getUserDetails().authorized">
+        <div data-ng-show="miniLogIn.getUserDetails().authorized">
             <table>
                 <tr>
                     <td>
-                        <img src="{{'./img/' + getUserDetails().profile}}" class="mini_Profile"/><br/>
+                        <img src="{{'./img/' + miniLogIn.getUserDetails().profile}}" class="mini_Profile"/><br/>
                     </td><td>
-                        <span class="label">Welcome {{getUserDetails().userName}}!</span><br/>
-                        <a class="content action" data-ng-click="LogOutClick()">[Log Out]</a>
+                        <span class="label">Welcome {{miniLogIn.getUserDetails().userName}}!</span><br/>
+                        <a class="content action" data-ng-click="miniLogIn.logOut()">[Log Out]</a>
                     </td>
                 </tr>
             </table>

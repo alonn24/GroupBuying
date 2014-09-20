@@ -77,8 +77,8 @@
     <Content Include="app\js\controllers.js" />
     <Content Include="app\js\directives.js" />
     <Content Include="app\js\filters.js" />
-    <Content Include="app\js\services.js" />
     <Content Include="app\js\services\OrdersFacade.js" />
+    <Content Include="app\js\services\ProductsFacade.js" />
     <Content Include="app\js\services\ServerFacade.js" />
     <Content Include="app\js\services\UserPermissions.js" />
     <Content Include="app\lib\angular\angular-animate.js" />
@@ -391,6 +391,9 @@
       <Project>{436ae656-3074-4042-8f3b-a2dad4d8d2f3}</Project>
       <Name>GroupBuyingLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\js\controllers\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

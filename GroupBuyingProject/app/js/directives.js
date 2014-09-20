@@ -26,7 +26,8 @@ angular.module('myApp.directives', ['app.common'])
 .directive('miniProfile', function ($parse) {
     return {
         restrict: 'E',
-        controller: 'userCtrl',
+        controller: 'logInController',
+        controllerAs: 'miniLogIn',
         transclude: true,
         template: '<div class="miniProfile" ng-transclude></div>',
         link: function LinkFn(scope, lElement, attrs) {
