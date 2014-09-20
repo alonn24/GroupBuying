@@ -91,69 +91,64 @@ angular.module('myApp.controllers', ['app.common'])
 })
 /* All products controller */
 /* ~~~~~~~~~~~~~~~~~~~~~~~ */
-.controller('allProductsCtrl', function ($scope, $location, $resource, $filter, userPermissions, productService) {
-        // Set scope data
-        $scope.products = [];
-        $scope.selectedProducts = [];
-        $scope.searchQuery = "";
-        //$scope.searchPrice = 0;
-        $scope.productDetailsPage = 'Product';
+.controller('allProductsCtrl', function ($scope, $location, $resource, $filter, userPermissions, productsFacade) {
+    // Set scope data
+    $scope.products = [];
+    $scope.selectedProducts = [];
+    $scope.searchQuery = "";
+    //$scope.searchPrice = 0;
+    $scope.productDetailsPage = 'Product';
 
-        // Get all products
-        var promise = productService.GetProducts();
-        // Success
-        promise.then(function(data) {
+    productsFacade.getProducts().then(
+        function (data) {
             $scope.products = data;
-            // Error
-        }, function(reason) {
+        }, function (reason) {
             $scope.message = reason;
         });
 
-        $scope.getUserDetails = function () {
-            return userPermissions.details;
-        }
+    $scope.getUserDetails = function () {
+        return userPermissions.details;
+    }
 
-        // Event - product click
-        //~~~~~~~~~~~~~~~~~~~~~~~
-        $scope.ProductClick = function(productId) {
-            $location.path($scope.productDetailsPage + '/' + productId);
-        }
+    // Event - product click
+    //~~~~~~~~~~~~~~~~~~~~~~~
+    $scope.ProductClick = function (productId) {
+        $location.path($scope.productDetailsPage + '/' + productId);
+    }
 
-        // Get filter function
-        $scope.filterProducts = function() {
-            return $filter('filter')($scope.products, $scope.searchQuery);
-        };
+    // Get filter function
+    $scope.filterProducts = function () {
+        return $filter('filter')($scope.products, $scope.searchQuery);
+    };
 
-        // Event - order click
-        //~~~~~~~~~~~~~~~~~~~~~
-        $scope.OrderClick = function() {
-            // Clear message
-            delete $scope.errorMessage;
-            delete $scope.successMessage;
+    // Event - order click
+    //~~~~~~~~~~~~~~~~~~~~~
+    $scope.OrderClick = function () {
+        // Clear message
+        delete $scope.errorMessage;
+        delete $scope.successMessage;
 
-            var user = $scope.getUserDetails();
-            // Basic checks
-            if (!user.userName || !user.password)
-                $scope.errorMessage = "No user name or password.";
-            else {
-                var promise = productService.OrderProducts($scope.selectedProducts);
-                // Success
-                promise.then(function(data) {
-                    $scope.successMessage = "Order successfully.";
-                    // Clear curt
-                    for(var i=$scope.selectedProducts.length-1; i>=0; i--) {
-                        $scope.products.push($scope.selectedProducts.pop());
-                    }
-                }, function(reason) {
-                    $scope.errorMessage = reason;
-                });
-            }
+        var user = $scope.getUserDetails();
+        // Basic checks
+        if (!user.userName || !user.password)
+            $scope.errorMessage = "No user name or password.";
+        else {
+            productsFacade.orderProducts($scope.selectedProducts)
+            .then(function (data) {
+                $scope.successMessage = "Order successfully.";
+                // Clear curt
+                for (var i = $scope.selectedProducts.length - 1; i >= 0; i--) {
+                    $scope.products.push($scope.selectedProducts.pop());
+                }
+            }, function (reason) {
+                $scope.errorMessage = reason;
+            });
         }
     }
-)
+})
 /* All products controller */
 /* ~~~~~~~~~~~~~~~~~~~~~~~ */
-.controller('productCtrl', function ($scope, $location, $route, userPermissions, productService) {
+.controller('productCtrl', function ($scope, $location, $route, userPermissions, productsFacade) {
         // Set scope data
         $scope.update = false;  // Indicated if the user can update product data
         $scope.seller = false;  // Indicates if the logged on user is the seller
@@ -173,9 +168,9 @@ angular.module('myApp.controllers', ['app.common'])
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Check if product exists from url
         if ($route.current.params.productId) {
-            var promise = productService.GetProductDetails($route.current.params.productId)
-            // Success
-            promise.then(function(data) {
+            productsFacade.getProductDetails($route.current.params.productId)
+            .then(
+            function (data) {
                 // Populate scope
                 $scope.Product = data.Product;
                 $scope.Orders = data.Orders;
@@ -188,11 +183,12 @@ angular.module('myApp.controllers', ['app.common'])
                 $scope.update = false;
                 if ($scope.getUserDetails().userName == $scope.Product.Seller.UserName) {
                     $scope.seller = true;
-                    if($scope.Orders.length == 0) {
+                    if ($scope.Orders.length == 0) {
                         $scope.update = true;
                     }
                 }
-            }, function(reason) {
+            },
+            function (reason) {
                 $scope.errorMessage = reason;
             });
         }
@@ -208,15 +204,14 @@ angular.module('myApp.controllers', ['app.common'])
             if (!user.userName || !user.password || !$scope.Product.ProductId)
                 $scope.errorMessage = "No user name or password.";
             else {
-                var promise = productService.OrderProducts([$scope.Product]);
-                // Success
-                promise.then(function(data) {
-                    $scope.successMessage = "Order successfully.";
-                    GetProductDetails($scope);
-                // Error
-                }, function(reason) {
-                    $scope.errorMessage = reason;
-                });
+                productsFacade.orderProducts([$scope.Product]).then(
+                    function (data) {
+                        $scope.successMessage = "Order successfully.";
+                        GetProductDetails($scope);
+                    },
+                    function (reason) {
+                        $scope.errorMessage = reason;
+                    });
             }
         }
         // Event - Update product data
@@ -235,14 +230,13 @@ angular.module('myApp.controllers', ['app.common'])
                 $scope.errorMessage = "Enter product details.";
             else {
                 // Update product
-                var promise = productService.UpdateProductDetails($scope.Product);
-                // Success
-                promise.then(function() {
-                    $scope.successMessage = "Order successfully.";
-                // Error
-                }, function(reason) {
-                    $scope.errorMessage = reason;
-                });
+                productsFacade.updateProductDetails($scope.Product).then(
+                    function (data) {
+                        $scope.successMessage = "Updated successfully.";
+                    },
+                    function (reason) {
+                        $scope.errorMessage = reason;
+                    });
             }
         }
         // Event - Remove product
@@ -252,19 +246,17 @@ angular.module('myApp.controllers', ['app.common'])
             delete $scope.errorMessage;
             delete $scope.successMessage;
 
-            var promise = productService.RemoveProduct($scope.Product.ProductId);
-            // Success
-            promise.then(function() {
+            productsFacade.removeProduct($scope.Product.ProductId).then(function (data) {
                 $location.path($scope.productsPage);
-            // Error
-            }, function(reason) {
+            },
+            function (reason) {
                 $scope.errorMessage = reason;
             });
         }
 })
 /* products manager controller */
 /* ~~~~~~~~~~~~~~~~~~~~~~~ */
-.controller('ProductsManagementCtrl', function ($scope, $location, userPermissions, productService) {
+.controller('ProductsManagementCtrl', function ($scope, $location, userPermissions, productsFacade) {
         // Set scope data
         $scope.products = [];
         $scope.searchQuery = "";
@@ -280,14 +272,13 @@ angular.module('myApp.controllers', ['app.common'])
         if (!$scope.getUserDetails().authorized)
             $scope.errorMessage = "User is not authorized.";
         else {
-            var promise = productService.GetProducts($scope.getUserDetails().userName);
-            // Success
-            promise.then(function(data) {
-                $scope.products = data;
-            // Error
-            }, function(reason) {
-                $scope.errorMessage = reason;
-            });
+            productsFacade.getProducts($scope.getUserDetails().userName).then(
+                function (data) {
+                    $scope.products = data;
+                },
+                function (reason) {
+                    $scope.errorMessage = reason;
+                });
         }
         // Event - product click
         //~~~~~~~~~~~~~~~~~~~~~~~
@@ -306,14 +297,13 @@ angular.module('myApp.controllers', ['app.common'])
                 !$scope.NewProduct.MaxPrice || !$scope.NewProduct.RequiredOrders)
                 $scope.errorMessage = "Enter product details.";
             else {
-                var promise = productService.CreateProduct($scope.NewProduct);
-                // Success
-                promise.then(function() {
-                    $scope.successMessage = "Order updated successfully.";
-                // Error
-                }, function(reason) {
-                    $scope.errorMessage = reason;
-                });
+                productsFacade.createProduct($scope.NewProduct).then(
+                    function (data) {
+                        $scope.successMessage = "Order updated successfully.";
+                    },
+                    function (reason) {
+                        $scope.errorMessage = reason;
+                    });
             }
         }
 });

@@ -8,7 +8,6 @@ angular.module('myApp', [
   'ngCookies',
   'ngDragDrop',
   'myApp.filters',
-  'myApp.services',
   'myApp.directives',
   'myApp.controllers'
 ]).
