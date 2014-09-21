@@ -74,7 +74,11 @@
     <Content Include="app\index-async.html" />
     <Content Include="app\index.html" />
     <Content Include="app\js\app.js" />
-    <Content Include="app\js\controllers.js" />
+    <Content Include="app\js\controllers\LogInController.js" />
+    <Content Include="app\js\controllers\ManageProductController.js" />
+    <Content Include="app\js\controllers\ProductController.js" />
+    <Content Include="app\js\controllers\ProductsController.js" />
+    <Content Include="app\js\controllers\RegisterController.js" />
     <Content Include="app\js\directives.js" />
     <Content Include="app\js\filters.js" />
     <Content Include="app\js\services\OrdersFacade.js" />
@@ -392,9 +396,7 @@
       <Name>GroupBuyingLib</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="app\js\controllers\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

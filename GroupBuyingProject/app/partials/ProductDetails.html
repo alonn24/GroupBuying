@@ -1,55 +1,55 @@
 <h1>Product Details</h1>
-<span class="error">{{ errorMessage }} </span>
-<span class="success">{{ successMessage }} </span>
-<table data-ng-show="Product.ProductId" class="contentGroup mainContentGroup">
+<span class="error">{{ product.errorMessage }} </span>
+<span class="success">{{ product.successMessage }} </span>
+<table data-ng-show="product.Product.ProductId" class="contentGroup mainContentGroup">
     <tr>
         <td>
-            <img class="productImage" src="./img/products/{{Product.Image}}"/>
+            <img class="productImage" src="./img/products/{{product.Product.Image}}"/>
         </td>
         <td class="contentGroup mainContentGroup">
-            <span class="label">Product Id:</span><span class="labelValue">{{ Product.ProductId }}</span>
+            <span class="label">Product Id:</span><span class="labelValue">{{ product.Product.ProductId }}</span>
             <br/>
             <span class="label">Title:</span>
-                <span data-ng-hide="update" class="labelValue">{{ Product.Title }}</span>
-                <input data-ng-show="update" type="text" class="textInput labelValue" data-ng-model="Product.Title" data-focus="true"/>
+                <span data-ng-hide="product.update" class="labelValue">{{ product.Product.Title }}</span>
+                <input data-ng-show="product.update" type="text" class="textInput labelValue" data-ng-model="product.Product.Title" data-focus="true"/>
             <br/>
-            <span class="label">Seller:</span><span class="labelValue">{{ Product.Seller.UserName }}</span>
+            <span class="label">Seller:</span><span class="labelValue">{{ product.Product.Seller.UserName }}</span>
             <br/>
             <span class="label">Price Range:</span>
-                <span data-ng-hide="update" class="labelValue">{{ Product.MinPrice }}-{{ Product.MaxPrice }} NIS</span>
-                <span data-ng-show="update">
-                    <input type="number" class="smallInput labelValue" data-ng-model="Product.MinPrice"/>
+                <span data-ng-hide="product.update" class="labelValue">{{ product.Product.MinPrice }}-{{ product.Product.MaxPrice }} NIS</span>
+                <span data-ng-show="product.update">
+                    <input type="number" class="smallInput labelValue" data-ng-model="product.Product.MinPrice"/>
                     -
-                    <input type="number" class="smallInput labelValue" data-ng-model="Product.MaxPrice"/>
+                    <input type="number" class="smallInput labelValue" data-ng-model="product.Product.MaxPrice"/>
                     <span class="labelValue">NIS</span>
                 </span>
             <br/>
-            <span class="label">Current Price:</span><span class="labelValue">{{ CurrentPrice }} NIS</span>
+            <span class="label">Current Price:</span><span class="labelValue">{{ product.CurrentPrice }} NIS</span>
             <br/>
                 <span class="label">Required Orders:</span>
-                <span data-ng-hide="update" class="labelValue">{{ Product.RequiredOrders }}</span>
-                <input data-ng-show="update" type="number" class="smallInput labelValue" data-ng-model="Product.RequiredOrders" />
+                <span data-ng-hide="product.update" class="labelValue">{{ product.Product.RequiredOrders }}</span>
+                <input data-ng-show="product.update" type="number" class="smallInput labelValue" data-ng-model="product.Product.RequiredOrders" />
             <br/>
-            <span class="label">Date Posted:</span><span class="labelValue">{{ Product.DatePosted }}</span>
+            <span class="label">Date Posted:</span><span class="labelValue">{{ product.Product.DatePosted }}</span>
             <br/>
-            <span class="label">Date End:</span><span class="labelValue">{{ DateEnd }}</span>
+            <span class="label">Date End:</span><span class="labelValue">{{ product.DateEnd }}</span>
         </td>
-    </tr><tr data-ng-show="getUserDetails().authorized && update">
+    </tr><tr data-ng-show="product.getUserDetails().authorized && product.update">
         <td colspan="2">
-            <input type="button" class="action" data-ng-click="UpdateClick()" value="Update">
-            <input type="button" class="action" data-ng-click="RemoveProduct()" value="Remove">
+            <input type="button" class="action" data-ng-click="product.updateOnClick()" value="Update">
+            <input type="button" class="action" data-ng-click="product.removeProduct()" value="Remove">
         </td>
-    </tr><tr data-ng-show="getUserDetails().authorized && !seller">
+    </tr><tr data-ng-show="product.getUserDetails().authorized && !product.seller">
         <td colspan="2">
-            <span class="label">Quantity:</span><input data-ng-model="Quantity" class="smallInput labelValue" type="number">
+            <span class="label">Quantity:</span><input data-ng-model="product.Quantity" class="smallInput labelValue" type="number">
             <input type="checkbox" data-ng-model="Shipping"><span class="label">Shipping</span><br/>
-            <input type="button" class="action" data-ng-click="OrderClick()" value="Order">
+            <input type="button" class="action" data-ng-click="product.orderOnClick()" value="Order">
         </td>
     </tr><tr>
         <td colspan="2">
             <h1>Orders</h1>
-            <span class="labelValue" data-ng-show="Orders.length == 0">There are no orders for this product.</span>
-            <table data-ng-hide="Orders.length == 0">
+            <span class="labelValue" data-ng-show="product.Orders.length == 0">There are no orders for this product.</span>
+            <table data-ng-hide="product.Orders.length == 0">
                 <tr>
                     <td>
                         <span class="label content">User</span>
@@ -58,7 +58,7 @@
                     </td><td>
                         <span class="label content">Quantity</span>
                     </td>
-                </tr><tr ng-repeat="order in Orders">
+                </tr><tr ng-repeat="order in product.Orders">
                     <td>
                         <span class="labelValue content">{{order.User.UserName}}</span>
                     </td><td>
@@ -72,7 +72,7 @@
                     </td><td>
                         <span class="label content">Total</span>
                     </td><td>
-                        <span class="label content">{{ TotalQuantity }}</span>
+                        <span class="label content">{{ product.TotalQuantity }}</span>
                     </td>
                 </tr>
             </table>

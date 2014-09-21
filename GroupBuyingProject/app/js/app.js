@@ -8,8 +8,7 @@ angular.module('myApp', [
   'ngCookies',
   'ngDragDrop',
   'myApp.filters',
-  'myApp.directives',
-  'myApp.controllers'
+  'myApp.directives'
 ]).
 config(['$routeProvider', function($routeProvider) {
     // Login page
@@ -19,10 +18,10 @@ config(['$routeProvider', function($routeProvider) {
     // All products page
     $routeProvider.when('/Products', { templateUrl: 'partials/Products.html', controller: 'productsController as products' });
     // Single product page
-    $routeProvider.when('/Product/:productId', { templateUrl: 'partials/ProductDetails.html', controller: 'productCtrl' });
+    $routeProvider.when('/Product/:productId', { templateUrl: 'partials/ProductDetails.html', controller: 'productController as product' });
     // Manage all products page
-    $routeProvider.when('/ProductsManagement', { templateUrl: 'partials/ProductsManagement.html', controller: 'ProductsManagementCtrl' });
+    $routeProvider.when('/ProductsManagement', { templateUrl: 'partials/ProductsManagement.html', controller: 'manageProductController as manageProduct' });
     // Contacts page
-    $routeProvider.when('/Contacts', { templateUrl: 'partials/Contacts.html', controller: 'userCtrl' });
+    $routeProvider.when('/Contacts', { templateUrl: 'partials/Contacts.html', controller: 'logInController as logIn' });
     //$routeProvider.otherwise({ redirectTo: '/LogInPage' });
 }]);
