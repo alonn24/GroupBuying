@@ -1,24 +1,24 @@
-<div class="label" data-ng-show="products.length == 0 && selecedProducts.length == 0">
+<div class="label" data-ng-show="allProducts.length == 0 && products.selecedProducts.length == 0">
     There are no products in the system.
 </div>
-<div data-ng-hide="products.length == 0 && selectedProducts == 0">
+<div data-ng-hide="allProducts.length == 0 && selectedProducts == 0">
     <h1>Products</h1>
-    <span class="success" >{{ successMessage }}</span>
-    <span class="error">{{ errorMessage }} </span>
+    <span class="success" >{{ products.successMessage }}</span>
+    <span class="error">{{ products.errorMessage }} </span>
     <table class="mainContentGroup">
         <tr>
             <td>
                 <span class="label">Search:</span>
-                <input type="text" class="bigInput labelValue" data-ng-model="searchQuery" data-focus="true">
+                <input type="text" class="bigInput labelValue" data-ng-model="products.searchQuery" data-focus="true">
             </td>
         </tr>
     </table>
     <table>
         <tr>
-            <td class="contentGroup mainContentGroup" data-drop="true" ng-model='products' jqyoui-droppable="{multiple:true, applyFilter: 'filterProducts'}" data-jqyoui-options="{revert: 'invalid'}">
-                <div class="card bigCard" data-ng-repeat="product in products | filter:searchQuery"
-                     title="Double click to watch product {{product.ProductId}} details." data-ng-dblclick="ProductClick(product.ProductId)"
-                     data-drag="true" ng-model="products" data-jqyoui-options="{revert: 'invalid'}"
+            <td class="contentGroup mainContentGroup" data-drop="true" ng-model='allProducts' jqyoui-droppable="{multiple:true, applyFilter: 'filterProducts'}" data-jqyoui-options="{revert: 'invalid'}">
+                <div class="card bigCard" data-ng-repeat="product in allProducts | filter:products.searchQuery"
+                     title="Double click to watch product {{product.ProductId}} details." data-ng-dblclick="products.productOnClick(product.ProductId)"
+                     data-drag="true" ng-model="allProducts" data-jqyoui-options="{revert: 'invalid'}"
                      jqyoui-draggable="{index: {{$index}}, applyFilter: 'filterProducts', animate:true}">
                     <span class="content label">Product Id: {{product.ProductId}}</span>
                     <table>
@@ -36,10 +36,10 @@
                     </table>
                 </div>
             </td>
-            <td class="contentGroup sideBar" data-ng-show="getUserDetails().authorized">
+            <td class="contentGroup sideBar" data-ng-show="products.getUserDetails().authorized">
                 <h1>Cart</h1>
                 <input class="action" data-ng-show="selectedProducts.length > 0" type="button" value="Order"
-                       data-ng-click="OrderClick()">
+                       data-ng-click="products.orderOnClick()">
                 <div  class="dropArea" data-drop="true" ng-model='selectedProducts'
                     jqyoui-droppable="{multiple:true}" data-jqyoui-options="{revert: 'invalid'}">
                     <span class="labelValue" data-ng-show="selectedProducts.length == 0">To order, drop products here.</span>

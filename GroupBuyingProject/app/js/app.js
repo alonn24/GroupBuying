@@ -13,11 +13,11 @@ angular.module('myApp', [
 ]).
 config(['$routeProvider', function($routeProvider) {
     // Login page
-    $routeProvider.when('/LogInPage', { templateUrl: 'partials/LogInPage.html', controller: 'userCtrl' });
+    $routeProvider.when('/LogInPage', { templateUrl: 'partials/LogInPage.html', controller: 'logInController as logIn' });
     // Registration page
-    $routeProvider.when('/Register', { templateUrl: 'partials/Register.html', controller: 'registerCtrl' });
+    $routeProvider.when('/Register', { templateUrl: 'partials/Register.html', controller: 'registerController as register' });
     // All products page
-    $routeProvider.when('/Products', { templateUrl: 'partials/Products.html', controller: 'allProductsCtrl' });
+    $routeProvider.when('/Products', { templateUrl: 'partials/Products.html', controller: 'productsController as products' });
     // Single product page
     $routeProvider.when('/Product/:productId', { templateUrl: 'partials/ProductDetails.html', controller: 'productCtrl' });
     // Manage all products page
