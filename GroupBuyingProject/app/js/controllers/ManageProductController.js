@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('myApp')
-.controller('manageProductController', function ($location, userPermissions, productsFacade) {
+.controller('manageProductController', function ($location, productsFacade, userDetails) {
     var vm = this;
     this.products = [];
     this.searchQuery = "";
@@ -10,7 +10,7 @@ angular.module('myApp')
     this.productImages = ['hundai.jpg', 'ipad.jpg', 'massage.jpg', 'pineapple.jpg', 'watch.jpg', 'wedding.jpg'];
 
     this.getUserDetails = function () {
-        return userPermissions.details;
+        return userDetails;
     };
 
     // Basic checks

@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('myApp')
-.controller('productsController', function ($scope, $location, $resource, $filter, userPermissions, productsFacade) {
+.controller('productsController', function ($scope, $location, $filter, userDetails, productsFacade) {
     var vm = this;
 
     $scope.allProducts = [];
@@ -17,7 +17,7 @@ angular.module('myApp')
         });
 
     this.getUserDetails = function () {
-        return userPermissions.details;
+        return userDetails;
     }
 
     this.productOnClick = function (productId) {

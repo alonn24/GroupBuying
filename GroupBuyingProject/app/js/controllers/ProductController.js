@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('myApp')
-.controller('productController', function ($location, $route, userPermissions, productsFacade) {
+.controller('productController', function ($location, $route, userDetails, productsFacade) {
     var vm = this;
 
     this.update = false;  // Indicated if the user can update product data
@@ -15,7 +15,7 @@ angular.module('myApp')
     this.productsPage = "Products";
 
     this.getUserDetails = function () {
-        return userPermissions.details;
+        return userDetails;
     };
 
     // Startup - Get given product url details

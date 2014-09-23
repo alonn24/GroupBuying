@@ -4,8 +4,6 @@
 angular.module('app.common', []);
 angular.module('myApp', [
   'ngRoute',
-  'ngResource',
-  'ngCookies',
   'ngDragDrop',
   'myApp.filters',
   'myApp.directives'

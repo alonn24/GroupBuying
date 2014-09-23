@@ -33,8 +33,6 @@
     $script([
       'lib/angular/angular.js',
       'lib/angular/angular-route.js',
-      'lib/angular/angular-resource.js',
-      'lib/angular/angular-cookies.js',
       'lib/angular/angular-dragdrop.js',
       'js/app.js',
       'js/filters.js',
@@ -63,7 +61,7 @@
         <ul class="mainContentGroup tabs contentGroup">
             <li><a data-link-navigate="LogInPage">Home</a></li>
             <li><a data-link-navigate="Products">Products & Services</a></li>
-            <li><a data-link-navigate="ProductsManagement" data-ng-show="getUserDetails().role == 'ProductManager'">Products Management</a></li>
+            <li><a data-link-navigate="ProductsManagement" data-ng-show="miniLogIn.getUserDetails().role == 'ProductManager'">Products Management</a></li>
             <li><a data-link-navigate="Contacts">Contact Us</a></li>
         </ul>
     </header>

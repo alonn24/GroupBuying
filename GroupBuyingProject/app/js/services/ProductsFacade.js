@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('myApp')
-.service('productsFacade', function (serverFacade, userPermissions) {
+.service('productsFacade', function (serverFacade, userDetails) {
     this.getProducts = function (userName) {
         if (userName)
             return serverFacade.getUserProducts(userName);
@@ -27,7 +27,7 @@ angular.module('myApp')
             else
                 orders += ",0";
         }
-        var user = userPermissions.details;
+        var user = userDetails;
         return serverFacade.orderProducts(user.userName, user.password, orders)
         .then(function (data) {
             if (data.Succeed) {
@@ -61,7 +61,7 @@ angular.module('myApp')
     };
 
     this.updateProductDetails = function (product) {
-        var user = userPermissions.details;
+        var user = userDetails;
         return serverFacade.updateProductDetails(user.userName, user.password, product.ProductId, product.Title, 
             product.MinPrice, product.MaxPrice, product.RequiredOrders)
         .then(function (data) {
@@ -75,7 +75,7 @@ angular.module('myApp')
     };
 
     this.createProduct = function (newProduct) {
-        var user = userPermissions.details;
+        var user = userDetails;
         return serverFacade.createProduct(user.userName, user.password, newProduct.Title,
             newProduct.MinPrice, newProduct.MaxPrice, newProduct.RequiredOrders)
         .then(function (data) {
@@ -89,7 +89,7 @@ angular.module('myApp')
     };
 
     this.removeProduct = function (productId) {
-        var user = userPermissions.details;
+        var user = userDetails;
         return serverFacade.removeProduct(user.userName, user.password, productId)
         .then(function (data) {
             if (data.Succeed) {

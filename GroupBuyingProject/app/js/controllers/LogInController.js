@@ -1,16 +1,15 @@
 ﻿'use strict';
 
 angular.module('myApp')
-.controller('logInController', function ($location, userPermissions, ordersFacade) {
+.controller('logInController', function ($location, userPermissions, ordersFacade, userDetails) {
     var vm = this;
-
     this.userName = '';
     this.password = '';
     this.orders = '';
     this.productDetailsPage = 'Product';
 
     this.getUserDetails = function () {
-        return userPermissions.details;
+        return userDetails;
     };
 
     this.logIn = function () {
