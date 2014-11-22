@@ -75,11 +75,11 @@ namespace GroupBuyingProject.Services
         /// RESTful API to order products
         /// </summary>
         [OperationContract]
-        [WebInvoke(Method = "GET",
+        [WebInvoke(Method = "POST",
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Bare,
-            UriTemplate = "/OrderProducts/{userid}/{password}/{orders}")]
-        ActionResponse<bool> OrderProducts(string userid, string password, string orders);
+            UriTemplate = "/OrderProducts/{orders}")]
+        ActionResponse<bool> OrderProducts(string orders);
 
         /// <summary>
         /// RESTful API to get product details

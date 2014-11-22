@@ -28,7 +28,7 @@ angular.module('myApp')
                 orders += ",0";
         }
         var user = userDetails;
-        return serverFacade.orderProducts(user.userName, user.password, orders)
+        return serverFacade.orderProducts(/*user.userName, user.password,*/ orders)
         .then(function (data) {
             if (data.Succeed) {
                 return data;

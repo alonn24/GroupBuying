@@ -19,8 +19,8 @@ namespace GroupBuyingProject.Services
     {
         private bool isAuthorized() {
             HttpRequest request = HttpContext.Current.Request;
-            string userName = request.Cookies["userName"].Value;
-            string password = request.Cookies["password"].Value;
+            string userName = HttpContext.Current.Request.Headers["User"];
+            string password = HttpContext.Current.Request.Headers["Password"];
             return (userName != null && userName != "" &&
                 password != null && password != "");
         }
@@ -88,9 +88,17 @@ namespace GroupBuyingProject.Services
         /// <param name="password"></param>
         /// <param name="orders"></param>
         /// <returns></returns>
-        public ActionResponse<bool> OrderProducts(string userId, string password, string orders)
+        public ActionResponse<bool> OrderProducts(string orders)
         {
-            return new ActionResponse<bool>("", true);
+            if (!isAuthorized())
+            {
+                return new ActionResponse<bool>("User is not authorized.", false);
+            }
+            else
+            {
+                return new ActionResponse<bool>("", true);
+            }
+            
         }
 
         /// <summary>

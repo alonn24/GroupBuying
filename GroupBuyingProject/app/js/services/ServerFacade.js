@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('app.common')
-.service('serverFacade', function ($http) {
+.service('serverFacade', function ($http, userDetails) {
 
     var baseUrl = '/Services/GeneralServices.svc/';
 
@@ -27,8 +27,9 @@ angular.module('app.common')
     };
 
     this.orderProducts = function (userName, password, orders) {
-        var params = [userName, password, orders].join('/');
-        return this.doHTTPGet(baseUrl + 'OrderProducts/' + params);
+        //var params = [userName, password, orders].join('/');
+        //return this.doHTTPGet(baseUrl + 'OrderProducts/' + params);
+        return this.doHTTPPost(baseUrl + 'OrderProducts/' + orders);
     };
 
     this.getProductDetails = function (productId) {
@@ -58,7 +59,25 @@ angular.module('app.common')
                 'Content-Type': 'application/json'
             }
         })
-        .then(function (data) { 
+        .then(function (data) {
+            return data.data;
+        }, function (reason) {
+            console.log(reason);
+            return reason;
+        });
+    }
+
+    this.doHTTPPost = function (url) {
+        return $http({
+            url: url,
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'User': userDetails.userName,
+                'Password': userDetails.password
+            }
+        })
+        .then(function (data) {
             return data.data;
         }, function (reason) {
             console.log(reason);
