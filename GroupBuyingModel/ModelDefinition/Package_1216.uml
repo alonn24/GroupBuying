@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="afde1098-8370-4926-806e-bee188fc2355"
+  name="Users" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <useCase
+        Id="d90a4ba8-23da-494e-b54f-c88aa484d8c6"
+        name="כניסת משתמשים למערכת"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="346ece7e-62e5-476d-b81d-62e73db6f1e6">
+            <useCaseMoniker
+              Id="35604bb7-20eb-494c-9d45-bd122b3c3ef7"
+              LastKnownName="צפייה וחיפוש בכלל המוצרים"
+              LastKnownLocation="Package2_1216.uml" />
+          </include>
+          <include
+            Id="81592eb8-300e-464a-b701-fa47b77ef9a6">
+            <useCaseMoniker
+              Id="fe9d0c78-f35e-471d-9611-7882e2b63bed"
+              LastKnownName="בדיקת הרשאות לביצוע פעולות"
+              LastKnownLocation="Package_1216.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="0439a1da-fa7a-4b1b-a372-ddf9268a4a53"
+        name="רישום משתמשים חדשים"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="16e02973-9bd5-41a0-9b8a-956a3134dceb">
+            <useCaseMoniker
+              Id="d90a4ba8-23da-494e-b54f-c88aa484d8c6"
+              LastKnownName="כניסת משתמשים למערכת"
+              LastKnownLocation="Package_1216.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="fe9d0c78-f35e-471d-9611-7882e2b63bed"
+        name="בדיקת הרשאות לביצוע פעולות"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f4f9547b-7cd9-4c36-988c-8ba447eb5a99"
+        name="צפייה בהזמנות למשתמש"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="91997170-12f6-415e-893a-358be307ca57">
+            <useCaseMoniker
+              Id="6d76bb3a-3d97-4cf4-8de8-8229e7de307f"
+              LastKnownName="צפייה בהזמנות למוצר"
+              LastKnownLocation="Package1_1216.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="32bcc87c-1f0f-4b66-9242-20ef940a105b"
+        name="צפייה במוצרים למשתמש"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="2b9c476d-2c3b-4499-bab3-bf43045b7613">
+            <useCaseMoniker
+              Id="35604bb7-20eb-494c-9d45-bd122b3c3ef7"
+              LastKnownName="צפייה וחיפוש בכלל המוצרים"
+              LastKnownLocation="Package2_1216.uml" />
+          </include>
+          <include
+            Id="c2b5bc5a-b961-4ae7-97ba-7fec87858c44">
+            <useCaseMoniker
+              Id="6d76bb3a-3d97-4cf4-8de8-8229e7de307f"
+              LastKnownName="צפייה בהזמנות למוצר"
+              LastKnownLocation="Package1_1216.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

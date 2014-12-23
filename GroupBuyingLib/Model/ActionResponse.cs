@@ -21,8 +21,12 @@ namespace GroupBuyingLib.Model
         /// Constructor
         /// </summary>
         public ActionResponse() { }
-        public ActionResponse(string message, bool succeed) {
-            this.Message = message;
+
+        public ActionResponse(string message, bool succeed, T result) : this(message, succeed) {
+            this.Result = result;
+        }
+
+        public ActionResponse(string message, bool succeed) : this(message) {
             this.Succeed = succeed;
         }
         public ActionResponse(string message)

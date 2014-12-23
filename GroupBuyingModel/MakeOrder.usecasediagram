@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="df8963c3-7935-42bd-bd7d-895904c209f5" name="MakeOrder" linkedPackageId="341c9a0f-b637-4374-9110-c3e996a46e4f" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="645536bf-166d-4801-86d6-eb6af77d5e87" name="Registered User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="553ac97d-ef01-4363-b20a-ef7bab255219" />
+        <targetEnds>
+          <association Id="55806fa8-19c5-4968-9fff-c0871cca17ef" isDerived="false" sourceEndRoleName="Registered User" targetEndRoleName="מימוש הזמנות למוצר" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="5def4c0f-37d2-43ee-ac82-6d7f9764c71d" LastKnownName="מימוש הזמנות למוצר" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0cdf36f8-66e1-4f03-9b7d-65e24212971c" name="Registered User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2a3dee2d-181a-4f98-b620-32015d101150" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fe4dd4c6-217a-42b3-840c-ad6ffdbc453e" name="מימוש הזמנות למוצר" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2f0d5632-f69f-4e93-9931-be95bd956331" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="4e0247cb-3d60-4b9d-9300-1aa7d19a2b06" />
+          </association>
+          <association Id="634d84e9-159b-469f-9367-d34449feba0b" isDerived="false" sourceEndRoleName="Registered User" targetEndRoleName="צפייה בהזמנות למוצר" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="bab0f9ac-c728-4ad7-a019-7407c6691531" LastKnownName="צפייה בהזמנות למוצר" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="807ef0de-b551-451d-955e-78a54a275848" name="Registered User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="26cb7640-6894-4761-809a-705f04942720" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="bbc716ad-0fdc-44df-a203-bfcf431b2005" name="צפייה בהזמנות למוצר" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5106db1d-628b-46e8-ae50-4a9c9a191635" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ccd31d84-bd77-441e-a376-3fd507c95433" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5def4c0f-37d2-43ee-ac82-6d7f9764c71d" name="מימוש הזמנות למוצר" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1348dc3c-dea4-421c-9eaa-f444597e8182" />
+        <extendedCases>
+          <extend Id="2486d777-ee61-4ee0-9407-9198dd626d23">
+            <useCaseMoniker Id="bab0f9ac-c728-4ad7-a019-7407c6691531" LastKnownName="צפייה בהזמנות למוצר" />
+            <elementDefinition Id="e9efe287-5ef9-414c-bd56-96efebbf6a2f" />
+          </extend>
+        </extendedCases>
+        <additions>
+          <include Id="074a05f7-67cc-44c6-83a1-2095cbfa9788">
+            <useCaseMoniker Id="f0b8cc2f-3e05-401f-bc44-9cea72142082" LastKnownName="בדיקת הרשאות לביצוע פעולות" />
+            <elementDefinition Id="a59bf116-3ed4-4edd-b51d-0ab5182d713d" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="bab0f9ac-c728-4ad7-a019-7407c6691531" name="צפייה בהזמנות למוצר" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6d76bb3a-3d97-4cf4-8de8-8229e7de307f" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="f0b8cc2f-3e05-401f-bc44-9cea72142082" name="בדיקת הרשאות לביצוע פעולות" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="fe9d0c78-f35e-471d-9611-7882e2b63bed" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="341c9a0f-b637-4374-9110-c3e996a46e4f" name="GroupBuyingModel">
+    <elementDefinition Id="6c0036fd-6ec0-4f40-9b60-fd495d3d647a" />
+    <profileInstances>
+      <packageHasProfileInstances Id="f873a078-d5c4-4313-b636-8bfca88519b2">
+        <profileInstance Id="54e975c2-9605-49c1-87d9-1367d1e9547e" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="508a0b49-a386-4d3c-9a11-35532b494fb6">
+        <profileInstance Id="eb3a327c-80db-4310-a631-508c2128dd57" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

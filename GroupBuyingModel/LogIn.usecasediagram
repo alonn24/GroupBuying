@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="0a31d6b0-3b5f-4952-a487-0414f95aa5eb" name="LogIn" linkedPackageId="8d00ce1f-6b7a-4f03-a6ad-4b3841f0777f" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="e76126a8-aaa8-4deb-b790-70287dcd2be4" name="Anonymous User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3703d32f-3db3-41c7-bec4-04afbe284fa6" />
+        <targetEnds>
+          <association Id="fe4767d2-54c6-4abc-bb9d-26b59b9df5a8" isDerived="false" sourceEndRoleName="Anonymous User" targetEndRoleName="רישום משתמשים חדשים" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="113dea0a-47c9-47bf-9a98-ac91782465d7" LastKnownName="רישום משתמשים חדשים" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="02a01044-7da6-464c-ae28-805b16b1957f" name="Anonymous User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f5352f3d-cd67-48fb-80de-e9e6301d2719" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3583ebc2-acdc-4b11-b3ee-a9b4edd3bff3" name="רישום משתמשים חדשים" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c1d9da56-8444-4098-98e7-d9495eff22a7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9fac9495-360a-490a-acbf-7aa00dd482a2" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="feb0f3ce-5342-4ebd-9b76-e65b9d97cc2f" name="Registered User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="553ac97d-ef01-4363-b20a-ef7bab255219" />
+        <targetEnds>
+          <association Id="155ea014-c785-4bda-8b4f-7f3a892e9a9e" isDerived="false" sourceEndRoleName="Registered User" targetEndRoleName="כניסת משתמשים למערכת" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="930253c5-09d4-4839-9f4f-aa3f3aad697d" LastKnownName="כניסת משתמשים למערכת" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="22617bfd-ca44-427f-a83b-21c59558a5a0" name="Registered User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9eb11f5b-5611-4695-9606-81d489a1c7fd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="02c02ad9-7b72-4e95-84b1-f760e04e2f3d" name="כניסת משתמשים למערכת" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ff9ff6ba-2023-4efb-aa4b-cee0d13bbbbc" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="341c7f96-1417-46b6-b3d3-d80983b2ee9e" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="113dea0a-47c9-47bf-9a98-ac91782465d7" name="רישום משתמשים חדשים" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0439a1da-fa7a-4b1b-a372-ddf9268a4a53" />
+        <extendedCases>
+          <extend Id="a8fec59c-0442-428d-acf5-b89355a7625d">
+            <useCaseMoniker Id="930253c5-09d4-4839-9f4f-aa3f3aad697d" LastKnownName="כניסת משתמשים למערכת" />
+            <elementDefinition Id="16e02973-9bd5-41a0-9b8a-956a3134dceb" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="930253c5-09d4-4839-9f4f-aa3f3aad697d" name="כניסת משתמשים למערכת" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d90a4ba8-23da-494e-b54f-c88aa484d8c6" />
+        <additions>
+          <include Id="e1d51568-a307-46a5-ae92-54a5b21cb4db">
+            <useCaseMoniker Id="2df6d587-3a5d-4310-96b4-4059b25920c2" LastKnownName="בדיקת הרשאות לביצוע פעולות" />
+            <elementDefinition Id="81592eb8-300e-464a-b701-fa47b77ef9a6" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="2df6d587-3a5d-4310-96b4-4059b25920c2" name="בדיקת הרשאות לביצוע פעולות" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="fe9d0c78-f35e-471d-9611-7882e2b63bed" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="8d00ce1f-6b7a-4f03-a6ad-4b3841f0777f" name="GroupBuyingModel">
+    <elementDefinition Id="6c0036fd-6ec0-4f40-9b60-fd495d3d647a" />
+    <profileInstances>
+      <packageHasProfileInstances Id="58ec36ae-1a16-46c2-a2f4-d0afde0abe64">
+        <profileInstance Id="8fd870ed-0464-464e-bbc4-cbf6217336c4" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="6707296d-a9a9-4b5d-a4b2-dc2e0a5fdd3f">
+        <profileInstance Id="9bcb0abc-5d10-472d-bb7d-2e734a6acf2e" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

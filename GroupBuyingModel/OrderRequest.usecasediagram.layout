@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="OrderRequest">
+  <useCaseModelRootMoniker Id="7b58fb10-a9c9-48a8-9746-b52f6c8d117d" />
+  <nestedChildShapes>
+    <actorShape Id="bb7ed245-bb18-4b90-ad64-8c43863716b4" absoluteBounds="0.75, 2.125, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="c60ade07-ed5b-4ced-b50a-023428824ad6" LastKnownName="Registered User" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseShape Id="8d2b8c14-39b6-4fc6-8b15-a1dd14fd7239" absoluteBounds="2.125, 2.125, 1, 0.625" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="a14aadd7-2c38-4a43-b680-4da0e44bf727" LastKnownName="בקשה להזמנת מוצר" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.25 : 2.38461538461538); (2.12594406503857 : 2.41830554096302)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="8cfb82c8-4d56-465f-a915-09bab52547c3" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="bb7ed245-bb18-4b90-ad64-8c43863716b4" />
+        <useCaseShapeMoniker Id="8d2b8c14-39b6-4fc6-8b15-a1dd14fd7239" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="7c231300-ba80-4795-80d0-8671ff834daa" absoluteBounds="3.875, 2, 1.25, 0.75" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="62e63081-321e-4491-a34a-3e3048e2d0f4" LastKnownName="צפייה וחיפוש בכלל המוצרים" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <includeConnector edgePoints="[(3.12429040233891 : 2.4208569865887); (3.87596227924662 : 2.39580125735845)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black" useCaseStereotype="«include»">
+      <includeMoniker Id="01e34dda-6062-4e60-93d2-42a399b738c0" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="3.1875, 2.25, 0.52439594268798828, 0.14800345897674561" shapeFieldName="NameDecorator" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <useCaseShapeMoniker Id="8d2b8c14-39b6-4fc6-8b15-a1dd14fd7239" />
+        <useCaseShapeMoniker Id="7c231300-ba80-4795-80d0-8671ff834daa" />
+      </nodes>
+    </includeConnector>
+    <useCaseShape Id="edd6f4c0-a98e-4472-8218-f608cc5abb30" absoluteBounds="3.875, 0.75, 1.25, 0.75" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="5d1f2a5c-c84f-429b-8bee-c44ac820c93c" LastKnownName="בדיקת הרשאות לביצוע פעולות" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <includeConnector edgePoints="[(2.95800788465443 : 2.2043944807419); (4.09325539159002 : 1.40972122588699)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black" useCaseStereotype="«include»">
+      <includeMoniker Id="c94c4658-f597-4347-9d10-70ce7e86ca55" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="8d2b8c14-39b6-4fc6-8b15-a1dd14fd7239" />
+        <useCaseShapeMoniker Id="edd6f4c0-a98e-4472-8218-f608cc5abb30" />
+      </nodes>
+    </includeConnector>
+    <useCaseShape Id="b130e648-2ea2-4536-99bf-960df9db9f9b" absoluteBounds="4.125, 3.375, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="2fc5e2a8-1343-482a-bd04-3a323b79ab15" LastKnownName="חישוב מחירים" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <includeConnector edgePoints="[(2.98749971679721 : 2.65273420684834); (4.30293212710861 : 3.43377220047074)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black" useCaseStereotype="«include»">
+      <includeMoniker Id="6fcc8f48-04e0-4b35-a2bf-6bd361d785de" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="8d2b8c14-39b6-4fc6-8b15-a1dd14fd7239" />
+        <useCaseShapeMoniker Id="b130e648-2ea2-4536-99bf-960df9db9f9b" />
+      </nodes>
+    </includeConnector>
+    <useCaseShape Id="8e78d22b-ebb8-411b-922f-63414f2842cb" absoluteBounds="6, 3.25, 1, 0.625" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="908c3cab-6583-4b6d-bd92-ad43e0f23c2a" LastKnownName="צפייה בהזמנות למוצר" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <extendConnector edgePoints="[(5.12389257892831 : 3.60837024736906); (6.00070959766109 : 3.5791430134113)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black" useCaseStereotype="«extend»">
+      <extendMoniker Id="20c8ff94-7247-4a9a-8651-9610fb8ac99d" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="5.25, 3.4375, 0.51066982746124268, 0.14800345897674561" shapeFieldName="NameDecorator" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <useCaseShapeMoniker Id="b130e648-2ea2-4536-99bf-960df9db9f9b" />
+        <useCaseShapeMoniker Id="8e78d22b-ebb8-411b-922f-63414f2842cb" />
+      </nodes>
+    </extendConnector>
+    <actorShape Id="e47d87bd-cd0f-495c-8d56-7a670aa98b71" absoluteBounds="0.75, 3.25, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="e7150b49-165e-404b-b430-c2e6ff98d977" LastKnownName="Anonymous User" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseAssociationConnector edgePoints="[(1.25 : 3.50284090909091); (6.00008262414334 : 3.5568191207289)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="6e88edfb-7671-40d6-b315-89fc92739673" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="e47d87bd-cd0f-495c-8d56-7a670aa98b71" />
+        <useCaseShapeMoniker Id="8e78d22b-ebb8-411b-922f-63414f2842cb" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseAssociationConnector edgePoints="[(1.25 : 3.41964285714286); (3.94907501873201 : 2.55208302969328)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="d688e43b-cb23-4aea-b305-a5408239ec85" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="e47d87bd-cd0f-495c-8d56-7a670aa98b71" />
+        <useCaseShapeMoniker Id="7c231300-ba80-4795-80d0-8671ff834daa" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <rectangleShape Id="6ff17648-1c7f-449e-98f0-3307a8d0d9be" absoluteBounds="1.875, 0.625, 5.375, 3.5" outlineColor="83, 134, 191" outlineThickness="0.03125" />
+  </nestedChildShapes>
+</useCaseDiagram>

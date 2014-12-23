@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="CreateProduct">
+  <useCaseModelRootMoniker Id="f1445fce-b81e-41aa-8194-d8fffc234d18" />
+  <nestedChildShapes>
+    <actorShape Id="74f1a9ea-1c8f-47a9-a843-e65b7eb7f416" absoluteBounds="1.25, 2.125, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="90971536-94b0-4456-8107-84c02e83856f" LastKnownName="Registered User" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseShape Id="860f6f49-00d6-4a20-988c-23742423e487" absoluteBounds="4.5, 2, 1.25, 0.75" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="5803df0c-3b75-4749-9ab6-0ecdd1eb8286" LastKnownName="בדיקת הרשאות לביצוע פעולות" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseShape Id="babf9e09-942b-4d12-be16-7872dfaafc0d" absoluteBounds="2.5, 2.125, 1, 0.625" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="f7541e4d-3024-4b81-934e-685ab7af94b3" LastKnownName="יצירה ועדכון של מוצרים" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <includeConnector edgePoints="[(3.49944728461757 : 2.42281037398184); (4.50074956252536 : 2.39336030698455)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black" useCaseStereotype="«include»">
+      <includeMoniker Id="484ea86a-505e-4544-a7b7-c8f4268de8a8" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="3.625, 2.1875, 0.52439594268798828, 0.14800345897674561" shapeFieldName="NameDecorator" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <useCaseShapeMoniker Id="babf9e09-942b-4d12-be16-7872dfaafc0d" />
+        <useCaseShapeMoniker Id="860f6f49-00d6-4a20-988c-23742423e487" />
+      </nodes>
+    </includeConnector>
+    <useCaseAssociationConnector edgePoints="[(1.75 : 2.38541666666667); (2.50110742107169 : 2.41671280921132)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="7a6e87f5-43d4-49ac-b06b-3cd75d11710e" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="74f1a9ea-1c8f-47a9-a843-e65b7eb7f416" />
+        <useCaseShapeMoniker Id="babf9e09-942b-4d12-be16-7872dfaafc0d" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="2c5a5ba7-6918-4ce6-854b-25e18e352a45" absoluteBounds="4.625, 3, 1, 0.625" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="dd24fbb1-2c41-4751-80f5-8511bb4f74b5" LastKnownName="צפייה במוצרים למשתמש" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <includeConnector edgePoints="[(3.4175303919731 : 2.60942427904775); (4.7074696080269 : 3.14057572095225)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black" useCaseStereotype="«include»">
+      <includeMoniker Id="154da30b-a74b-4c56-bbad-4b0009c29e62" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="babf9e09-942b-4d12-be16-7872dfaafc0d" />
+        <useCaseShapeMoniker Id="2c5a5ba7-6918-4ce6-854b-25e18e352a45" />
+      </nodes>
+    </includeConnector>
+    <rectangleShape Id="b15df7ca-ff9e-45a7-b077-ba5e431ff96b" absoluteBounds="2.25, 1.875, 3.75, 2" outlineColor="83, 134, 191" outlineThickness="0.03125" />
+  </nestedChildShapes>
+</useCaseDiagram>

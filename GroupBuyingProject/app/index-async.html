@@ -65,7 +65,7 @@
             <li><a data-link-navigate="Contacts">Contact Us</a></li>
         </ul>
     </header>
-    <mini-profile>
+    <div class="miniProfile" ng-controller="logInController as miniLogIn">
         <div data-ng-hide="miniLogIn.getUserDetails().authorized">
             <span class="label">User Not Signed</span><br/>
             <a class="content action" data-link-navigate="LogInPage">[LogIn]</a>
@@ -82,7 +82,7 @@
                 </tr>
             </table>
         </div>
-    </mini-profile>
+    </div>
     <br /><br />
     <div data-ng-view="" class="mainContentGroup contentGroup"></div>
     <footer>

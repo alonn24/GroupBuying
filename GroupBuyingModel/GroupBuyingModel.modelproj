@@ -22,26 +22,56 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
-    <Content Include="ManageProduct.usecasediagram">
+    <Content Include="CreateProduct.usecasediagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="ManageProduct.usecasediagram.layout">
+    <Content Include="CreateProduct.usecasediagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>ManageProduct.usecasediagram</DependentUpon>
+      <DependentUpon>CreateProduct.usecasediagram</DependentUpon>
     </Content>
-    <Content Include="ProductsOrder.usecasediagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ProductsOrder.usecasediagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>ProductsOrder.usecasediagram</DependentUpon>
-    </Content>
-    <Content Include="UserLogIn.usecasediagram">
+    <Content Include="FinishOrder.usecasediagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="UserLogIn.usecasediagram.layout">
+    <Content Include="FinishOrder.usecasediagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>UserLogIn.usecasediagram</DependentUpon>
+      <DependentUpon>FinishOrder.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="LogIn.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="LogIn.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>LogIn.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="MakeOrder.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="MakeOrder.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>MakeOrder.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="ModelDefinition\Package1_1216.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package2_1216.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1216.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="OrderRequest.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="OrderRequest.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>OrderRequest.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="UserProfile.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserProfile.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UserProfile.usecasediagram</DependentUpon>
     </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\GroupBuyingModel.uml">

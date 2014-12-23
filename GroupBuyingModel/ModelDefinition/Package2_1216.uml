@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="b77da2cf-29f4-4660-886f-3987a1d11933"
+  name="Products" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <useCase
+        Id="35604bb7-20eb-494c-9d45-bd122b3c3ef7"
+        name="צפייה וחיפוש בכלל המוצרים"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="bdf0d17c-660f-437f-b171-1e69a54e87aa"
+        name="יצירה ועדכון של מוצרים"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="5038e0ee-4a15-464b-bff6-3a0307355400">
+            <useCaseMoniker
+              Id="fe9d0c78-f35e-471d-9611-7882e2b63bed"
+              LastKnownName="בדיקת הרשאות לביצוע פעולות"
+              LastKnownLocation="Package_1216.uml" />
+          </include>
+          <include
+            Id="f26721fc-15a8-4666-88e1-0fe65c73d93c">
+            <useCaseMoniker
+              Id="32bcc87c-1f0f-4b66-9242-20ef940a105b"
+              LastKnownName="צפייה במוצרים למשתמש"
+              LastKnownLocation="Package_1216.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="5e70de2b-9fac-4dc2-b2de-c45dbf64573b"
+        name="חישוב מחירים"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="478b8868-5d68-4375-be45-d354319cb85e">
+            <useCaseMoniker
+              Id="6d76bb3a-3d97-4cf4-8de8-8229e7de307f"
+              LastKnownName="צפייה בהזמנות למוצר"
+              LastKnownLocation="Package1_1216.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

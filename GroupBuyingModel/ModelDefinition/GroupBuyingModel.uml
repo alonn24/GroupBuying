@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="6c0036fd-6ec0-4f40-9b60-fd495d3d647a"
   name="GroupBuyingModel" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -20,319 +20,26 @@
   <packagedElements>
     <packageHasNamedElement>
       <actor
-        Id="59ec131b-5086-4eb1-98bf-12853df40001"
-        name="Product Manager"
-        isAbstract="false"
-        isLeaf="false">
-        <targetEnds>
-          <association
-            Id="22812442-defc-42d5-a832-3c95e2c4790a"
-            isDerived="false"
-            sourceEndRoleName="Product Manager"
-            targetEndRoleName="הזנת פרטי משתמש לזיהוי"
-            isLeaf="false"
-            isAbstract="false">
-            <useCaseMoniker
-              Id="f5404c9a-9cb2-455d-b207-5e6633f27531"
-              LastKnownName="הזנת פרטי משתמש לזיהוי"
-              LastKnownLocation="GroupBuyingModel.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="763f7f1e-c11d-4ee6-b127-83a2f95420d8"
-                  name="Product Manager"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="4a342ada-0cd6-4d82-a6a7-051b7d2040e1"
-                  name="הזנת פרטי משתמש לזיהוי"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="ac718bfd-366c-4749-a653-adcc5b81bce1"
-            isDerived="false"
-            sourceEndRoleName="Product Manager"
-            targetEndRoleName="מחיקת מוצר"
-            isLeaf="false"
-            isAbstract="false">
-            <useCaseMoniker
-              Id="d8349a41-098d-472f-a2f0-7c32a94f9ffc"
-              LastKnownName="מחיקת מוצר"
-              LastKnownLocation="GroupBuyingModel.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="618abca9-cf41-4dc7-881a-eef45879ea0f"
-                  name="Product Manager"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="65b9b3b8-e387-4c40-9cfb-1949bd55af38"
-                  name="מחיקת מוצר"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="e7ff0c16-f33b-494a-ab1e-04321eb5dc86"
-            isDerived="false"
-            sourceEndRoleName="Product Manager"
-            targetEndRoleName="צפייה בפרטי מוצר"
-            isLeaf="false"
-            isAbstract="false">
-            <useCaseMoniker
-              Id="bdb5552b-aca2-402d-93d9-4e08da5339d6"
-              LastKnownName="צפייה בפרטי מוצר"
-              LastKnownLocation="GroupBuyingModel.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="53daa8cb-6aaa-48e3-9344-e83d97221fdf"
-                  name="Product Manager"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="33e184fa-d52f-4dd9-b52b-79bac74ab8d0"
-                  name="צפייה בפרטי מוצר"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="3896f610-b032-4404-8f14-f1c12e9b744d"
-            isDerived="false"
-            sourceEndRoleName="Product Manager"
-            targetEndRoleName="יצירת מוצר"
-            isLeaf="false"
-            isAbstract="false">
-            <useCaseMoniker
-              Id="5c346059-a81a-4109-b179-8b8e39bd26c8"
-              LastKnownName="יצירת מוצר"
-              LastKnownLocation="GroupBuyingModel.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="efa45f7d-fb4d-4fd6-815a-2f595f0019b6"
-                  name="Product Manager"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="87db1abb-e13d-4890-9285-7b67e5946de5"
-                  name="יצירת מוצר"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-        </targetEnds>
-      </actor>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <actor
-        Id="76d7d46c-e948-457a-a2cf-fcd045de8010"
-        name="Registered User"
-        isAbstract="false"
-        isLeaf="false">
-        <targetEnds>
-          <association
-            Id="cfe4b488-3557-4294-a1b3-db5b2e87b8ba"
-            isDerived="false"
-            sourceEndRoleName="Registered User"
-            targetEndRoleName="הזנת פרטי משתמש לזיהוי"
-            isLeaf="false"
-            isAbstract="false">
-            <useCaseMoniker
-              Id="f5404c9a-9cb2-455d-b207-5e6633f27531"
-              LastKnownName="הזנת פרטי משתמש לזיהוי"
-              LastKnownLocation="GroupBuyingModel.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="8c86e4c4-43e9-4b7a-8594-b471eb734e7d"
-                  name="Registered User"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="4306bff0-1d49-4573-93b6-0b617bd85c48"
-                  name="הזנת פרטי משתמש לזיהוי"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="dd4fdf9c-3a50-4b99-b8dc-aaf424659e99"
-            isDerived="false"
-            sourceEndRoleName="Registered User"
-            targetEndRoleName="הזמנת מוצרים או שירותים"
-            isLeaf="false"
-            isAbstract="false">
-            <useCaseMoniker
-              Id="5e853ece-8ecf-4f64-9913-4b79cfb2e0a7"
-              LastKnownName="הזמנת מוצרים או שירותים"
-              LastKnownLocation="GroupBuyingModel.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="daffde33-2bef-462d-8d1b-93e2b56f004d"
-                  name="Registered User"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="59dbd24f-e031-45d6-934a-4c4f23a29a78"
-                  name="הזמנת מוצרים או שירותים"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="81dc556f-f271-42c9-af73-3567dc93a2c1"
-            isDerived="false"
-            sourceEndRoleName="Registered User"
-            targetEndRoleName="הזמנת מוצר בודד"
-            isLeaf="false"
-            isAbstract="false">
-            <useCaseMoniker
-              Id="37fbca64-e817-4573-9fd3-0ab2c9f7e960"
-              LastKnownName="הזמנת מוצר בודד"
-              LastKnownLocation="GroupBuyingModel.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="4dda8a2c-48ba-4368-a415-32c1734c753e"
-                  name="Registered User"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="8f1ce52f-ccd6-422b-9d32-b081d59e8c8c"
-                  name="הזמנת מוצר בודד"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-        </targetEnds>
-      </actor>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <actor
-        Id="fd272f88-2d09-4760-b6c1-b3eabff56e11"
+        Id="3703d32f-3db3-41c7-bec4-04afbe284fa6"
         name="Anonymous User"
         isAbstract="false"
         isLeaf="false">
         <targetEnds>
           <association
-            Id="8fdb2bb6-ab95-409b-8307-a53035f14caa"
+            Id="9fac9495-360a-490a-acbf-7aa00dd482a2"
             isDerived="false"
             sourceEndRoleName="Anonymous User"
-            targetEndRoleName="הזנת פרטי משתמש לרישום"
+            targetEndRoleName="רישום משתמשים חדשים"
             isLeaf="false"
             isAbstract="false">
             <useCaseMoniker
-              Id="7b9301cb-18d7-4a17-a232-65842600585b"
-              LastKnownName="הזנת פרטי משתמש לרישום"
-              LastKnownLocation="GroupBuyingModel.uml" />
+              Id="0439a1da-fa7a-4b1b-a372-ddf9268a4a53"
+              LastKnownName="רישום משתמשים חדשים"
+              LastKnownLocation="Package_1216.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="61841749-20c6-4ade-8363-d038bdb95207"
+                  Id="f5352f3d-cd67-48fb-80de-e9e6301d2719"
                   name="Anonymous User"
                   isLeaf="false"
                   isStatic="false"
@@ -345,8 +52,86 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="97013b7c-a33b-44ba-8cad-3bc34df08cd3"
-                  name="הזנת פרטי משתמש לרישום"
+                  Id="c1d9da56-8444-4098-98e7-d9495eff22a7"
+                  name="רישום משתמשים חדשים"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="61c0b691-f1ab-43ff-89b5-a05d621aab8e"
+            isDerived="false"
+            sourceEndRoleName="Anonymous User"
+            targetEndRoleName="צפייה בהזמנות למוצר"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="6d76bb3a-3d97-4cf4-8de8-8229e7de307f"
+              LastKnownName="צפייה בהזמנות למוצר"
+              LastKnownLocation="Package1_1216.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fdc079e8-b62e-4164-8779-b62d7f63aac0"
+                  name="Anonymous User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="46513488-f837-448f-99f7-0f029dc042c2"
+                  name="צפייה בהזמנות למוצר"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="03cf06cf-2810-41e4-8b80-d0321fcf7792"
+            isDerived="false"
+            sourceEndRoleName="Anonymous User"
+            targetEndRoleName="צפייה וחיפוש בכלל המוצרים"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="35604bb7-20eb-494c-9d45-bd122b3c3ef7"
+              LastKnownName="צפייה וחיפוש בכלל המוצרים"
+              LastKnownLocation="Package2_1216.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="757f6b3e-8b26-4f51-9685-1740a80850d9"
+                  name="Anonymous User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1128cd5d-3b92-4438-8304-bfa29193f5ac"
+                  name="צפייה וחיפוש בכלל המוצרים"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -361,190 +146,344 @@
       </actor>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <useCase
-        Id="f5404c9a-9cb2-455d-b207-5e6633f27531"
-        name="הזנת פרטי משתמש לזיהוי"
+      <actor
+        Id="553ac97d-ef01-4363-b20a-ef7bab255219"
+        name="Registered User"
         isAbstract="false"
         isLeaf="false">
-        <additions>
-          <include
-            Id="1ea89f52-0301-4f60-bcac-00a860a80c52">
+        <targetEnds>
+          <association
+            Id="341c7f96-1417-46b6-b3d3-d80983b2ee9e"
+            isDerived="false"
+            sourceEndRoleName="Registered User"
+            targetEndRoleName="כניסת משתמשים למערכת"
+            isLeaf="false"
+            isAbstract="false">
             <useCaseMoniker
-              Id="5b47f04f-b481-4a24-82c1-bbebe422ac63"
-              LastKnownName="זיהוי משתמש במערכת"
-              LastKnownLocation="GroupBuyingModel.uml" />
-          </include>
-          <include
-            Id="6296eb78-d401-4f9d-bbe2-0ee82c09eff4">
+              Id="d90a4ba8-23da-494e-b54f-c88aa484d8c6"
+              LastKnownName="כניסת משתמשים למערכת"
+              LastKnownLocation="Package_1216.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9eb11f5b-5611-4695-9606-81d489a1c7fd"
+                  name="Registered User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ff9ff6ba-2023-4efb-aa4b-cee0d13bbbbc"
+                  name="כניסת משתמשים למערכת"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="e94b6496-f824-42df-9253-f24262cf7dc6"
+            isDerived="false"
+            sourceEndRoleName="Registered User"
+            targetEndRoleName="צפייה בהזמנות למשתמש"
+            isLeaf="false"
+            isAbstract="false">
             <useCaseMoniker
-              Id="926e2c62-6748-4d7f-8837-15a24d7ac9a7"
-              LastKnownName="כניסה למסך ראשי"
-              LastKnownLocation="GroupBuyingModel.uml" />
-          </include>
-        </additions>
-      </useCase>
+              Id="f4f9547b-7cd9-4c36-988c-8ba447eb5a99"
+              LastKnownName="צפייה בהזמנות למשתמש"
+              LastKnownLocation="Package_1216.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e7b95bf5-517d-40d2-8f47-d07c5493a17a"
+                  name="Registered User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1693b8e4-e70e-4cf3-b29b-a8db224299f0"
+                  name="צפייה בהזמנות למשתמש"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="610de154-d616-496f-b1a2-89252bc8df4b"
+            isDerived="false"
+            sourceEndRoleName="Registered User"
+            targetEndRoleName="יצירה ועדכון של מוצרים"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="bdf0d17c-660f-437f-b171-1e69a54e87aa"
+              LastKnownName="יצירה ועדכון של מוצרים"
+              LastKnownLocation="Package2_1216.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f6c23c6c-b51b-4799-ae13-6e6eb8d4a4b6"
+                  name="Registered User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b9a1f26d-6059-4c4c-b796-87796180dd69"
+                  name="יצירה ועדכון של מוצרים"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="e41bacb3-d199-4c99-a620-cec81e2e2878"
+            isDerived="false"
+            sourceEndRoleName="Registered User"
+            targetEndRoleName="בקשה להזמנת מוצר"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="e6c9c90b-6098-40de-a54f-6f60d3812776"
+              LastKnownName="בקשה להזמנת מוצר"
+              LastKnownLocation="Package1_1216.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5a88eab4-05d3-4f31-8cec-0b541f5ecde3"
+                  name="Registered User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="943c7071-6502-45c0-ac36-00abd23678ab"
+                  name="בקשה להזמנת מוצר"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="4e0247cb-3d60-4b9d-9300-1aa7d19a2b06"
+            isDerived="false"
+            sourceEndRoleName="Registered User"
+            targetEndRoleName="מימוש הזמנות למוצר"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="1348dc3c-dea4-421c-9eaa-f444597e8182"
+              LastKnownName="מימוש הזמנות למוצר"
+              LastKnownLocation="Package1_1216.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2a3dee2d-181a-4f98-b620-32015d101150"
+                  name="Registered User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2f0d5632-f69f-4e93-9931-be95bd956331"
+                  name="מימוש הזמנות למוצר"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="9aaaf686-aac9-4d74-801e-0737c68fbd91"
+            isDerived="false"
+            sourceEndRoleName="Registered User"
+            targetEndRoleName="צפייה במוצרים למשתמש"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="32bcc87c-1f0f-4b66-9242-20ef940a105b"
+              LastKnownName="צפייה במוצרים למשתמש"
+              LastKnownLocation="Package_1216.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2c6a8994-8b27-4e14-9571-dd3b00ec458b"
+                  name="Registered User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="890c66e2-1c6e-46a7-8409-53735317d256"
+                  name="צפייה במוצרים למשתמש"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="ccd31d84-bd77-441e-a376-3fd507c95433"
+            isDerived="false"
+            sourceEndRoleName="Registered User"
+            targetEndRoleName="צפייה בהזמנות למוצר"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="6d76bb3a-3d97-4cf4-8de8-8229e7de307f"
+              LastKnownName="צפייה בהזמנות למוצר"
+              LastKnownLocation="Package1_1216.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="26cb7640-6894-4761-809a-705f04942720"
+                  name="Registered User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5106db1d-628b-46e8-ae50-4a9c9a191635"
+                  name="צפייה בהזמנות למוצר"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="126c992c-5758-4f53-955c-95078c64c2f1"
+            isDerived="false"
+            sourceEndRoleName="Registered User"
+            targetEndRoleName="סיום הזמנות למוצר"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="fa66ffb9-c0d6-43c8-ab48-9789e429345a"
+              LastKnownName="סיום הזמנות למוצר"
+              LastKnownLocation="Package1_1216.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e20d302a-323b-43d0-8cfb-9943288efecf"
+                  name="Registered User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7c052910-5b6b-4c23-a220-56142fb2e532"
+                  name="סיום הזמנות למוצר"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <useCase
-        Id="7b9301cb-18d7-4a17-a232-65842600585b"
-        name="הזנת פרטי משתמש לרישום"
-        isAbstract="false"
-        isLeaf="false">
-        <additions>
-          <include
-            Id="8ea112c7-9027-42ae-a706-54bf5fa2da76">
-            <useCaseMoniker
-              Id="926e2c62-6748-4d7f-8837-15a24d7ac9a7"
-              LastKnownName="כניסה למסך ראשי"
-              LastKnownLocation="GroupBuyingModel.uml" />
-          </include>
-        </additions>
-      </useCase>
+      <packageMoniker
+        Id="afde1098-8370-4926-806e-bee188fc2355"
+        LastKnownName="Users"
+        LastKnownLocation="Package_1216.uml" />
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <useCase
-        Id="5b47f04f-b481-4a24-82c1-bbebe422ac63"
-        name="זיהוי משתמש במערכת"
-        isAbstract="false"
-        isLeaf="false" />
+      <packageMoniker
+        Id="317bedae-db35-4f3c-8c84-bbbb69682087"
+        LastKnownName="Orders"
+        LastKnownLocation="Package1_1216.uml" />
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <useCase
-        Id="926e2c62-6748-4d7f-8837-15a24d7ac9a7"
-        name="כניסה למסך ראשי"
-        isAbstract="false"
-        isLeaf="false" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <useCase
-        Id="e4c7ec4d-0154-49b9-bace-8cc8bf2136ac"
-        name="צפייה בכל המוצרים"
-        isAbstract="false"
-        isLeaf="false" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <useCase
-        Id="bdb5552b-aca2-402d-93d9-4e08da5339d6"
-        name="צפייה בפרטי מוצר"
-        isAbstract="false"
-        isLeaf="false">
-        <extendedCases>
-          <extend
-            Id="20002ed9-ae58-403d-8175-716e60454ab1">
-            <useCaseMoniker
-              Id="5c983297-2d16-4118-ab8e-c49bd84707d4"
-              LastKnownName="עדכון מוצר"
-              LastKnownLocation="GroupBuyingModel.uml" />
-          </extend>
-        </extendedCases>
-      </useCase>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <useCase
-        Id="5e853ece-8ecf-4f64-9913-4b79cfb2e0a7"
-        name="הזמנת מוצרים או שירותים"
-        isAbstract="false"
-        isLeaf="false">
-        <extendedCases>
-          <extend
-            Id="f88f139e-7f4f-4989-8f05-7407299234bc">
-            <useCaseMoniker
-              Id="107282eb-ae31-48c8-9ebd-27355e895b26"
-              LastKnownName="בניית עגלת מוצרים"
-              LastKnownLocation="GroupBuyingModel.uml" />
-          </extend>
-        </extendedCases>
-        <additions>
-          <include
-            Id="103425dd-9748-41c6-b45e-af611baf6995">
-            <useCaseMoniker
-              Id="e4c7ec4d-0154-49b9-bace-8cc8bf2136ac"
-              LastKnownName="צפייה בכל המוצרים"
-              LastKnownLocation="GroupBuyingModel.uml" />
-          </include>
-        </additions>
-      </useCase>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <useCase
-        Id="107282eb-ae31-48c8-9ebd-27355e895b26"
-        name="בניית עגלת מוצרים"
-        isAbstract="false"
-        isLeaf="false" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <useCase
-        Id="37fbca64-e817-4573-9fd3-0ab2c9f7e960"
-        name="הזמנת מוצר בודד"
-        isAbstract="false"
-        isLeaf="false">
-        <extendedCases>
-          <extend
-            Id="0140032d-8727-4e8a-8de6-f8354da2f38f">
-            <useCaseMoniker
-              Id="107282eb-ae31-48c8-9ebd-27355e895b26"
-              LastKnownName="בניית עגלת מוצרים"
-              LastKnownLocation="GroupBuyingModel.uml" />
-          </extend>
-        </extendedCases>
-        <additions>
-          <include
-            Id="8f1bd738-2b3c-4f20-a0c3-344bfe283ac7">
-            <useCaseMoniker
-              Id="bdb5552b-aca2-402d-93d9-4e08da5339d6"
-              LastKnownName="צפייה בפרטי מוצר"
-              LastKnownLocation="GroupBuyingModel.uml" />
-          </include>
-        </additions>
-      </useCase>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <useCase
-        Id="5c983297-2d16-4118-ab8e-c49bd84707d4"
-        name="עדכון מוצר"
-        isAbstract="false"
-        isLeaf="false" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <useCase
-        Id="d8349a41-098d-472f-a2f0-7c32a94f9ffc"
-        name="מחיקת מוצר"
-        isAbstract="false"
-        isLeaf="false">
-        <additions>
-          <include
-            Id="3e64b43d-0dd1-4f00-a740-99f26ca0789b">
-            <useCaseMoniker
-              Id="bdb5552b-aca2-402d-93d9-4e08da5339d6"
-              LastKnownName="צפייה בפרטי מוצר"
-              LastKnownLocation="GroupBuyingModel.uml" />
-          </include>
-          <include
-            Id="0834c918-a683-4e06-bb68-be3db13301fc">
-            <useCaseMoniker
-              Id="e4c7ec4d-0154-49b9-bace-8cc8bf2136ac"
-              LastKnownName="צפייה בכל המוצרים"
-              LastKnownLocation="GroupBuyingModel.uml" />
-          </include>
-        </additions>
-      </useCase>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <useCase
-        Id="5c346059-a81a-4109-b179-8b8e39bd26c8"
-        name="יצירת מוצר"
-        isAbstract="false"
-        isLeaf="false">
-        <additions>
-          <include
-            Id="66ddc32d-6d6d-4d38-9e76-0976c2c15423">
-            <useCaseMoniker
-              Id="bdb5552b-aca2-402d-93d9-4e08da5339d6"
-              LastKnownName="צפייה בפרטי מוצר"
-              LastKnownLocation="GroupBuyingModel.uml" />
-          </include>
-        </additions>
-      </useCase>
+      <packageMoniker
+        Id="b77da2cf-29f4-4660-886f-3987a1d11933"
+        LastKnownName="Products"
+        LastKnownLocation="Package2_1216.uml" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

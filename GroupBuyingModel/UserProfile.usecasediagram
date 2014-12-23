@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="52d3fa04-1510-4781-b142-4d0a17935ce9" name="UserProfile" linkedPackageId="0ff10d3d-280b-4fcc-b676-9b8417792460" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="e1bbb0ec-6c28-4a3e-a499-8063990f862c" name="Registered User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="553ac97d-ef01-4363-b20a-ef7bab255219" />
+        <targetEnds>
+          <association Id="0d6bb9d5-a433-4bed-adc2-0c416b35665f" isDerived="false" sourceEndRoleName="Registered User" targetEndRoleName="צפייה בהזמנות למשתמש" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="367262b3-3a9d-4c54-a42d-4fd99feca888" LastKnownName="צפייה בהזמנות למשתמש" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="803db165-b204-49dd-8e14-9e20868892c2" name="Registered User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e7b95bf5-517d-40d2-8f47-d07c5493a17a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d459befc-bd12-4c17-a866-3110bef3714f" name="צפייה בהזמנות למשתמש" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1693b8e4-e70e-4cf3-b29b-a8db224299f0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e94b6496-f824-42df-9253-f24262cf7dc6" />
+          </association>
+          <association Id="3a289e6c-1c02-434c-96d6-f589b30ac1d7" isDerived="false" sourceEndRoleName="Registered User" targetEndRoleName="צפייה במוצרים למשתמש" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="7ce9a622-e1ee-4a88-ad4f-509de9e3a459" LastKnownName="צפייה במוצרים למשתמש" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e635069a-ea93-4a26-8dc6-a052dd65903e" name="Registered User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2c6a8994-8b27-4e14-9571-dd3b00ec458b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8f1549bb-5e36-40fc-9827-fbd7fa22d623" name="צפייה במוצרים למשתמש" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="890c66e2-1c6e-46a7-8409-53735317d256" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9aaaf686-aac9-4d74-801e-0737c68fbd91" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="367262b3-3a9d-4c54-a42d-4fd99feca888" name="צפייה בהזמנות למשתמש" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f4f9547b-7cd9-4c36-988c-8ba447eb5a99" />
+        <additions>
+          <include Id="33f8c82a-0ce2-4f14-9a7d-78e9fa93c0c3">
+            <useCaseMoniker Id="4e66f999-59a3-41f2-a163-01986ac93e69" LastKnownName="צפייה בהזמנות למוצר" />
+            <elementDefinition Id="91997170-12f6-415e-893a-358be307ca57" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="7ce9a622-e1ee-4a88-ad4f-509de9e3a459" name="צפייה במוצרים למשתמש" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="32bcc87c-1f0f-4b66-9242-20ef940a105b" />
+        <additions>
+          <include Id="0210c102-2eec-479e-abdd-57055cf0def7">
+            <useCaseMoniker Id="0244a577-2442-4875-9896-13d646718866" LastKnownName="צפייה וחיפוש בכלל המוצרים" />
+            <elementDefinition Id="2b9c476d-2c3b-4499-bab3-bf43045b7613" />
+          </include>
+          <include Id="24782cbd-0184-41bb-9287-ca9b812500c8">
+            <useCaseMoniker Id="4e66f999-59a3-41f2-a163-01986ac93e69" LastKnownName="צפייה בהזמנות למוצר" />
+            <elementDefinition Id="c2b5bc5a-b961-4ae7-97ba-7fec87858c44" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="4e66f999-59a3-41f2-a163-01986ac93e69" name="צפייה בהזמנות למוצר" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6d76bb3a-3d97-4cf4-8de8-8229e7de307f" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="0244a577-2442-4875-9896-13d646718866" name="צפייה וחיפוש בכלל המוצרים" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="35604bb7-20eb-494c-9d45-bd122b3c3ef7" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="0731dda2-129a-492b-8cbb-3efd52f1d7d4" name="Anonymous User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3703d32f-3db3-41c7-bec4-04afbe284fa6" />
+        <targetEnds>
+          <association Id="a16b93cc-5eaa-42bf-b05e-a1e67a6c5c3d" isDerived="false" sourceEndRoleName="Anonymous User" targetEndRoleName="צפייה בהזמנות למוצר" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="4e66f999-59a3-41f2-a163-01986ac93e69" LastKnownName="צפייה בהזמנות למוצר" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b8b545dc-133e-4688-a4ab-13652f057ebe" name="Anonymous User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="fdc079e8-b62e-4164-8779-b62d7f63aac0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="47944bc8-7feb-4972-9dd6-47c8299af053" name="צפייה בהזמנות למוצר" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="46513488-f837-448f-99f7-0f029dc042c2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="61c0b691-f1ab-43ff-89b5-a05d621aab8e" />
+          </association>
+          <association Id="d32d44c2-cc09-46a3-bf5f-34b4b70dc2e4" isDerived="false" sourceEndRoleName="Anonymous User" targetEndRoleName="צפייה וחיפוש בכלל המוצרים" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="0244a577-2442-4875-9896-13d646718866" LastKnownName="צפייה וחיפוש בכלל המוצרים" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c2bc5751-4ce3-42e7-8f23-0eaed19b8ccb" name="Anonymous User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="757f6b3e-8b26-4f51-9685-1740a80850d9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dfd6a277-8eb3-44a9-94f4-7039c4de1a7b" name="צפייה וחיפוש בכלל המוצרים" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1128cd5d-3b92-4438-8304-bfa29193f5ac" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="03cf06cf-2810-41e4-8b80-d0321fcf7792" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="0ff10d3d-280b-4fcc-b676-9b8417792460" name="GroupBuyingModel">
+    <elementDefinition Id="6c0036fd-6ec0-4f40-9b60-fd495d3d647a" />
+    <profileInstances>
+      <packageHasProfileInstances Id="f31444d8-3138-4184-bd68-2b3f702ce6b2">
+        <profileInstance Id="11f990d5-5c38-44b1-b584-66d9017e5dc4" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="6e051ebc-946a-4b16-a207-a3bcb7b099c8">
+        <profileInstance Id="bcb3044f-2534-4c3e-ab52-6d4cd8cf4795" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

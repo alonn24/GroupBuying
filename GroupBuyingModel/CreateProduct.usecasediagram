@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="f1445fce-b81e-41aa-8194-d8fffc234d18" name="CreateProduct" linkedPackageId="e98cd9e9-a468-44d0-abf5-91f554c431b3" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="90971536-94b0-4456-8107-84c02e83856f" name="Registered User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="553ac97d-ef01-4363-b20a-ef7bab255219" />
+        <targetEnds>
+          <association Id="7a6e87f5-43d4-49ac-b06b-3cd75d11710e" isDerived="false" sourceEndRoleName="Registered User" targetEndRoleName="יצירה ועדכון של מוצרים" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="f7541e4d-3024-4b81-934e-685ab7af94b3" LastKnownName="יצירה ועדכון של מוצרים" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6fc6d16e-9ef6-4094-9a27-56add11f520f" name="Registered User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f6c23c6c-b51b-4799-ae13-6e6eb8d4a4b6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="745391a6-9f75-4f96-b3f6-56f6b6622f52" name="יצירה ועדכון של מוצרים" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b9a1f26d-6059-4c4c-b796-87796180dd69" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="610de154-d616-496f-b1a2-89252bc8df4b" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5803df0c-3b75-4749-9ab6-0ecdd1eb8286" name="בדיקת הרשאות לביצוע פעולות" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="fe9d0c78-f35e-471d-9611-7882e2b63bed" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="f7541e4d-3024-4b81-934e-685ab7af94b3" name="יצירה ועדכון של מוצרים" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="bdf0d17c-660f-437f-b171-1e69a54e87aa" />
+        <additions>
+          <include Id="484ea86a-505e-4544-a7b7-c8f4268de8a8">
+            <useCaseMoniker Id="5803df0c-3b75-4749-9ab6-0ecdd1eb8286" LastKnownName="בדיקת הרשאות לביצוע פעולות" />
+            <elementDefinition Id="5038e0ee-4a15-464b-bff6-3a0307355400" />
+          </include>
+          <include Id="154da30b-a74b-4c56-bbad-4b0009c29e62">
+            <useCaseMoniker Id="dd24fbb1-2c41-4751-80f5-8511bb4f74b5" LastKnownName="צפייה במוצרים למשתמש" />
+            <elementDefinition Id="f26721fc-15a8-4666-88e1-0fe65c73d93c" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="dd24fbb1-2c41-4751-80f5-8511bb4f74b5" name="צפייה במוצרים למשתמש" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="32bcc87c-1f0f-4b66-9242-20ef940a105b" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="e98cd9e9-a468-44d0-abf5-91f554c431b3" name="GroupBuyingModel">
+    <elementDefinition Id="6c0036fd-6ec0-4f40-9b60-fd495d3d647a" />
+    <profileInstances>
+      <packageHasProfileInstances Id="ead9918b-02e9-46cd-87c9-8aec500868d3">
+        <profileInstance Id="d22bc0fd-6e66-4993-806a-de28e8c8cff5" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="0061380d-b7bb-4ea8-8a8b-5820077b318b">
+        <profileInstance Id="8a7a0d62-4430-4985-b206-f772e8213637" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

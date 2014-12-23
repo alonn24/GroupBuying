@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LogIn">
+  <useCaseModelRootMoniker Id="0a31d6b0-3b5f-4952-a487-0414f95aa5eb" />
+  <nestedChildShapes>
+    <actorShape Id="552fdf34-c6cf-4406-8b64-a68790baa885" absoluteBounds="1.75, 2, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="e76126a8-aaa8-4deb-b790-70287dcd2be4" LastKnownName="Anonymous User" />
+      <relativeChildShapes />
+    </actorShape>
+    <actorShape Id="9459ab92-16f0-4d1d-b035-8270c3e01ae3" absoluteBounds="1.75, 3.125, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="feb0f3ce-5342-4ebd-9b76-e65b9d97cc2f" LastKnownName="Registered User" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseShape Id="7feacbb0-eb54-4e21-84f3-8d630746e85f" absoluteBounds="3.125, 1.875, 1, 0.625" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="113dea0a-47c9-47bf-9a98-ac91782465d7" LastKnownName="רישום משתמשים חדשים" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(2.25 : 2.24038461538462); (3.12594406503856 : 2.20669445903698)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="fe4767d2-54c6-4abc-bb9d-26b59b9df5a8" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="552fdf34-c6cf-4406-8b64-a68790baa885" />
+        <useCaseShapeMoniker Id="7feacbb0-eb54-4e21-84f3-8d630746e85f" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="23aac23b-8913-47a9-8534-c1221142e0f6" absoluteBounds="3.125, 3.125, 1, 0.625" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="930253c5-09d4-4839-9f4f-aa3f3aad697d" LastKnownName="כניסת משתמשים למערכת" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <extendConnector edgePoints="[(3.625 : 2.5); (3.625 : 3.125)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black" useCaseStereotype="«extend»">
+      <extendMoniker Id="a8fec59c-0442-428d-acf5-b89355a7625d" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="7feacbb0-eb54-4e21-84f3-8d630746e85f" />
+        <useCaseShapeMoniker Id="23aac23b-8913-47a9-8534-c1221142e0f6" />
+      </nodes>
+    </extendConnector>
+    <useCaseAssociationConnector edgePoints="[(2.25 : 3.38461538461538); (3.12594406503857 : 3.41830554096302)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="155ea014-c785-4bda-8b4f-7f3a892e9a9e" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="9459ab92-16f0-4d1d-b035-8270c3e01ae3" />
+        <useCaseShapeMoniker Id="23aac23b-8913-47a9-8534-c1221142e0f6" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="d0992881-90a7-4b96-86d2-9d33c728ef0e" absoluteBounds="4.875, 3, 1.25, 0.75" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="2df6d587-3a5d-4310-96b4-4059b25920c2" LastKnownName="בדיקת הרשאות לביצוע פעולות" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <includeConnector edgePoints="[(4.12429040233891 : 3.4208569865887); (4.87596227924662 : 3.39580125735845)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«include»">
+      <includeMoniker Id="e1d51568-a307-46a5-ae92-54a5b21cb4db" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="4.1822732606288726, 3.2576943598894381, 0.52439594268798828, 0.14800345897674561" shapeFieldName="NameDecorator" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <useCaseShapeMoniker Id="23aac23b-8913-47a9-8534-c1221142e0f6" />
+        <useCaseShapeMoniker Id="d0992881-90a7-4b96-86d2-9d33c728ef0e" />
+      </nodes>
+    </includeConnector>
+    <rectangleShape Id="94f93247-7c0c-436d-aa73-b095ea4ab7f9" absoluteBounds="2.75, 1.5, 3.625, 2.75" outlineColor="83, 134, 191" outlineThickness="0.03125" />
+  </nestedChildShapes>
+</useCaseDiagram>

@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="317bedae-db35-4f3c-8c84-bbbb69682087"
+  name="Orders" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <useCase
+        Id="e6c9c90b-6098-40de-a54f-6f60d3812776"
+        name="בקשה להזמנת מוצר"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="a60e15fd-cfa5-4471-83f7-2e67838c8640">
+            <useCaseMoniker
+              Id="fe9d0c78-f35e-471d-9611-7882e2b63bed"
+              LastKnownName="בדיקת הרשאות לביצוע פעולות"
+              LastKnownLocation="Package_1216.uml" />
+          </include>
+          <include
+            Id="d812aa99-1969-4032-a125-a3b530c9e89a">
+            <useCaseMoniker
+              Id="35604bb7-20eb-494c-9d45-bd122b3c3ef7"
+              LastKnownName="צפייה וחיפוש בכלל המוצרים"
+              LastKnownLocation="Package2_1216.uml" />
+          </include>
+          <include
+            Id="ee9d810b-9b92-44f4-b784-127bb0a1c9c1">
+            <useCaseMoniker
+              Id="5e70de2b-9fac-4dc2-b2de-c45dbf64573b"
+              LastKnownName="חישוב מחירים"
+              LastKnownLocation="Package2_1216.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="fa66ffb9-c0d6-43c8-ab48-9789e429345a"
+        name="סיום הזמנות למוצר"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="c075708a-ac1c-4066-92aa-76a561e1d369">
+            <useCaseMoniker
+              Id="6d76bb3a-3d97-4cf4-8de8-8229e7de307f"
+              LastKnownName="צפייה בהזמנות למוצר"
+              LastKnownLocation="Package1_1216.uml" />
+          </extend>
+        </extendedCases>
+        <additions>
+          <include
+            Id="4ce7867a-ab7d-4fec-a680-47972bf51cec">
+            <useCaseMoniker
+              Id="fe9d0c78-f35e-471d-9611-7882e2b63bed"
+              LastKnownName="בדיקת הרשאות לביצוע פעולות"
+              LastKnownLocation="Package_1216.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="1348dc3c-dea4-421c-9eaa-f444597e8182"
+        name="מימוש הזמנות למוצר"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="617651f1-5d4b-407c-ae44-7b2939eb217a">
+            <useCaseMoniker
+              Id="f4f9547b-7cd9-4c36-988c-8ba447eb5a99"
+              LastKnownName="צפייה בהזמנות למשתמש"
+              LastKnownLocation="Package_1216.uml" />
+          </extend>
+          <extend
+            Id="e9efe287-5ef9-414c-bd56-96efebbf6a2f">
+            <useCaseMoniker
+              Id="6d76bb3a-3d97-4cf4-8de8-8229e7de307f"
+              LastKnownName="צפייה בהזמנות למוצר"
+              LastKnownLocation="Package1_1216.uml" />
+          </extend>
+        </extendedCases>
+        <additions>
+          <include
+            Id="a59bf116-3ed4-4edd-b51d-0ab5182d713d">
+            <useCaseMoniker
+              Id="fe9d0c78-f35e-471d-9611-7882e2b63bed"
+              LastKnownName="בדיקת הרשאות לביצוע פעולות"
+              LastKnownLocation="Package_1216.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="6d76bb3a-3d97-4cf4-8de8-8229e7de307f"
+        name="צפייה בהזמנות למוצר"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
