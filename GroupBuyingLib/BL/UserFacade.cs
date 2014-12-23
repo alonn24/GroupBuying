@@ -29,9 +29,9 @@ namespace GroupBuyingLib.BL
         /// Perform checks and register a new user
         /// </summary>
         /// <returns>Action success</returns>
-        public ActionResponse<bool> RegisterUser(string username, string password, string role, string email, string profile)
+        public ActionResponse<bool> RegisterUser(string username, string password, string email, string profile)
         {
-            ICommand<ActionResponse<bool>> command = new RegisterUserCommand(username, password, role, email, profile);
+            ICommand<ActionResponse<bool>> command = new RegisterUserCommand(username, password, email, profile);
             command.execute();
             return command.Result;
         }

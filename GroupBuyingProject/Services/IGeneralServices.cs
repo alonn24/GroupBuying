@@ -31,11 +31,12 @@ namespace GroupBuyingProject.Services
         /// RESTful API to register a new user
         /// </summary>
         [OperationContract]
-        [WebInvoke(Method = "GET",
+        [WebInvoke(Method = "POST",
             ResponseFormat = WebMessageFormat.Json,
+            RequestFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Bare,
-            UriTemplate = "/RegisterUser/{username}/{password}/{role}/{email}")]
-        ActionResponse<bool> RegisterUser(string username, string password, string role, string email);
+            UriTemplate = "/RegisterUser")]
+        ActionResponse<bool> RegisterUser(User user);
         #endregion
 
         #region Order APIs

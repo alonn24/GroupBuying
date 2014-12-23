@@ -25,8 +25,8 @@ namespace GroupBuyingLib.BL.Commands
         /// <summary>
         /// Constractor
         /// </summary>
-        public RegisterUserCommand(string userName, string password, string role, string email, string profile) {
-            m_userToRegister = new User(userName, password, role);
+        public RegisterUserCommand(string userName, string password, string email, string profile) {
+            m_userToRegister = new User(userName, password);
             if (email != null)
                 m_userToRegister.Email = email;
             if (profile != null)

@@ -40,10 +40,10 @@ namespace GroupBuyingProject.Services
         /// Register a new user to the system
         /// </summary>
         /// <returns></returns>
-        public ActionResponse<bool> RegisterUser(string userName, string password, string role, string email)
+        public ActionResponse<bool> RegisterUser(User user)
         {
             // Deal with HTML encode/decode parameters
-            return new UserFacade().RegisterUser(userName, password, role, email, "Default.jpg");
+            return new UserFacade().RegisterUser(user.UserName, user.Password, user.Email, "Default.jpg");
         }
         #endregion
 

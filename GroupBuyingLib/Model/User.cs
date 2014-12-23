@@ -11,8 +11,6 @@ namespace GroupBuyingLib.Model
         [DataMember]
         public string Password { get; set; }
         [DataMember]
-        public string Role { get; set; }
-        [DataMember]
         public string Email { get; set; }
         [DataMember]
         public string Profile { get; set; }
@@ -32,11 +30,10 @@ namespace GroupBuyingLib.Model
         /// <param name="username"></param>
         /// <param name="password"></param>
         /// <param name="role"></param>
-        public User(string userName, string password, string role)
+        public User(string userName, string password)
         {
             this.UserName = userName;
             this.Password = password;
-            this.Role = role;
         }
         #endregion
     }

@@ -8,7 +8,6 @@ angular.module('app.common')
     function resetUserDetails() {
         userDetails.userName = '';
         userDetails.password = '';
-        userDetails.role = '';
         userDetails.authorized = false;
         userDetails.email = '';
         userDetails.profile = '';
@@ -29,7 +28,6 @@ angular.module('app.common')
                 // Save data to model
                 userDetails.userName = data.UserName;
                 userDetails.password = data.Password;
-                userDetails.role = data.Role;
                 userDetails.authorized = data.Authorized;
                 userDetails.email = data.Email;
                 userDetails.profile = data.Profile;
@@ -42,17 +40,20 @@ angular.module('app.common')
         });
     };
 
-    this.registerUser = function (username, password, role, email) {
-        return serverFacade.registerUser(username, password, role, email)
+    this.registerUser = function (username, password, email) {
+        var user = {
+            UserName: username,
+            Password: password,
+            Email: email
+        };
+        return serverFacade.registerUser(user)
         .then(function (data) {
             if (data.Succeed == true) {
                 userDetails.userName = username;
                 userDetails.password = password;
-                userDetails.role = role;
                 userDetails.authorized = true;
                 userDetails.email = email;
                 userDetails.profile = "Default.jpg";
-
                 return userDetails;
             }
             else {

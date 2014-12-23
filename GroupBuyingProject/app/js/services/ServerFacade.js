@@ -13,9 +13,8 @@ angular.module('app.common')
         return this.doHTTPGet(baseUrl + 'GetUserOrders/' + userName + '/' + password);
     }
 
-    this.registerUser = function (userName, password, role, email) {
-        var params = [userName, password, role, email].join('/');
-        return this.doHTTPGet(baseUrl + 'RegisterUser/' + params);
+    this.registerUser = function (data) {
+        return this.doHTTPPost(baseUrl + 'RegisterUser', data);
     };
 
     this.getUserProducts = function (userName) {
@@ -67,10 +66,11 @@ angular.module('app.common')
         });
     }
 
-    this.doHTTPPost = function (url) {
+    this.doHTTPPost = function (url, data) {
         return $http({
             url: url,
             method: 'POST',
+            data: data,
             headers: {
                 'Content-Type': 'application/json',
                 'User': userDetails.userName,

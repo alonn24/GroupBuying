@@ -57,11 +57,11 @@
   <link rel="stylesheet" href="css/app.css">
 </head>
 <body class="ng-cloak">
-    <header>
+    <header ng-controller="logInController as logIn">
         <ul class="mainContentGroup tabs contentGroup">
             <li><a data-link-navigate="LogInPage">Home</a></li>
             <li><a data-link-navigate="Products">Products & Services</a></li>
-            <li><a data-link-navigate="ProductsManagement" data-ng-show="miniLogIn.getUserDetails().role == 'ProductManager'">Products Management</a></li>
+            <li><a data-link-navigate="ProductsManagement" data-ng-show="logIn.getUserDetails().authorized">Products Management</a></li>
             <li><a data-link-navigate="Contacts">Contact Us</a></li>
         </ul>
     </header>

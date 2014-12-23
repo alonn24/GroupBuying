@@ -23,8 +23,7 @@ namespace GroupBuyingLib.DAL
             User returnUser = null;   // Return value
 
             returnUser = new User((string)row["UserName"],
-                    (string)row["Password"],
-                    (string)row["Role"]);
+                    (string)row["Password"]);
             returnUser.Email = row["Email"].ToString();
             returnUser.Profile = (string)row["Profile"];
             returnUser.Authorized = (bool)row["Authorized"];
@@ -89,12 +88,11 @@ namespace GroupBuyingLib.DAL
                 return new ActionResponse<bool>("User " + user.UserName + " already exists in the system", false);
 
             // Add user to db
-            Object[] parameters = new Object[6] {
-                user.UserName, user.Password, 
-                user.Role, user.Email, 
+            Object[] parameters = new Object[] {
+                user.UserName, user.Password, user.Email, 
                 user.Profile, user.Authorized
             };
-            DataProvider.Instance.executeCommand("INSERT INTO Users VALUES (@p1, @p2, @p3, @p4, @p5, @p6)", parameters);
+            DataProvider.Instance.executeCommand("INSERT INTO Users VALUES (@p1, @p2, @p3, @p4, @p5)", parameters);
 
             return new ActionResponse<bool>("OK", true);
 

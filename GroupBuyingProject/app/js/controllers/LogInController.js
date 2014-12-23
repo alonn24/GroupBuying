@@ -8,6 +8,10 @@ angular.module('myApp')
     this.orders = '';
     this.productDetailsPage = 'Product';
 
+    this.authorized = function () {
+        return userDetails.authorized;
+    };
+
     this.getUserDetails = function () {
         return userDetails;
     };
