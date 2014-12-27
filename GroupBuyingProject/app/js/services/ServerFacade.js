@@ -81,7 +81,7 @@ angular.module('app.common')
             if (data.data.success === false)
                 return $q.reject(data.data.Message);
             else
-                return data.data;
+                return data.data.Result;
         }, function (reason) {
             console.log(reason);
             return $q.reject(reason.Message);

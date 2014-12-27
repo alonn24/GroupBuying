@@ -61,7 +61,8 @@ namespace GroupBuyingLib.DAL
                 {
                     objCommand.Parameters.Add(new OleDbParameter("@p" + i, parameters[i]));
                 }
-                return objCommand.ExecuteScalar();
+                objCommand.ExecuteScalar();
+                return new OleDbCommand("SELECT @@IDENTITY AS 'Identity'", objConn).ExecuteScalar();
             }
             finally
             {

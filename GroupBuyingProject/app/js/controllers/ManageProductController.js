@@ -43,7 +43,8 @@ angular.module('myApp')
             vm.errorMessage = "Enter product details.";
         else {
             productsFacade.createProduct(vm.NewProduct).then(
-                function (data) {
+                function (product) {
+                    vm.products.push(product);
                     vm.successMessage = "Created successfully.";
                 },
                 function (reason) {

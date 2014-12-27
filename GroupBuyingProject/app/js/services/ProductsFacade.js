@@ -66,12 +66,7 @@ angular.module('myApp')
 
     this.createProduct = function (newProduct) {
         var user = userDetails;
-        return serverFacade.createProduct(newProduct)
-        .then(function (data) {
-            if (data.Succeed) {
-                return data;
-            }
-        });
+        return serverFacade.createProduct(newProduct);
     };
 
     this.removeProduct = function (productId) {
