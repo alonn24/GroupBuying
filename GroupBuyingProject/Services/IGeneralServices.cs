@@ -107,12 +107,12 @@ namespace GroupBuyingProject.Services
         /// RESTful API to create new product
         /// </summary>
         [OperationContract]
-        [WebInvoke(Method = "GET",
+        [WebInvoke(Method = "POST",
             ResponseFormat = WebMessageFormat.Json,
+            RequestFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Bare,
-            UriTemplate = "/CreateProduct/{userName}/{password}/{title}/{minPrice}/{maxPrice}/{requiredOrders}")]
-        ActionResponse<bool> CreateProduct(string userName, string password, string title,
-            string minPrice, string maxPrice, string requiredOrders);
+            UriTemplate = "/CreateProduct")]
+        ActionResponse<Product> CreateProduct(Product product);
 
         /// <summary>
         /// RESTful API to create new product

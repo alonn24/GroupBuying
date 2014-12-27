@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GroupBuyingLib.BL.Commands;
 using GroupBuyingLib.DAL;
+using GroupBuyingLib.Model;
 using GroupBuyingLib.Model.OrderLib;
 using GroupBuyingLib.Model.ProductLib;
 
@@ -68,6 +70,12 @@ namespace GroupBuyingLib.BL
             }
             else
                 return null;    //Input wasn't a number
+        }
+
+        public ActionResponse<Product> CreateProduct(string userName, Product product) {
+            CreateProductCommand command = new CreateProductCommand(userName, product);
+            command.execute();
+            return command.Result;
         }
     }
 }

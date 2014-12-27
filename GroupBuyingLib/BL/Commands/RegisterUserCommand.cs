@@ -14,12 +14,10 @@ namespace GroupBuyingLib.BL.Commands
         /// <summary>
         /// Result
         /// </summary>
-        private ActionResponse<bool> m_message;
         public ActionResponse<bool> Result
-        { 
-            get { 
-                return m_message;
-            }
+        {
+            get;
+            set;
         }
 
         /// <summary>
@@ -35,9 +33,31 @@ namespace GroupBuyingLib.BL.Commands
 
         /// <summary>
         /// Execute
+        /// Perform user existance check
         /// </summary>
-        public void execute() {
-            m_message = new UserDAL().RegisterUser(m_userToRegister);
+        public void execute()
+        {
+            UserDAL userDal = new UserDAL();
+            // If the user does not exists
+            if (userDal.GetUserDetails(m_userToRegister.UserName) != null)
+            {
+                // Return false resut
+                Result = new ActionResponse<bool>("User " + m_userToRegister.UserName + " already exists in the system");
+                return;
+            }
+
+            try
+            {
+                // Try to register user
+                userDal.RegisterUser(m_userToRegister);
+                Result = new ActionResponse<bool>();
+            }
+            catch (Exception)
+            {
+                // Return general error
+                Result = new ActionResponse<bool>("Failed to register user.");
+                throw;
+            }
         }
     }
 }

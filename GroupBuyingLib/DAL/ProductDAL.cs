@@ -165,6 +165,17 @@ namespace GroupBuyingLib.DAL
 
             return orders;
         }
+
+        public void CreateProduct(Product product)
+        {
+            // Add user to db
+            Object[] parameters = new Object[] {
+                product.Title, product.MaxPrice,product.MinPrice,
+                product.RequiredOrders, product.Image, 
+                product.Seller.UserName, product.DatePosted
+            };
+            DataProvider.Instance.executeCommand("INSERT INTO Products VALUES (@p1, @p2, @p3, @p4, @p5)", parameters);
+        }
     }
 }
 

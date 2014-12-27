@@ -80,21 +80,14 @@ namespace GroupBuyingLib.DAL
             return returnUser;
         }
 
-        public ActionResponse<bool> RegisterUser(User user)
+        public void RegisterUser(User user)
         {
-            // Check that user not exists
-            User existingUser = GetUserDetails(user.UserName);
-            if (existingUser != null)
-                return new ActionResponse<bool>("User " + user.UserName + " already exists in the system", false);
-
             // Add user to db
             Object[] parameters = new Object[] {
                 user.UserName, user.Password, user.Email, 
                 user.Profile, user.Authorized
             };
             DataProvider.Instance.executeCommand("INSERT INTO Users VALUES (@p1, @p2, @p3, @p4, @p5)", parameters);
-
-            return new ActionResponse<bool>("OK", true);
 
         }
     }

@@ -25,6 +25,12 @@ namespace GroupBuyingProject.Services
                 password != null && password != "");
         }
 
+        private string GetUserName() {
+            HttpRequest request = HttpContext.Current.Request;
+            string userName = HttpContext.Current.Request.Headers["User"];
+            return userName;
+        }
+
         #region User APIs
         /// <summary>
         /// Retrive authenticated user data, null oterwise
@@ -121,9 +127,15 @@ namespace GroupBuyingProject.Services
         /// Check credentials and create new product
         /// </summary>
         /// <returns></returns>
-        public ActionResponse<bool> CreateProduct(string userName, string password, string title,
-            string minPrice, string maxPrice, string requiredOrders) {
-                return new ActionResponse<bool>("", true);
+        public ActionResponse<Product> CreateProduct(Product product) {
+            if (!isAuthorized())
+            {
+                return new ActionResponse<Product>("User is not authorized.", false);
+            }
+            else
+            {
+                return new ProductFacade().CreateProduct(this.GetUserName(), product);
+            }
         }
 
         /// <summary>

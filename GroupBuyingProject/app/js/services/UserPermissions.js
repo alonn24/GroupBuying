@@ -34,9 +34,6 @@ angular.module('app.common')
 
                 return userDetails;
             }
-            else {
-                throw "User is not authorized.";
-            }
         });
     };
 
@@ -55,9 +52,6 @@ angular.module('app.common')
                 userDetails.email = email;
                 userDetails.profile = "Default.jpg";
                 return userDetails;
-            }
-            else {
-                throw "User alrdaey exists.";
             }
         });
     };

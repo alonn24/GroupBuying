@@ -11,7 +11,7 @@ namespace GroupBuyingLib.Model
     public class ActionResponse<T>
     {
         [DataMember]
-        public bool Succeed { get; set; }
+        public bool success { get; set; }
         [DataMember]
         public T Result { get; set; }
         [DataMember]
@@ -20,18 +20,21 @@ namespace GroupBuyingLib.Model
         /// <summary>
         /// Constructor
         /// </summary>
-        public ActionResponse() { }
+        public ActionResponse() {
+            this.success = true;
+        }
 
         public ActionResponse(string message, bool succeed, T result) : this(message, succeed) {
             this.Result = result;
         }
 
         public ActionResponse(string message, bool succeed) : this(message) {
-            this.Succeed = succeed;
+            this.success = succeed;
         }
+
         public ActionResponse(string message)
         {
-            this.Succeed = false;
+            this.success = false;
             this.Message = message;
         }
     }

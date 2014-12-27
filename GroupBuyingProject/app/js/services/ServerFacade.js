@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('app.common')
-.service('serverFacade', function ($http, userDetails) {
+.service('serverFacade', function ($http, $q, userDetails) {
 
     var baseUrl = '/Services/GeneralServices.svc/';
 
@@ -26,8 +26,6 @@ angular.module('app.common')
     };
 
     this.orderProducts = function (userName, password, orders) {
-        //var params = [userName, password, orders].join('/');
-        //return this.doHTTPGet(baseUrl + 'OrderProducts/' + params);
         return this.doHTTPPost(baseUrl + 'OrderProducts/' + orders);
     };
 
@@ -40,9 +38,8 @@ angular.module('app.common')
         return this.doHTTPGet(baseUrl + 'UpdateProductDetails/' + params);
     };
 
-    this.createProduct = function (username, password, title, minPrice, maxPrice, requiredOrders) {
-        var params = [username, password, title, minPrice, maxPrice, requiredOrders].join('/');
-        return this.doHTTPGet(baseUrl + 'CreateProduct/' + params);
+    this.createProduct = function (product) {
+        return this.doHTTPPost(baseUrl + 'CreateProduct', product);
     };
 
     this.removeProduct = function (username, password, productId) {
@@ -59,10 +56,13 @@ angular.module('app.common')
             }
         })
         .then(function (data) {
-            return data.data;
+            if (data.data.success === false)
+                return $q.reject(data.data.Message);
+            else
+                return data.data;
         }, function (reason) {
             console.log(reason);
-            return reason;
+            return $q.reject(reason.Message);
         });
     }
 
@@ -78,10 +78,13 @@ angular.module('app.common')
             }
         })
         .then(function (data) {
-            return data.data;
+            if (data.data.success === false)
+                return $q.reject(data.data.Message);
+            else
+                return data.data;
         }, function (reason) {
             console.log(reason);
-            return reason;
+            return $q.reject(reason.Message);
         });
     }
 });

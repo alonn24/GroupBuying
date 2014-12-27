@@ -33,9 +33,6 @@ angular.module('myApp')
             if (data.Succeed) {
                 return data;
             }
-            else {
-                throw data.message;
-            }
         });
     };
 
@@ -68,22 +65,15 @@ angular.module('myApp')
             if (data.Succeed) {
                 return data;
             }
-            else {
-                throw data.message;
-            }
         });
     };
 
     this.createProduct = function (newProduct) {
         var user = userDetails;
-        return serverFacade.createProduct(user.userName, user.password, newProduct.Title,
-            newProduct.MinPrice, newProduct.MaxPrice, newProduct.RequiredOrders)
+        return serverFacade.createProduct(newProduct)
         .then(function (data) {
             if (data.Succeed) {
                 return data;
-            }
-            else {
-                throw data.message;
             }
         });
     };
@@ -94,9 +84,6 @@ angular.module('myApp')
         .then(function (data) {
             if (data.Succeed) {
                 return data;
-            }
-            else {
-                throw data.message;
             }
         });
     };
