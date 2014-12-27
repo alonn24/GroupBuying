@@ -14,10 +14,10 @@ angular.module('myApp')
     };
 
     // Basic checks
-    if (!vm.getUserDetails().authorized)
+    if (!userDetails.authorized)
         vm.errorMessage = "User is not authorized.";
     else {
-        productsFacade.getProducts(vm.getUserDetails().userName).then(
+        productsFacade.getProducts(userDetails.userName).then(
             function (data) {
                 vm.products = data;
             },

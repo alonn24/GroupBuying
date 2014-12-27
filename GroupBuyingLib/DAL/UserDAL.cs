@@ -87,7 +87,7 @@ namespace GroupBuyingLib.DAL
                 user.UserName, user.Password, user.Email, 
                 user.Profile, user.Authorized
             };
-            DataProvider.Instance.executeCommand("INSERT INTO Users VALUES (@p1, @p2, @p3, @p4, @p5)", parameters);
+            DataProvider.Instance.executeCommand("INSERT INTO Users VALUES (@p0, @p1, @p2, @p3, @p4)", parameters);
 
         }
     }

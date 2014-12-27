@@ -41,8 +41,9 @@ namespace GroupBuyingLib.Model.ProductLib
         /// </summary>
         /// <param name="productId"></param>
         /// <param name="price"></param>
-        public Product(int productId, int minPrice, int maxPrice, int requiredOrders, User seller) : this() {
+        public Product(int productId, string title, int minPrice, int maxPrice, int requiredOrders, User seller) : this() {
             this.ProductId = productId;
+            this.Title = title;
             this.MinPrice = minPrice;
             this.MaxPrice = maxPrice;
             this.RequiredOrders = requiredOrders;

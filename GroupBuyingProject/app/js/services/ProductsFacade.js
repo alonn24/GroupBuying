@@ -49,10 +49,6 @@ angular.module('myApp')
                 var date = new Date(parseInt(data.Product.DatePosted.substr(6)));
                 data.Product.DatePosted = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
             }
-            if (data.DateEnd) {
-                var date = new Date(parseInt(data.DateEnd.substr(6)));
-                data.DateEnd = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
-            }
             return data;
         });
     };

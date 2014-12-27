@@ -50,7 +50,7 @@ namespace GroupBuyingLib.DAL
             return table;
         }
 
-        public void executeCommand(String command, Object[] parameters) {
+        public object executeCommand(String command, Object[] parameters) {
             OleDbConnection objConn = new OleDbConnection(sConnectionString);
             try
             {
@@ -61,11 +61,7 @@ namespace GroupBuyingLib.DAL
                 {
                     objCommand.Parameters.Add(new OleDbParameter("@p" + i, parameters[i]));
                 }
-                objCommand.ExecuteScalar();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
+                return objCommand.ExecuteScalar();
             }
             finally
             {

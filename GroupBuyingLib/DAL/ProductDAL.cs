@@ -20,6 +20,7 @@ namespace GroupBuyingLib.DAL
         public static Product FromRow(DataRow row, User seller) {
             Product returnProduct = new Product(
                 (int)row["ProductId"],
+                (string)row["Title"],
                 (int)row["MinPrice"],
                 (int)row["MaxPrice"],
                 (int)row["RequiredOrders"],
@@ -174,7 +175,9 @@ namespace GroupBuyingLib.DAL
                 product.RequiredOrders, product.Image, 
                 product.Seller.UserName, product.DatePosted
             };
-            DataProvider.Instance.executeCommand("INSERT INTO Products VALUES (@p1, @p2, @p3, @p4, @p5)", parameters);
+            DataProvider.Instance.executeCommand("INSERT INTO Products" + 
+                " ([Title], [MaxPrice], [MinPrice], [RequiredOrders], [Image], [Seller], [DatePosted])" + 
+                " VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)", parameters);
         }
     }
 }
