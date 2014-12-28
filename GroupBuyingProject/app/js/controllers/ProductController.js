@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('myApp')
-.controller('productController', function ($location, $route, userDetails, productsFacade) {
+.controller('productController', function (urlDispacher, appMessages, $route, userDetails, productsFacade) {
     var vm = this;
 
     this.update = false;  // Indicated if the user can update product data
@@ -40,69 +40,49 @@ angular.module('myApp')
                     vm.update = true;
                 }
             }
-        },
-        function (reason) {
-            vm.errorMessage = reason;
         });
     }
     // Event - Order Click
     //~~~~~~~~~~~~~~~~~~~~~
     this.orderOnClick = function () {
-        // Clear message;
-        delete vm.errorMessage;
-        delete vm.successMessage;
-
+        appMessages.clear();
         var user = vm.getUserDetails();
         // Basic checks
         if (!user.userName || !user.password || !vm.Product.ProductId)
-            vm.errorMessage = "No user name or password.";
+            appMessages.setErrorMessage("No user name or password.");
         else {
             productsFacade.orderProducts([vm.Product]).then(
                 function (data) {
-                    vm.successMessage = "Order successfully.";
-                },
-                function (reason) {
-                    vm.errorMessage = reason;
+                    appMessages.setMessage("Order successfully.");
                 });
         }
     }
     // Event - Update product data
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     this.updateOnClick = function () {
-        // Clear message;
-        delete vm.errorMessage;
-        delete vm.successMessage;
-
+        appMessages.clear();
         var user = vm.getUserDetails();
         // Basic checks
         if (!user.userName || !user.password)
-            vm.errorMessage = "No user name or password.";
+            appMessages.setErrorMessage("No user name or password.");
         else if (!vm.Product.Title || !vm.Product.MinPrice ||
             !vm.Product.MaxPrice || !vm.Product.RequiredOrders)
-            vm.errorMessage = "Enter product details.";
+            appMessages.setErrorMessage("Enter product details.");
         else {
             // Update product
             productsFacade.updateProductDetails(vm.Product).then(
                 function (data) {
-                    vm.successMessage = "Updated successfully.";
-                },
-                function (reason) {
-                    vm.errorMessage = reason;
+                    appMessages.setMessage("Updated successfully.");
                 });
         }
     }
     // Event - Remove product
     //~~~~~~~~~~~~~~~~~~~~~~~~
     this.removeProduct = function () {
-        // Clear message;
-        delete vm.errorMessage;
-        delete vm.successMessage;
-
+        appMessages.clear();
         productsFacade.removeProduct(vm.Product.ProductId).then(function (data) {
-            $location.path(vm.productsPage);
-        },
-        function (reason) {
-            vm.errorMessage = reason;
+            appMessages.setMessage("Deleted successfully.");
+            urlDispacher.navigateToProduct();
         });
     }
 });

@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('app.common')
-.service('serverFacade', function ($http, $q, userDetails) {
+.service('serverFacade', function ($http, $q, userDetails, appMessages) {
 
     var baseUrl = '/Services/GeneralServices.svc/';
 
@@ -48,6 +48,7 @@ angular.module('app.common')
     };
 
     this.doHTTPGet = function (url) {
+        appMessages.clear();
         return $http({
             url: url,
             method: 'GET',
@@ -56,17 +57,20 @@ angular.module('app.common')
             }
         })
         .then(function (data) {
-            if (data.data.success === false)
+            if (data.data.success === false) {
+                appMessages.setErrorMessage(data.data.Message);
                 return $q.reject(data.data.Message);
+            }
             else
-                return data.data;
+                return data.data.Result;
         }, function (reason) {
             console.log(reason);
-            return $q.reject(reason.Message);
+            return $q.reject();
         });
     }
 
     this.doHTTPPost = function (url, data) {
+        appMessages.clear();
         return $http({
             url: url,
             method: 'POST',
@@ -78,13 +82,15 @@ angular.module('app.common')
             }
         })
         .then(function (data) {
-            if (data.data.success === false)
+            if (data.data.success === false) {
+                appMessages.setErrorMessage(data.data.Message);
                 return $q.reject(data.data.Message);
+            }
             else
                 return data.data.Result;
         }, function (reason) {
             console.log(reason);
-            return $q.reject(reason.Message);
+            return $q.reject();
         });
     }
 });

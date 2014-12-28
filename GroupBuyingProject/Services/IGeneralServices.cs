@@ -25,7 +25,7 @@ namespace GroupBuyingProject.Services
             ResponseFormat=WebMessageFormat.Json,
             BodyStyle=WebMessageBodyStyle.Bare,
             UriTemplate="/GetUserData/{userid}/{password}")]
-        User GetUserData(string userid, string password);
+        ActionResponse<User> GetUserData(string userid, string password);
 
         /// <summary>
         /// RESTful API to register a new user
@@ -48,7 +48,7 @@ namespace GroupBuyingProject.Services
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Bare,
             UriTemplate = "/GetUserOrders/{userid}/{password}")]
-        List<Order> GetUserOrders(string userid, string password);
+        ActionResponse<List<Order>> GetUserOrders(string userid, string password);
         #endregion
 
         #region Product APIs
@@ -60,7 +60,7 @@ namespace GroupBuyingProject.Services
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Bare,
             UriTemplate = "/GetProducts")]
-        List<Product> GetAllProducts();
+        ActionResponse<List<Product>> GetAllProducts();
 
         /// <summary>
         /// RESTful API to retrive seller products
@@ -70,7 +70,7 @@ namespace GroupBuyingProject.Services
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Bare,
             UriTemplate = "/GetProducts/{userid}")]
-        List<Product> GetUserProducts(string userid);
+        ActionResponse<List<Product>> GetUserProducts(string userid);
 
         /// <summary>
         /// RESTful API to order products
@@ -90,7 +90,7 @@ namespace GroupBuyingProject.Services
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Bare,
             UriTemplate = "/GetProductDetails/{productId}")]
-        ProductDetails GetProductDetails(string productId);
+        ActionResponse<ProductDetails> GetProductDetails(string productId);
 
         /// <summary>
         /// RESTful API to update product details

@@ -33,4 +33,14 @@ angular.module('myApp.directives', ['app.common'])
         link: function LinkFn(scope, lElement, attrs) {
         }
     }
-});
+})
+.directive('appMessages', function (appMessages) {
+    return {
+        restrict: 'E',
+        template: '<div class="{{vm.type}}" >{{ vm.message }}</div>',
+        scope: true,
+        link: function (scope) {
+            scope.vm = appMessages;
+        }
+    }
+});;

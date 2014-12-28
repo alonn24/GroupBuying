@@ -17,12 +17,13 @@ namespace GroupBuyingLib.BL
         /// return null if unauthorized
         /// </summary>
         /// <returns>User or null if unauthorized</returns>
-        public User GetUserDetails(string userName, string password)
+        public ActionResponse<User> GetUserDetails(string userName, string password)
         {
             User user = new UserDAL().GetUserDetails(userName, password);
-            if(user != null)
-                user.Authorized = true;
-            return user;
+            if (user == null)
+                return new ActionResponse<User>("User does not exist");
+            else
+                return new ActionResponse<User>(user);
         }
 
         /// <summary>

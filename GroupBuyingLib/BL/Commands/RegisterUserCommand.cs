@@ -50,7 +50,7 @@ namespace GroupBuyingLib.BL.Commands
             {
                 // Try to register user
                 userDal.RegisterUser(m_userToRegister);
-                Result = new ActionResponse<bool>();
+                Result = new ActionResponse<bool>(true);
             }
             catch (Exception)
             {

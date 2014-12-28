@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('myApp')
-.controller('productsController', function ($scope, $location, $filter, userDetails, productsFacade) {
+.controller('productsController', function ($scope, urlDispacher, appMessages, $filter, userDetails, productsFacade) {
     var vm = this;
 
     $scope.allProducts = [];
@@ -9,19 +9,16 @@ angular.module('myApp')
     this.searchQuery = "";
     this.productDetailsPage = 'Product';
 
-    productsFacade.getProducts().then(
-        function (data) {
-            $scope.allProducts = data;
-        }, function (reason) {
-            vm.message = reason;
-        });
+    productsFacade.getProducts().then(function (data) {
+        $scope.allProducts = data;
+    });
 
     this.getUserDetails = function () {
         return userDetails;
     }
 
     this.productOnClick = function (productId) {
-        $location.path(vm.productDetailsPage + '/' + productId);
+        urlDispacher.navigateToProduct(productId);
     }
 
     // Get filter function
@@ -30,24 +27,20 @@ angular.module('myApp')
     };
 
     this.orderOnClick = function () {
-        // Clear message
-        delete vm.errorMessage;
-        delete vm.successMessage;
+        appMessages.clear();
 
         var user = vm.getUserDetails();
         // Basic checks
         if (!user.userName || !user.password)
-            vm.errorMessage = "No user name or password.";
+            appMessages.setErrorMessage("No user name or password.");
         else {
             productsFacade.orderProducts($scope.selectedProducts)
             .then(function (data) {
-                vm.successMessage = "Order successfully.";
+                appMessages.setMessage("Order successfully.");
                 // Clear curt
                 for (var i = $scope.selectedProducts.length - 1; i >= 0; i--) {
                     $scope.allProducts.push($scope.selectedProducts.pop());
                 }
-            }, function (reason) {
-                vm.errorMessage = reason;
             });
         }
     }

@@ -45,7 +45,9 @@
       'js/services/ServerFacade.js',
       'js/services/UserPermissions.js',
       'js/services/OrdersFacade.js',
-      'js/services/ProductsFacade.js'
+      'js/services/ProductsFacade.js',
+      'js/services/common/UrlDispacher.js',
+      'js/services/common/AppMessages.js'
     ], function() {
       // when all is done, execute bootstrap angular application
       angular.bootstrap(document, ['myApp']);
@@ -84,6 +86,7 @@
         </div>
     </div>
     <br /><br />
+    <app-messages></app-messages>
     <div data-ng-view="" class="mainContentGroup contentGroup"></div>
     <footer>
         Footer

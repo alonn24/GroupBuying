@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('myApp')
-.controller('registerController', function ($location, userPermissions) {
+.controller('registerController', function (urlDispacher, appMessages, userPermissions) {
     var vm = this;
 
     this.nextPage = "LogInPage";
@@ -12,13 +12,11 @@ angular.module('myApp')
     
     this.register = function () {
         if (!vm.userName || !vm.password || !vm.email)
-            vm.message = "Please enter user details.";
+            appMessages.setErrorMessage("Please enter user details.");
         else {
             userPermissions.registerUser(vm.userName, vm.password, vm.email)
             .then(function () {
-                $location.path(vm.nextPage);
-            }, function (reason) {
-                vm.message = reason;
+                urlDispacher.navigateToLogIn();
             });
         }
     };

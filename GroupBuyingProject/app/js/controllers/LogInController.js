@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('myApp')
-.controller('logInController', function ($location, userPermissions, ordersFacade, userDetails) {
+.controller('logInController', function (urlDispacher, appMessages, userPermissions, ordersFacade, userDetails) {
     var vm = this;
     this.userName = '';
     this.password = '';
@@ -19,13 +19,11 @@ angular.module('myApp')
     this.logIn = function () {
         // Basic checks
         if (!vm.userName || !vm.password)
-            vm.message = "Please enter user credentials.";
+            appMessages.setErrorMessage('Please enter user credentials.');
         else {
             userPermissions.logIn(vm.userName, vm.password)
             .then(function () {
                 vm.LoadUserOrders();
-            }, function (reason) {
-                vm.message = reason;
             });
         }
     };
@@ -36,7 +34,7 @@ angular.module('myApp')
 
 
     this.orderLinkClick = function (order) {
-        $location.path(vm.productDetailsPage + '/' + order.Product.ProductId);
+        urlDispacher.navigateToProduct(order.Product.ProductId);
     };
 
     this.LoadUserOrders = function () {
@@ -46,8 +44,6 @@ angular.module('myApp')
             ordersFacade.getUserOrders(user.userName, user.password)
             .then(function (orders) {
                 vm.orders = orders;
-            }, function (reason) {
-                vm.message = reason;
             });
         }
     }

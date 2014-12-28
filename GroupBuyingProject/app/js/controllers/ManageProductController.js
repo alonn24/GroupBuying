@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('myApp')
-.controller('manageProductController', function ($location, productsFacade, userDetails) {
+.controller('manageProductController', function (urlDispacher, appMessages, productsFacade, userDetails) {
     var vm = this;
     this.products = [];
     this.searchQuery = "";
@@ -15,40 +15,31 @@ angular.module('myApp')
 
     // Basic checks
     if (!userDetails.authorized)
-        vm.errorMessage = "User is not authorized.";
+        urlDispacher.navigateToLogIn();
     else {
         productsFacade.getProducts(userDetails.userName).then(
             function (data) {
                 vm.products = data;
-            },
-            function (reason) {
-                vm.errorMessage = reason;
             });
     }
 
 
     this.productOnClick = function (productId) {
-        $location.path(vm.productDetailsPage + '/' + productId);
+        urlDispacher.navigateToProduct(productId);
     }
 
 
     this.createOnClick = function () {
-        // Clear message
-        delete vm.errorMessage;
-        delete vm.successMessage;
 
         // Basic checks
         if (!vm.NewProduct.Title || !vm.NewProduct.MinPrice ||
             !vm.NewProduct.MaxPrice || !vm.NewProduct.RequiredOrders)
-            vm.errorMessage = "Enter product details.";
+            appMessages.setErrorMessage("Enter product details.");
         else {
             productsFacade.createProduct(vm.NewProduct).then(
                 function (product) {
                     vm.products.push(product);
-                    vm.successMessage = "Created successfully.";
-                },
-                function (reason) {
-                    vm.errorMessage = reason;
+                    appMessages.setMessage("Created successfully.");
                 });
         }
     }

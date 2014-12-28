@@ -40,7 +40,7 @@ namespace GroupBuyingLib.BL.Commands
             {
                 int productId = productDAL.CreateProduct(m_productToCreate);
                 Product product = productDAL.GetProductById(productId);
-                Result = new ActionResponse<Product>("OK", true, product);
+                Result = new ActionResponse<Product>(product);
             }
             catch (Exception ex)
             {

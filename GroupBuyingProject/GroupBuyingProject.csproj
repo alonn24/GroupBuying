@@ -81,6 +81,8 @@
     <Content Include="app\js\controllers\RegisterController.js" />
     <Content Include="app\js\directives.js" />
     <Content Include="app\js\filters.js" />
+    <Content Include="app\js\services\common\AppMessages.js" />
+    <Content Include="app\js\services\common\UrlDispacher.js" />
     <Content Include="app\js\services\OrdersFacade.js" />
     <Content Include="app\js\services\ProductsFacade.js" />
     <Content Include="app\js\services\ServerFacade.js" />

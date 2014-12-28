@@ -36,7 +36,7 @@ namespace GroupBuyingProject.Services
         /// Retrive authenticated user data, null oterwise
         /// </summary>
         /// <returns></returns>
-        public User GetUserData(string userName, string password)
+        public ActionResponse<User> GetUserData(string userName, string password)
         {
             // Deal with HTML encode/decode parameters
             return new UserFacade().GetUserDetails(userName, password);
@@ -58,11 +58,11 @@ namespace GroupBuyingProject.Services
         /// Check user permissions and get orders by userid
         /// </summary>
         /// <returns></returns>
-        public List<Order> GetUserOrders(string userId, string password)
+        public ActionResponse<List<Order>> GetUserOrders(string userId, string password)
         {
             //bool b = this.isAuthorized();
             List<Order> list = new UserFacade().GetUserOrders(userId, password);
-            return list;
+            return new ActionResponse<List<Order>>(list);
         }
         #endregion
 
@@ -71,10 +71,10 @@ namespace GroupBuyingProject.Services
         /// Get all products
         /// </summary>
         /// <returns></returns>
-        public List<Product> GetAllProducts()
+        public ActionResponse<List<Product>> GetAllProducts()
         {
             List<Product> products = new ProductFacade().GetAllProducts();
-            return products;
+            return new ActionResponse<List<Product>>(products);
         }
 
         /// <summary>
@@ -82,9 +82,10 @@ namespace GroupBuyingProject.Services
         /// </summary>
         /// <param name="userid"></param>
         /// <returns></returns>
-        public List<Product> GetUserProducts(string userid) {
+        public ActionResponse<List<Product>> GetUserProducts(string userid)
+        {
             List<Product> products = new ProductFacade().GetUserProducts(userid);
-            return products;
+            return new ActionResponse<List<Product>>(products);
         }
 
         /// <summary>
@@ -98,11 +99,11 @@ namespace GroupBuyingProject.Services
         {
             if (!isAuthorized())
             {
-                return new ActionResponse<bool>("User is not authorized.", false);
+                return new ActionResponse<bool>("User is not authorized.");
             }
             else
             {
-                return new ActionResponse<bool>("", true);
+                return new ActionResponse<bool>(true);
             }
             
         }
@@ -111,8 +112,10 @@ namespace GroupBuyingProject.Services
         /// Get product details
         /// </summary>
         /// <returns></returns>
-        public ProductDetails GetProductDetails(string productId) {
-            return new ProductFacade().GetProductDetails(productId); ;
+        public ActionResponse<ProductDetails> GetProductDetails(string productId)
+        {
+            ProductDetails productDetails = new ProductFacade().GetProductDetails(productId);
+            return new ActionResponse<ProductDetails>(productDetails);
         }
 
         /// <summary>
@@ -120,7 +123,7 @@ namespace GroupBuyingProject.Services
         /// <returns></returns>
         public ActionResponse<bool> UpdateProductDetails(string userName, string password, string productId, string title,
             string minPrice, string maxPrice, string requiredOrders) {
-                return new ActionResponse<bool>("", true);
+                return new ActionResponse<bool>(true);
         }
 
         /// <summary>
@@ -130,7 +133,7 @@ namespace GroupBuyingProject.Services
         public ActionResponse<Product> CreateProduct(Product product) {
             if (!isAuthorized())
             {
-                return new ActionResponse<Product>("User is not authorized.", false);
+                return new ActionResponse<Product>("User is not authorized.");
             }
             else
             {
@@ -146,7 +149,7 @@ namespace GroupBuyingProject.Services
         /// <param name="productId"></param>
         /// <returns></returns>
         public ActionResponse<bool> RemoveProduct(string userName, string password, string productId) {
-            return new ActionResponse<bool>("", true);
+            return new ActionResponse<bool>(true);
         }
         #endregion
     }
