@@ -121,9 +121,8 @@ namespace GroupBuyingProject.Services
         /// <summary>
         /// Check credentials and update product data
         /// <returns></returns>
-        public ActionResponse<bool> UpdateProductDetails(string userName, string password, string productId, string title,
-            string minPrice, string maxPrice, string requiredOrders) {
-                return new ActionResponse<bool>(true);
+        public ActionResponse<bool> UpdateProductDetails(Product product) {
+            return new ActionResponse<bool>(true);
         }
 
         /// <summary>

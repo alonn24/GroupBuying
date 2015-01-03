@@ -96,12 +96,12 @@ namespace GroupBuyingProject.Services
         /// RESTful API to update product details
         /// </summary>
         [OperationContract]
-        [WebInvoke(Method = "GET",
+        [WebInvoke(Method = "POST",
             ResponseFormat = WebMessageFormat.Json,
+            RequestFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Bare,
-            UriTemplate = "/UpdateProductDetails/{userName}/{password}/{productId}/{title}/{minPrice}/{maxPrice}/{requiredOrders}")]
-        ActionResponse<bool> UpdateProductDetails(string userName, string password, string productId, string title, 
-            string minPrice, string maxPrice, string requiredOrders);
+            UriTemplate = "/UpdateProductDetails")]
+        ActionResponse<bool> UpdateProductDetails(Product product);
 
         /// <summary>
         /// RESTful API to create new product

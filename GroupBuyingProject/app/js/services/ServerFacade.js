@@ -33,9 +33,8 @@ angular.module('app.common')
         return this.doHTTPGet(baseUrl + 'GetProductDetails/' + productId);
     };
 
-    this.updateProductDetails = function (username, password, productId, title, minPrice, maxPrice, requiredOrders) {
-        var params = [username, password, productId, title, minPrice, maxPrice, requiredOrders].join('/');
-        return this.doHTTPGet(baseUrl + 'UpdateProductDetails/' + params);
+    this.updateProductDetails = function (product) {
+        return this.doHTTPPost(baseUrl + 'UpdateProductDetails', product);
     };
 
     this.createProduct = function (product) {
@@ -64,7 +63,8 @@ angular.module('app.common')
             else
                 return data.data.Result;
         }, function (reason) {
-            console.log(reason);
+            console.log(reason, url);
+            appMessages.setErrorMessage('General error. Please check you network.');
             return $q.reject();
         });
     }
@@ -89,7 +89,8 @@ angular.module('app.common')
             else
                 return data.data.Result;
         }, function (reason) {
-            console.log(reason);
+            console.log(reason, url, data);
+            appMessages.setErrorMessage('General error. Please check you network.');
             return $q.reject();
         });
     }

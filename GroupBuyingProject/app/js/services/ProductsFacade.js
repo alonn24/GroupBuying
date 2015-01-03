@@ -54,14 +54,10 @@ angular.module('myApp')
     };
 
     this.updateProductDetails = function (product) {
-        var user = userDetails;
-        return serverFacade.updateProductDetails(user.userName, user.password, product.ProductId, product.Title, 
-            product.MinPrice, product.MaxPrice, product.RequiredOrders)
-        .then(function (data) {
-            if (data.Succeed) {
-                return data;
-            }
-        });
+        var productToSave = angular.copy(product);
+        delete productToSave.DatePosted;
+        delete productToSave.Seller;
+        return serverFacade.updateProductDetails(productToSave);
     };
 
     this.createProduct = function (newProduct) {
