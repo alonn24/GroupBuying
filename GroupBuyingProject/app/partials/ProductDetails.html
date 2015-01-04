@@ -31,7 +31,7 @@
             <br/>
             <span class="label">Date Posted:</span><span class="labelValue">{{ product.Product.DatePosted | date }}</span>
             <br/>
-            <span class="label">Date End:</span><span class="labelValue">{{ product.DateEnd }}</span>
+            <span class="label">Date End:</span><span class="labelValue">{{ product.DateEnd | date }}</span>
         </td>
     </tr><tr data-ng-show="product.getUserDetails().authorized && product.update">
         <td colspan="2">

@@ -77,5 +77,12 @@ namespace GroupBuyingLib.BL
             command.execute();
             return command.Result;
         }
+
+        public ActionResponse<bool> UpdateProduct(Product product)
+        {
+            UpdateProductCommand command = new UpdateProductCommand(product);
+            command.execute();
+            return command.Result;
+        }
     }
 }

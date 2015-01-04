@@ -169,7 +169,7 @@ namespace GroupBuyingLib.DAL
 
         public int CreateProduct(Product product)
         {
-            // Add user to db
+            // Add product to db
             Object[] parameters = new Object[] {
                 product.Title, product.MaxPrice,product.MinPrice,
                 product.RequiredOrders, product.Image, 
@@ -179,6 +179,18 @@ namespace GroupBuyingLib.DAL
                 " ([Title], [MaxPrice], [MinPrice], [RequiredOrders], [Image], [Seller], [DatePosted])" +
                 " VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)", parameters);
             return (int)res;
+        }
+
+        public void UpdateProduct(Product product) {
+            Object[] parameters = new Object[] {
+                product.Title, product.MaxPrice,product.MinPrice,
+                product.RequiredOrders, product.Image, 
+                product.Seller.UserName, product.DatePosted,
+                product.ProductId
+            };
+            var res = DataProvider.Instance.executeCommand("UPDATE Products" +
+                " SET [Title]=@p0, [MaxPrice]=@p1, [MinPrice]=@p2, [RequiredOrders]=@p3, [Image]=@p4, [Seller]=@p5, [DatePosted]=@p6" +
+                " WHERE [ProductId]=@p7", parameters);
         }
     }
 }

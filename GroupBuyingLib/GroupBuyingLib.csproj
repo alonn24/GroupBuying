@@ -44,6 +44,7 @@
     <Compile Include="BL\Commands\CreateProductCommand.cs" />
     <Compile Include="BL\Commands\ICommand.cs" />
     <Compile Include="BL\Commands\RegisterUserCommand.cs" />
+    <Compile Include="BL\Commands\UpdateProductCommand.cs" />
     <Compile Include="BL\ProductFacade.cs" />
     <Compile Include="BL\UserFacade.cs" />
     <Compile Include="DAL\DataProvider.cs" />

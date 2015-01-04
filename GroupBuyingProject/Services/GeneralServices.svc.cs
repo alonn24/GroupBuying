@@ -122,7 +122,14 @@ namespace GroupBuyingProject.Services
         /// Check credentials and update product data
         /// <returns></returns>
         public ActionResponse<bool> UpdateProductDetails(Product product) {
-            return new ActionResponse<bool>(true);
+            if (!isAuthorized())
+            {
+                return new ActionResponse<bool>("User is not authorized.");
+            }
+            else
+            {
+                return new ProductFacade().UpdateProduct(product);
+            }
         }
 
         /// <summary>

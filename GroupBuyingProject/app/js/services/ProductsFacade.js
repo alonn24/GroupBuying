@@ -48,6 +48,9 @@ angular.module('myApp')
             if (data.Product.DatePosted) {
                 data.Product.DatePosted = data.Product.DatePosted.fromMSJSON();
             }
+            if (data.DateEnd) {
+                data.DateEnd = data.DateEnd.fromMSJSON();
+            }
             return data;
         });
     };
