@@ -24,6 +24,8 @@
                 <br/>
                 <span class="label">Required Orders:</span>
                 <input type="number" class="smallInput labelValue" data-ng-model="manageProduct.NewProduct.RequiredOrders" />
+                <br />
+                <span class="label">Date Posted:</span><span class="labelValue">{{ Date.now() | date }}</span>
                 <br/>
                 <input type="button" class="action" data-ng-click="manageProduct.createOnClick()" value="Create">
             </td>

@@ -46,8 +46,7 @@ angular.module('myApp')
                 data.Orders[i].Date = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
             }
             if (data.Product.DatePosted) {
-                var date = new Date(parseInt(data.Product.DatePosted.substr(6)));
-                data.Product.DatePosted = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+                data.Product.DatePosted = data.Product.DatePosted.fromMSJSON();
             }
             return data;
         });
@@ -55,8 +54,7 @@ angular.module('myApp')
 
     this.updateProductDetails = function (product) {
         var productToSave = angular.copy(product);
-        delete productToSave.DatePosted;
-        delete productToSave.Seller;
+        productToSave.DatePosted = product.DatePosted.toMSJSON();
         return serverFacade.updateProductDetails(productToSave);
     };
 

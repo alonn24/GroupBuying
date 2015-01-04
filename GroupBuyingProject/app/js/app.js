@@ -8,7 +8,7 @@ angular.module('myApp', [
   'myApp.filters',
   'myApp.directives'
 ]).
-config(['$routeProvider', function($routeProvider) {
+config(['$routeProvider', function ($routeProvider) {
     // Login page
     $routeProvider.when('/LogInPage', { templateUrl: 'partials/LogInPage.html', controller: 'logInController as logIn' });
     // Registration page
@@ -22,4 +22,17 @@ config(['$routeProvider', function($routeProvider) {
     // Contacts page
     $routeProvider.when('/Contacts', { templateUrl: 'partials/Contacts.html', controller: 'logInController as logIn' });
     //$routeProvider.otherwise({ redirectTo: '/LogInPage' });
+}]).
+run(['$rootScope', function ($rootScope) {
+    $rootScope.Date = Date;
 }]);
+
+Date.prototype.toMSJSON = function () {
+    var dt = new Date(Date.UTC(this.getFullYear(), this.getMonth(), this.getDate(),
+        this.getHours(), this.getMinutes(), this.getSeconds(), this.getMilliseconds()));
+    return '/Date(' + dt.getTime() + ')/';
+};
+
+String.prototype.fromMSJSON = function () {
+    return new Date(parseInt(this.substr(6)));
+}
