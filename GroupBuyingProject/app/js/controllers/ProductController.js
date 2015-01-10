@@ -12,7 +12,6 @@ angular.module('myApp')
     this.DateEnd = "";        // Calculated date
     this.Quantity = 1;        // Default quantity
     this.Shipping = false;    // Default shipping
-    this.productsPage = "Products";
 
     this.getUserDetails = function () {
         return userDetails;
@@ -46,6 +45,7 @@ angular.module('myApp')
     //~~~~~~~~~~~~~~~~~~~~~
     this.orderOnClick = function () {
         appMessages.clear();
+
         var user = vm.getUserDetails();
         // Basic checks
         if (!user.userName || !user.password || !vm.Product.ProductId)
@@ -61,6 +61,7 @@ angular.module('myApp')
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     this.updateOnClick = function () {
         appMessages.clear();
+
         var user = vm.getUserDetails();
         // Basic checks
         if (!user.userName || !user.password)
@@ -81,7 +82,7 @@ angular.module('myApp')
     this.removeProduct = function () {
         appMessages.clear();
         productsFacade.removeProduct(vm.Product.ProductId).then(function (data) {
-            appMessages.setMessage("Deleted successfully.");
+            appMessages.setMessage("Removed successfully.");
             urlDispacher.navigateToProduct();
         });
     }

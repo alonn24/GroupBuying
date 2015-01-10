@@ -6,7 +6,6 @@ angular.module('myApp')
     this.userName = '';
     this.password = '';
     this.orders = '';
-    this.productDetailsPage = 'Product';
 
     this.authorized = function () {
         return userDetails.authorized;
@@ -17,6 +16,7 @@ angular.module('myApp')
     };
 
     this.logIn = function () {
+        appMessages.clear();
         // Basic checks
         if (!vm.userName || !vm.password)
             appMessages.setErrorMessage('Please enter user credentials.');

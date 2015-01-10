@@ -7,7 +7,6 @@ angular.module('myApp')
     $scope.allProducts = [];
     $scope.selectedProducts = [];
     this.searchQuery = "";
-    this.productDetailsPage = 'Product';
 
     productsFacade.getProducts().then(function (data) {
         $scope.allProducts = data;

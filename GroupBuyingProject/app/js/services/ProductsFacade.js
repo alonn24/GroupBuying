@@ -68,7 +68,7 @@ angular.module('myApp')
 
     this.removeProduct = function (productId) {
         var user = userDetails;
-        return serverFacade.removeProduct(user.userName, user.password, productId)
+        return serverFacade.removeProduct(productId)
         .then(function (data) {
             if (data.Succeed) {
                 return data;

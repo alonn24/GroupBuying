@@ -154,8 +154,15 @@ namespace GroupBuyingProject.Services
         /// <param name="password"></param>
         /// <param name="productId"></param>
         /// <returns></returns>
-        public ActionResponse<bool> RemoveProduct(string userName, string password, string productId) {
-            return new ActionResponse<bool>(true);
+        public ActionResponse<bool> RemoveProduct(string productId) {
+            if (!isAuthorized())
+            {
+                return new ActionResponse<bool>("User is not authorized.");
+            }
+            else
+            {
+                return new ProductFacade().RemoveProduct(productId);
+            }
         }
         #endregion
     }

@@ -41,13 +41,11 @@ angular.module('app.common')
         return this.doHTTPPost(baseUrl + 'CreateProduct', product);
     };
 
-    this.removeProduct = function (username, password, productId) {
-        var params = [username, password, productId].join('/');
-        return this.doHTTPGet(baseUrl + 'RemoveProduct/' + params);
+    this.removeProduct = function (productId) {
+        return this.doHTTPPost(baseUrl + 'RemoveProduct/' + productId);
     };
 
     this.doHTTPGet = function (url) {
-        appMessages.clear();
         return $http({
             url: url,
             method: 'GET',
@@ -70,7 +68,6 @@ angular.module('app.common')
     }
 
     this.doHTTPPost = function (url, data) {
-        appMessages.clear();
         return $http({
             url: url,
             method: 'POST',

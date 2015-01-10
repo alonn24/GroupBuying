@@ -4,6 +4,7 @@ angular.module('app.common')
     var _this = this;
 
     this.navigateToLogIn = function () {
+        appMessages.clear();
         $location.path('LogInPage');
     };
 

@@ -118,11 +118,12 @@ namespace GroupBuyingProject.Services
         /// RESTful API to create new product
         /// </summary>
         [OperationContract]
-        [WebInvoke(Method = "GET",
+        [WebInvoke(Method = "POST",
             ResponseFormat = WebMessageFormat.Json,
+            RequestFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Bare,
-            UriTemplate = "/RemoveProduct/{userName}/{password}/{productId}")]
-        ActionResponse<bool> RemoveProduct(string userName, string password, string productId);
+            UriTemplate = "/RemoveProduct/{productId}")]
+        ActionResponse<bool> RemoveProduct(string productId);
         #endregion
     }
 }

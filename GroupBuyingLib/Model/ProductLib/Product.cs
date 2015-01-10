@@ -12,6 +12,8 @@ namespace GroupBuyingLib.Model.ProductLib
         #region Properties
         [DataMember]
         public int ProductId { get; set; }
+        [DataMember(EmitDefaultValue = true)]
+        public bool? isActive { get; set; }
         [DataMember]
         public string Title { get; set; }
         [DataMember]
@@ -41,8 +43,9 @@ namespace GroupBuyingLib.Model.ProductLib
         /// </summary>
         /// <param name="productId"></param>
         /// <param name="price"></param>
-        public Product(int productId, string title, int minPrice, int maxPrice, int requiredOrders, User seller) : this() {
+        public Product(int productId, bool isActive, string title, int minPrice, int maxPrice, int requiredOrders, User seller) : this() {
             this.ProductId = productId;
+            this.isActive = isActive;
             this.Title = title;
             this.MinPrice = minPrice;
             this.MaxPrice = maxPrice;

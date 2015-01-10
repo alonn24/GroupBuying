@@ -84,5 +84,11 @@ namespace GroupBuyingLib.BL
             command.execute();
             return command.Result;
         }
+
+        public ActionResponse<bool> RemoveProduct(string productId) {
+            ProductDetails productDetails = new ProductFacade().GetProductDetails(productId);
+            productDetails.Product.isActive = false;
+            return this.UpdateProduct(productDetails.Product);
+        }
     }
 }

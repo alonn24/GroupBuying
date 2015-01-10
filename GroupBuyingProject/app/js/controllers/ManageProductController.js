@@ -5,7 +5,6 @@ angular.module('myApp')
     var vm = this;
     this.products = [];
     this.searchQuery = "";
-    this.productDetailsPage = 'Product';
     this.NewProduct = {}; // New product input
     this.productImages = ['hundai.jpg', 'ipad.jpg', 'massage.jpg', 'pineapple.jpg', 'watch.jpg', 'wedding.jpg'];
 
@@ -30,6 +29,7 @@ angular.module('myApp')
 
 
     this.createOnClick = function () {
+        appMessages.clear();
 
         // Basic checks
         if (!vm.NewProduct.Title || !vm.NewProduct.MinPrice ||

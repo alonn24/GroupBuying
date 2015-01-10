@@ -13,6 +13,18 @@ namespace GroupBuyingLib.DAL
     class ProductDAL
     {
         /// <summary>
+        /// Get active products
+        /// </summary>
+        /// <returns></returns>
+        private DataTable getActiveProductsTable()
+        {
+            DataTable tblFiltered = DataProvider.Instance.getTable("Products").AsEnumerable()
+            .Where(row => row.Field<Boolean>("isActive") == true)
+            .CopyToDataTable();
+            return tblFiltered;
+        }
+
+        /// <summary>
         /// Convert row to product
         /// </summary>
         /// <param name="row"></param>
@@ -20,6 +32,7 @@ namespace GroupBuyingLib.DAL
         public static Product FromRow(DataRow row, User seller) {
             Product returnProduct = new Product(
                 (int)row["ProductId"],
+                (bool)row["isActive"],
                 (string)row["Title"],
                 (int)row["MinPrice"],
                 (int)row["MaxPrice"],
@@ -39,7 +52,7 @@ namespace GroupBuyingLib.DAL
             List<Product> products = new List<Product>();   // Return value
             
             // Get products table
-            DataTable Products = DataProvider.Instance.getTable("Products");
+            DataTable Products = getActiveProductsTable();
             DataTable Users = DataProvider.Instance.getTable("Users");
 
             // Get products with users
@@ -68,7 +81,7 @@ namespace GroupBuyingLib.DAL
             List<Product> products = new List<Product>();   // Return value
 
             // Get tables
-            DataTable Products = DataProvider.Instance.getTable("Products");
+            DataTable Products = getActiveProductsTable();
             DataTable Users = DataProvider.Instance.getTable("Users");
 
             // Get products with users
@@ -176,21 +189,23 @@ namespace GroupBuyingLib.DAL
                 product.Seller.UserName, product.DatePosted
             };
             var res = DataProvider.Instance.executeCommand("INSERT INTO Products" + 
-                " ([Title], [MaxPrice], [MinPrice], [RequiredOrders], [Image], [Seller], [DatePosted])" +
-                " VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)", parameters);
+                " ([Title], [isActive], [MaxPrice], [MinPrice], [RequiredOrders], [Image], [Seller], [DatePosted])" +
+                " VALUES (@p0, true, @p1, @p2, @p3, @p4, @p5, @p6)", parameters);
             return (int)res;
         }
 
         public void UpdateProduct(Product product) {
             Object[] parameters = new Object[] {
-                product.Title, product.MaxPrice,product.MinPrice,
+                product.Title, product.isActive, 
+                product.MaxPrice, product.MinPrice,
                 product.RequiredOrders, product.Image, 
                 product.Seller.UserName, product.DatePosted,
                 product.ProductId
             };
             var res = DataProvider.Instance.executeCommand("UPDATE Products" +
-                " SET [Title]=@p0, [MaxPrice]=@p1, [MinPrice]=@p2, [RequiredOrders]=@p3, [Image]=@p4, [Seller]=@p5, [DatePosted]=@p6" +
-                " WHERE [ProductId]=@p7", parameters);
+                " SET [Title]=@p0, [isActive]=@p1, [MaxPrice]=@p2, [MinPrice]=@p3, [RequiredOrders]=@p4, " + 
+                "[Image]=@p5, [Seller]=@p6, [DatePosted]=@p7" +
+                " WHERE [ProductId]=@p8", parameters);
         }
     }
 }
