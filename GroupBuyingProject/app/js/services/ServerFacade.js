@@ -79,7 +79,7 @@ angular.module('app.common')
             }
         })
         .then(function (data) {
-            if (Array.isArray(data.data)) {
+            if (Array.isArray(data.data) && data.data.length > 0) {
                 appMessages.setErrorMessage(data.data.reduce(function (prev, response) {
                     return prev + response.Message;
                 }, ''));

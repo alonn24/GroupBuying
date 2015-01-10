@@ -10,7 +10,7 @@ using GroupBuyingLib.Model.ProductLib;
 
 namespace GroupBuyingLib.DAL
 {
-    class OrderDAL
+    public class OrderDAL
     {
         /// <summary>
         /// Convert row to order
@@ -71,6 +71,17 @@ namespace GroupBuyingLib.DAL
             }
 
             return orders;
+        }
+
+        public int orderProducts(OrderRequest order) {
+            // Add product to db
+            Object[] parameters = new Object[] {
+                order.Buyer, order.ProductId, order.Quatity, order.OrderDate
+            };
+            var res = DataProvider.Instance.executeCommand("INSERT INTO Orders" +
+                " ([Buyer], [ProductId], [Quantity], [OrderDate])" +
+                " VALUES (@p0, @p1, @p2, @p3)", parameters);
+            return (int)res;
         }
     }
 }

@@ -27,7 +27,7 @@ namespace GroupBuyingLib.BL.Commands
         {
             m_productToCreate = product;
             m_productToCreate.Seller = new UserDAL().GetUserDetails(seller);
-            m_productToCreate.DatePosted = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day); ;
+            m_productToCreate.DatePosted = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
         }
 
         /// <summary>

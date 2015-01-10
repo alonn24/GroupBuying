@@ -113,7 +113,8 @@ namespace GroupBuyingProject.Services
             }
             else
             {
-                return new OrdersFacade().OrderProducts(orders);
+                string userName = GetUserName();
+                return new OrdersFacade().OrderProducts(userName, orders);
             }
         }
 

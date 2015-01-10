@@ -20,11 +20,6 @@ angular.module('myApp')
                 Quatity: productRequest.Quatity || 1
             };
         });
-        return serverFacade.orderProducts(orderRequests)
-        .then(function (data) {
-            if (data.Succeed) {
-                return data;
-            }
-        });
+        return serverFacade.orderProducts(orderRequests);
     }
 });

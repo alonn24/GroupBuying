@@ -20,10 +20,9 @@ angular.module('myApp')
     // Startup - Get given product url details
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // Check if product exists from url
-    if ($route.current.params.productId) {
+    function load() {
         productsFacade.getProductDetails($route.current.params.productId)
-        .then(
-        function (data) {
+        .then(function (data) {
             vm.Product = data.Product;
             vm.Orders = data.Orders;
             vm.CurrentPrice = data.CurrentPrice;
@@ -41,12 +40,15 @@ angular.module('myApp')
             }
         });
     }
+    load();
+
     // Event - Order Click
     //~~~~~~~~~~~~~~~~~~~~~
     this.orderOnClick = function () {
         appMessages.clear();
         ordersFacade.orderProducts([vm.Product])
-            .then(function (data) {
+            .then(function () {
+                load();
                 appMessages.setMessage("Order successfully.");
             });
     }

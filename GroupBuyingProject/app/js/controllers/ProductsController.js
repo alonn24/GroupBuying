@@ -29,7 +29,7 @@ angular.module('myApp')
         appMessages.clear();
 
         ordersFacade.orderProducts($scope.selectedProducts)
-            .then(function (data) {
+            .then(function () {
                 appMessages.setMessage("Order successfully.");
                 // Clear curt
                 for (var i = $scope.selectedProducts.length - 1; i >= 0; i--) {
