@@ -43,8 +43,10 @@
   <ItemGroup>
     <Compile Include="BL\Commands\CreateProductCommand.cs" />
     <Compile Include="BL\Commands\ICommand.cs" />
+    <Compile Include="BL\Commands\OrderProductCommand.cs" />
     <Compile Include="BL\Commands\RegisterUserCommand.cs" />
     <Compile Include="BL\Commands\UpdateProductCommand.cs" />
+    <Compile Include="BL\OrdersFacade.cs" />
     <Compile Include="BL\ProductFacade.cs" />
     <Compile Include="BL\UserFacade.cs" />
     <Compile Include="DAL\DataProvider.cs" />
@@ -54,6 +56,7 @@
     <Compile Include="Model\ActionResponse.cs" />
     <Compile Include="Model\OrderLib\Order.cs" />
     <Compile Include="Model\OrderLib\OrderDecorator.cs" />
+    <Compile Include="Model\OrderLib\OrderRequest.cs" />
     <Compile Include="Model\OrderLib\ShipOrderDecorator.cs" />
     <Compile Include="Model\ProductLib\Product.cs" />
     <Compile Include="Model\ProductLib\ProductDetails.cs" />

@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('myApp')
-.controller('productController', function (urlDispacher, appMessages, $route, userDetails, productsFacade) {
+.controller('productController', function (urlDispacher, appMessages, $route, userDetails, productsFacade, ordersFacade) {
     var vm = this;
 
     this.update = false;  // Indicated if the user can update product data
@@ -45,37 +45,19 @@ angular.module('myApp')
     //~~~~~~~~~~~~~~~~~~~~~
     this.orderOnClick = function () {
         appMessages.clear();
-
-        var user = vm.getUserDetails();
-        // Basic checks
-        if (!user.userName || !user.password || !vm.Product.ProductId)
-            appMessages.setErrorMessage("No user name or password.");
-        else {
-            productsFacade.orderProducts([vm.Product]).then(
-                function (data) {
-                    appMessages.setMessage("Order successfully.");
-                });
-        }
+        ordersFacade.orderProducts([vm.Product])
+            .then(function (data) {
+                appMessages.setMessage("Order successfully.");
+            });
     }
     // Event - Update product data
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     this.updateOnClick = function () {
         appMessages.clear();
-
-        var user = vm.getUserDetails();
-        // Basic checks
-        if (!user.userName || !user.password)
-            appMessages.setErrorMessage("No user name or password.");
-        else if (!vm.Product.Title || !vm.Product.MinPrice ||
-            !vm.Product.MaxPrice || !vm.Product.RequiredOrders)
-            appMessages.setErrorMessage("Enter product details.");
-        else {
-            // Update product
-            productsFacade.updateProductDetails(vm.Product).then(
-                function (data) {
-                    appMessages.setMessage("Updated successfully.");
-                });
-        }
+        productsFacade.updateProductDetails(vm.Product)
+            .then(function (data) {
+                appMessages.setMessage("Updated successfully.");
+            });
     }
     // Event - Remove product
     //~~~~~~~~~~~~~~~~~~~~~~~~

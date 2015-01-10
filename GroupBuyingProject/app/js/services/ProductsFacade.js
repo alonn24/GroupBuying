@@ -9,33 +9,6 @@ angular.module('myApp')
             return serverFacade.getAllProducts();
     };
 
-    this.orderProducts = function (products) {
-        // Build orders string - id,quantity,shipping...
-        var orders = "";
-        for (var i = 0; i < products.length; i++) {
-            if (i > 0) orders += ",";
-            // Id
-            orders += products[i].ProductId;
-            // Quantity
-            if (products[i].quantity)
-                orders += "," + products[i].quantity;
-            else
-                orders += ",1";
-            // Shipping
-            if (products[i].shipping == true)
-                orders += ",1";
-            else
-                orders += ",0";
-        }
-        var user = userDetails;
-        return serverFacade.orderProducts(/*user.userName, user.password,*/ orders)
-        .then(function (data) {
-            if (data.Succeed) {
-                return data;
-            }
-        });
-    };
-
     this.getProductDetails = function (productId) {
         return serverFacade.getProductDetails(productId)
         .then(function (data) {

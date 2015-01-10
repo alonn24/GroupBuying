@@ -17,6 +17,11 @@ namespace GroupBuyingProject.Services
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class GeneralServices : IGeneralServices
     {
+        #region Private Helpers
+        /// <summary>
+        /// Check if user name and password exists
+        /// </summary>
+        /// <returns></returns>
         private bool isAuthorized() {
             HttpRequest request = HttpContext.Current.Request;
             string userName = HttpContext.Current.Request.Headers["User"];
@@ -25,11 +30,16 @@ namespace GroupBuyingProject.Services
                 password != null && password != "");
         }
 
+        /// <summary>
+        /// Get user name from headers
+        /// </summary>
+        /// <returns></returns>
         private string GetUserName() {
             HttpRequest request = HttpContext.Current.Request;
             string userName = HttpContext.Current.Request.Headers["User"];
             return userName;
         }
+        #endregion
 
         #region User APIs
         /// <summary>
@@ -95,17 +105,16 @@ namespace GroupBuyingProject.Services
         /// <param name="password"></param>
         /// <param name="orders"></param>
         /// <returns></returns>
-        public ActionResponse<bool> OrderProducts(string orders)
+        public ActionResponse<bool>[] OrderProducts(OrderRequest[] orders)
         {
             if (!isAuthorized())
             {
-                return new ActionResponse<bool>("User is not authorized.");
+                return new ActionResponse<bool>[] {new ActionResponse<bool>("User is not authorized.")};
             }
             else
             {
-                return new ActionResponse<bool>(true);
+                return new OrdersFacade().OrderProducts(orders);
             }
-            
         }
 
         /// <summary>

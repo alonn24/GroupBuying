@@ -25,8 +25,8 @@ angular.module('app.common')
         return this.doHTTPGet(baseUrl + 'GetProducts');
     };
 
-    this.orderProducts = function (userName, password, orders) {
-        return this.doHTTPPost(baseUrl + 'OrderProducts/' + orders);
+    this.orderProducts = function (orders) {
+        return this.doHTTPPost(baseUrl + 'OrderProducts', orders);
     };
 
     this.getProductDetails = function (productId) {
@@ -79,9 +79,15 @@ angular.module('app.common')
             }
         })
         .then(function (data) {
-            if (data.data.success === false) {
+            if (Array.isArray(data.data)) {
+                appMessages.setErrorMessage(data.data.reduce(function (prev, response) {
+                    return prev + response.Message;
+                }, ''));
+                return $q.reject();
+            }
+            else if (data.data.success === false) {
                 appMessages.setErrorMessage(data.data.Message);
-                return $q.reject(data.data.Message);
+                return $q.reject();
             }
             else
                 return data.data.Result;

@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('myApp')
-.controller('productsController', function ($scope, urlDispacher, appMessages, $filter, userDetails, productsFacade) {
+.controller('productsController', function ($scope, urlDispacher, appMessages, $filter, userDetails, productsFacade, ordersFacade) {
     var vm = this;
 
     $scope.allProducts = [];
@@ -28,12 +28,7 @@ angular.module('myApp')
     this.orderOnClick = function () {
         appMessages.clear();
 
-        var user = vm.getUserDetails();
-        // Basic checks
-        if (!user.userName || !user.password)
-            appMessages.setErrorMessage("No user name or password.");
-        else {
-            productsFacade.orderProducts($scope.selectedProducts)
+        ordersFacade.orderProducts($scope.selectedProducts)
             .then(function (data) {
                 appMessages.setMessage("Order successfully.");
                 // Clear curt
@@ -41,6 +36,5 @@ angular.module('myApp')
                     $scope.allProducts.push($scope.selectedProducts.pop());
                 }
             });
-        }
     }
 });

@@ -12,4 +12,19 @@ angular.module('myApp')
             return data;
         });
     }
+
+    this.orderProducts = function (ordersRequests) {
+        var orderRequests = ordersRequests.map(function (productRequest) {
+            return {
+                ProductId: productRequest.ProductId,
+                Quatity: productRequest.Quatity || 1
+            };
+        });
+        return serverFacade.orderProducts(orderRequests)
+        .then(function (data) {
+            if (data.Succeed) {
+                return data;
+            }
+        });
+    }
 });

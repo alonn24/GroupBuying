@@ -37,7 +37,7 @@ angular.module('myApp.directives', ['app.common'])
 .directive('appMessages', function (appMessages) {
     return {
         restrict: 'E',
-        template: '<div class="{{vm.type}}" >{{ vm.message }}</div>',
+        template: '<div class="{{vm.type}}" ng-bind="vm.message"></div>',
         scope: true,
         link: function (scope) {
             scope.vm = appMessages;
