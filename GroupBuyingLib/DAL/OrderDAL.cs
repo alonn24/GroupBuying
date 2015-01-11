@@ -76,7 +76,7 @@ namespace GroupBuyingLib.DAL
         public int orderProducts(OrderRequest order) {
             // Add product to db
             Object[] parameters = new Object[] {
-                order.Buyer, order.ProductId, order.Quatity, order.OrderDate
+                order.Buyer, order.ProductId, order.Quantity, order.OrderDate
             };
             var res = DataProvider.Instance.executeCommand("INSERT INTO Orders" +
                 " ([Buyer], [ProductId], [Quantity], [OrderDate])" +

@@ -17,7 +17,7 @@ angular.module('myApp')
         var orderRequests = ordersRequests.map(function (productRequest) {
             return {
                 ProductId: productRequest.ProductId,
-                Quatity: productRequest.Quatity || 1
+                Quantity: productRequest.Quantity || 1
             };
         });
         return serverFacade.orderProducts(orderRequests);

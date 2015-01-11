@@ -29,6 +29,7 @@ namespace GroupBuyingLib.BL.Commands
                 m_userToRegister.Email = email;
             if (profile != null)
                 m_userToRegister.Profile = profile;
+            m_userToRegister.Authorized = true;
         }
 
         /// <summary>

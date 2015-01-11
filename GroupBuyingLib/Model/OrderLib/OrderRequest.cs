@@ -13,7 +13,7 @@ namespace GroupBuyingLib.Model.OrderLib
         [DataMember]
         public string ProductId { get; set; }
         [DataMember]
-        public int Quatity { get; set; }
+        public int Quantity { get; set; }
         [DataMember]
         public string Buyer { get; set; }
         [DataMember]
