@@ -68,14 +68,6 @@ namespace GroupBuyingLib.DAL
             {
                 objConn.Close();
             }
-
-/*
-            OleDbCommand command = new OleDbCommand();
-command.Connection = conn;
-command.CommandText= "INSERT INTO myTable (col1, col2) VALUES (@p_col1, @p_col2)";
-command.Parameters.Add ("@p_col1", OleDbType.String).Value = textBox1.Text;
-
-command.ExecuteNonQUery();*/
         }
     }
 }

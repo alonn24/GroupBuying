@@ -9,8 +9,12 @@ angular.module('app.common')
         return this.doHTTPGet(baseUrl + 'GetUserData/' + userName + '/' + password);
     }
 
-    this.getUserOrders = function (userName, password) {
-        return this.doHTTPGet(baseUrl + 'GetUserOrders/' + userName + '/' + password);
+    this.getUserOrders = function () {
+        return this.doHTTPGet(baseUrl + 'GetUserOrders');
+    }
+
+    this.getMerchantOrders = function () {
+        return this.doHTTPGet(baseUrl + 'GetMerchantOrders');
     }
 
     this.registerUser = function (data) {
@@ -50,7 +54,9 @@ angular.module('app.common')
             url: url,
             method: 'GET',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'User': userDetails.userName,
+                'Password': userDetails.password
             }
         })
         .then(function (data) {

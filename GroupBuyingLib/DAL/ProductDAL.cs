@@ -16,7 +16,7 @@ namespace GroupBuyingLib.DAL
         /// Get active products
         /// </summary>
         /// <returns></returns>
-        private DataTable getActiveProductsTable()
+        public static DataTable getActiveProductsTable()
         {
             DataTable tblFiltered = DataProvider.Instance.getTable("Products").AsEnumerable()
             .Where(row => row.Field<Boolean>("isActive") == true)
@@ -52,7 +52,7 @@ namespace GroupBuyingLib.DAL
             List<Product> products = new List<Product>();   // Return value
             
             // Get products table
-            DataTable Products = getActiveProductsTable();
+            DataTable Products = ProductDAL.getActiveProductsTable();
             DataTable Users = DataProvider.Instance.getTable("Users");
 
             // Get products with users
@@ -81,7 +81,7 @@ namespace GroupBuyingLib.DAL
             List<Product> products = new List<Product>();   // Return value
 
             // Get tables
-            DataTable Products = getActiveProductsTable();
+            DataTable Products = ProductDAL.getActiveProductsTable();
             DataTable Users = DataProvider.Instance.getTable("Users");
 
             // Get products with users

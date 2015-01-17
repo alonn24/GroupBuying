@@ -32,20 +32,14 @@ angular.module('myApp')
         userPermissions.logOut();
     };
 
-
     this.orderLinkClick = function (order) {
         urlDispacher.navigateToProduct(order.Product.ProductId);
     };
 
     this.LoadUserOrders = function () {
-        var user = vm.getUserDetails();
-        // Basic checks
-        if (user.authorized) {
-            ordersFacade.getUserOrders(user.userName, user.password)
-            .then(function (orders) {
-                vm.orders = orders;
-            });
-        }
+        ordersFacade.getUserOrders().then(function (orders) {
+            vm.orders = orders;
+        });
     }
     // Startup code
     //~~~~~~~~~~~~~~

@@ -37,16 +37,14 @@ namespace GroupBuyingLib.BL
             return command.Result;
         }
 
-        public List<Order> GetUserOrders(string userName, string password)
+        public List<Order> GetUserOrders(string userName)
         {
-            // Check permissions
-            List<Order> userOrders = null;
-            if (GetUserDetails(userName, password) != null)
-            {
-                // Get data from DAL
-                return new OrderDAL().GetUserOrders(userName);
-            }
-            return userOrders;
+            return new OrderDAL().GetUserOrders(userName);
+        }
+
+        public List<Order> GetMerchantOrders(string merchant)
+        {
+            return new OrderDAL().GetMerchantOrders(merchant);
         }
     }
 }

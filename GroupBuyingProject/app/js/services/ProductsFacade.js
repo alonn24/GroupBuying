@@ -15,8 +15,7 @@ angular.module('myApp')
             data.TotalQuantity = 0;
             for (var i = 0; i < data.Orders.length; i++) {
                 data.TotalQuantity += (data.Orders[i].Quantity * 1);    // Add total quantity
-                var date = new Date(parseInt(data.Orders[i].Date.substr(6)));
-                data.Orders[i].Date = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+                data.Orders[i].Date = data.Orders[i].Date.fromMSJSON();
             }
             if (data.Product.DatePosted) {
                 data.Product.DatePosted = data.Product.DatePosted.fromMSJSON();

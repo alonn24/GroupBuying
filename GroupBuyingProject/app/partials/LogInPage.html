@@ -44,7 +44,7 @@
                 <div class="card smallCard" ng-repeat="order in logIn.orders" data-ng-dblclick="logIn.orderLinkClick(order)"
                      title="Double click to watch order {{order.OrderId}} details.">
                     <span class="content label" >Product Id: {{order.Product.ProductId}}</span>
-                    <span class="content label">{{order.Date}}</span>
+                    <span class="content label">{{order.Date | date}}</span>
                     <div>
                         <img class="smallProductImage" src="./img/products/{{order.Product.Image}}"><br />
                         <span class="content label">{{order.Quantity}}</span>

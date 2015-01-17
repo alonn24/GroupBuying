@@ -47,8 +47,18 @@ namespace GroupBuyingProject.Services
         [WebInvoke(Method = "GET",
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Bare,
-            UriTemplate = "/GetUserOrders/{userid}/{password}")]
-        ActionResponse<List<Order>> GetUserOrders(string userid, string password);
+            UriTemplate = "/GetUserOrders")]
+        ActionResponse<List<Order>> GetUserOrders();
+
+        /// <summary>
+        /// RESTful API to retrive user orders
+        /// </summary>
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+            ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.Bare,
+            UriTemplate = "/GetMerchantOrders")]
+        ActionResponse<List<Order>> GetMerchantOrders();
         #endregion
 
         #region Product APIs

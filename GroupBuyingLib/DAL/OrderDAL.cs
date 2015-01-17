@@ -32,15 +32,42 @@ namespace GroupBuyingLib.DAL
         }
 
         /// <summary>
-        /// Get user details from DB
+        /// Get buyer orders
         /// </summary>
         /// <returns></returns>
         public List<Order> GetUserOrders(string userName)
         {
+            List<Order> order = getAllOrders();
+            return order.Where(o => o.User.UserName == userName).ToList();
+        }
+
+        /// <summary>
+        /// Get merchant orders
+        /// </summary>
+        /// <param name="merchant"></param>
+        /// <returns></returns>
+        public List<Order> GetMerchantOrders(string merchant) {
+            List<Order> orders = getAllOrders();
+            return orders.Where(o => o.Product.Seller.UserName == merchant).ToList();
+        }
+
+        public int orderProducts(OrderRequest order) {
+            // Add product to db
+            Object[] parameters = new Object[] {
+                order.Buyer, order.ProductId, order.Quantity, order.OrderDate
+            };
+            var res = DataProvider.Instance.executeCommand("INSERT INTO Orders" +
+                " ([Buyer], [ProductId], [Quantity], [OrderDate])" +
+                " VALUES (@p0, @p1, @p2, @p3)", parameters);
+            return (int)res;
+        }
+
+        private List<Order> getAllOrders()
+        {
             List<Order> orders = new List<Order>(); // Return value
 
             // Get tables
-            DataTable Products = DataProvider.Instance.getTable("Products");
+            DataTable Products = ProductDAL.getActiveProductsTable();
             DataTable Users = DataProvider.Instance.getTable("Users");
             DataTable Orders = DataProvider.Instance.getTable("Orders");
 
@@ -49,8 +76,7 @@ namespace GroupBuyingLib.DAL
                         from buyer in Users.AsEnumerable()
                         from product in Products.AsEnumerable()
                         from order in Orders.AsEnumerable()
-                        where order.Field<String>("Buyer") == userName &&
-                        seller.Field<String>("UserName") == product.Field<String>("Seller") &&
+                        where seller.Field<String>("UserName") == product.Field<String>("Seller") &&
                         buyer.Field<String>("UserName") == order.Field<String>("Buyer") &&
                         product.Field<int>("ProductId") == order.Field<int>("ProductId")
                         select new
@@ -69,19 +95,7 @@ namespace GroupBuyingLib.DAL
                 Order order = FromRow(queryObj.Order, buyer, product);
                 orders.Add(order);
             }
-
             return orders;
-        }
-
-        public int orderProducts(OrderRequest order) {
-            // Add product to db
-            Object[] parameters = new Object[] {
-                order.Buyer, order.ProductId, order.Quantity, order.OrderDate
-            };
-            var res = DataProvider.Instance.executeCommand("INSERT INTO Orders" +
-                " ([Buyer], [ProductId], [Quantity], [OrderDate])" +
-                " VALUES (@p0, @p1, @p2, @p3)", parameters);
-            return (int)res;
         }
     }
 }

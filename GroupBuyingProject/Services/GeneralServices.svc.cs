@@ -65,13 +65,31 @@ namespace GroupBuyingProject.Services
 
         #region Order APIs
         /// <summary>
-        /// Check user permissions and get orders by userid
+        /// Get byer orders
         /// </summary>
         /// <returns></returns>
-        public ActionResponse<List<Order>> GetUserOrders(string userId, string password)
+        public ActionResponse<List<Order>> GetUserOrders()
         {
-            //bool b = this.isAuthorized();
-            List<Order> list = new UserFacade().GetUserOrders(userId, password);
+            string userName = this.GetUserName();
+            if (userName == null)
+            {
+                return new ActionResponse<List<Order>>("Could not find user.");
+            }
+            List<Order> list = new UserFacade().GetUserOrders(userName);
+            return new ActionResponse<List<Order>>(list);
+        }
+
+        /// <summary>
+        /// Get merchant orders
+        /// </summary>
+        /// <returns></returns>
+        public ActionResponse<List<Order>> GetMerchantOrders()
+        {
+            string userName = this.GetUserName();
+            if (userName == null) { 
+                return new ActionResponse<List<Order>>("Could not find user.");
+            }
+            List<Order> list = new UserFacade().GetMerchantOrders(userName);
             return new ActionResponse<List<Order>>(list);
         }
         #endregion
