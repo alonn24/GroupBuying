@@ -131,12 +131,28 @@ h1 {
     border-radius: 20px;
     padding: 0px 10px 0px 10px;
 }
+
+table tr th {
+    color: #5d5d5d;
+    padding-right:10px;
+    font-weight: normal;
+    font-family: fantasy;
+}
+
+table tr th {
+    color: #5d5d5d;
+    padding-right:10px;
+    font-weight: normal;
+    font-family: fantasy;
+}
+
 .label {
     color: #5d5d5d;
     padding-right:10px;
     /*font-weight: bold;*/
     font-family: fantasy;
 }
+
 .labelValue {
     color: #000000;
     font-family: monospace;

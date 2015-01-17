@@ -51,29 +51,19 @@
             <span class="labelValue" data-ng-show="product.Orders.length == 0">There are no orders for this product.</span>
             <table data-ng-hide="product.Orders.length == 0">
                 <tr>
+                    <th>User</th>
+                    <th>Date</th>
+                    <th>Quantity</th>
+                </tr><tr data-ng-repeat="order in product.Orders">
+                    <td>{{order.User.UserName}}</td>
+                    <td>{{order.Date | date}}</td>
                     <td>
-                        <span class="label content">User</span>
-                    </td><td>
-                        <span class="label content">Date</span>
-                    </td><td>
-                        <span class="label content">Quantity</span>
-                    </td>
-                </tr><tr ng-repeat="order in product.Orders">
-                    <td>
-                        <span class="labelValue content">{{order.User.UserName}}</span>
-                    </td><td>
-                        <span class="labelValue content">{{order.Date | date}}</span>
-                    </td><td>
-                        <span class="labelValue content">{{order.Quantity}}</span>
+                        <span class="content">{{order.Quantity}}</span>
                     </td>
                 </tr><tr>
-                    <td>
-
-                    </td><td>
-                        <span class="label content">Total</span>
-                    </td><td>
-                        <span class="label content">{{ product.TotalQuantity }}</span>
-                    </td>
+                    <th></th>
+                    <th>Total</th>
+                    <th>{{ product.TotalQuantity }}</th>
                 </tr>
             </table>
         </td>
