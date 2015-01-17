@@ -125,6 +125,11 @@ a[class~="action"]
     min-width: 100px;
     outline:none;
 }
+
+input[type="number"] {
+    text-align:center;
+}
+
 h1 {
     color: #828282;
     font-weight: 300;
@@ -144,6 +149,10 @@ table tr th {
     padding-right:10px;
     font-weight: normal;
     font-family: fantasy;
+}
+
+.action {
+    cursor: pointer;
 }
 
 .label {

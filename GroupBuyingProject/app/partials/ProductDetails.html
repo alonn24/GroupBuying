@@ -9,14 +9,14 @@
             <span class="label">Product Id:</span><span class="labelValue">{{ product.Product.ProductId }}</span>
             <br/>
             <span class="label">Title:</span>
-                <span data-ng-hide="product.update" class="labelValue">{{ product.Product.Title }}</span>
-                <input data-ng-show="product.update" type="text" class="textInput labelValue" data-ng-model="product.Product.Title" data-focus="true"/>
+                <span data-ng-hide="product.canUpdate" class="labelValue">{{ product.Product.Title }}</span>
+                <input data-ng-show="product.canUpdate" type="text" class="textInput labelValue" data-ng-model="product.Product.Title" data-focus="true"/>
             <br/>
             <span class="label">Seller:</span><span class="labelValue">{{ product.Product.Seller.UserName }}</span>
             <br/>
             <span class="label">Price Range:</span>
-                <span data-ng-hide="product.update" class="labelValue">{{ product.Product.MinPrice }}-{{ product.Product.MaxPrice }} NIS</span>
-                <span data-ng-show="product.update">
+                <span data-ng-hide="product.canUpdate" class="labelValue">{{ product.Product.MinPrice }}-{{ product.Product.MaxPrice }} NIS</span>
+                <span data-ng-show="product.canUpdate">
                     <input type="number" class="smallInput labelValue" data-ng-model="product.Product.MinPrice"/>
                     -
                     <input type="number" class="smallInput labelValue" data-ng-model="product.Product.MaxPrice"/>
@@ -26,24 +26,28 @@
             <span class="label">Current Price:</span><span class="labelValue">{{ product.CurrentPrice }} NIS</span>
             <br/>
                 <span class="label">Required Orders:</span>
-                <span data-ng-hide="product.update" class="labelValue">{{ product.Product.RequiredOrders }}</span>
-                <input data-ng-show="product.update" type="number" class="smallInput labelValue" data-ng-model="product.Product.RequiredOrders" />
+                <span data-ng-hide="product.canUpdate" class="labelValue">{{ product.Product.RequiredOrders }}</span>
+                <input data-ng-show="product.canUpdate" type="number" class="smallInput labelValue" data-ng-model="product.Product.RequiredOrders" />
             <br/>
             <span class="label">Date Posted:</span><span class="labelValue">{{ product.Product.DatePosted | date }}</span>
             <br/>
             <span class="label">Date End:</span><span class="labelValue">{{ product.DateEnd | date }}</span>
         </td>
-    </tr><tr data-ng-show="product.getUserDetails().authorized && product.update">
+    </tr><tr data-ng-show="product.canUpdate">
         <td colspan="2">
-            <input type="button" class="action" data-ng-click="product.updateOnClick()" value="Update">
-            <input type="button" class="action" data-ng-click="product.removeProduct()" value="Remove">
+            <input type="button" class="action" data-ng-click="product.canUpdateOnClick()" value="UPDATE">
+            <input type="button" class="action" data-ng-click="product.removeProduct()" value="REMOVE">
         </td>
-    </tr><tr data-ng-show="product.getUserDetails().authorized && !product.seller">
+    </tr><tr data-ng-show="product.canOrder">
         <td colspan="2">
             <span class="label">Quantity:</span><input data-ng-model="product.Product.Quantity" class="smallInput labelValue" type="number">
             <!--<input type="checkbox" data-ng-model="Shipping"><span class="label">Shipping</span>-->
             <br/>
-            <input type="button" class="action" data-ng-click="product.orderOnClick()" value="Order">
+            <input type="button" class="action" data-ng-click="product.orderOnClick()" value="ORDER">
+        </td>
+    </tr><tr data-ng-show="product.canFulfill">
+        <td colspan="2">
+            <input type="button" class="action" data-ng-click="product.fulfillOnCLick()" value="FULFILL" >
         </td>
     </tr><tr>
         <td colspan="2">

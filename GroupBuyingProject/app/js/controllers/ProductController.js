@@ -4,18 +4,15 @@ angular.module('myApp')
 .controller('productController', function (urlDispacher, appMessages, $route, userDetails, productsFacade, ordersFacade) {
     var vm = this;
 
-    this.update = false;  // Indicated if the user can update product data
-    this.seller = false;  // Indicates if the logged on user is the seller
+    this.canOrder = false;
+    this.canUpdate = false;
+    this.canFulfill = false;
     this.Product = {};
     this.Orders = [];
     this.CurrentPrice = 0;    // Calculated price
     this.DateEnd = "";        // Calculated date
     this.Quantity = 1;        // Default quantity
     this.Shipping = false;    // Default shipping
-
-    this.getUserDetails = function () {
-        return userDetails;
-    };
 
     // Startup - Get given product url details
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -30,14 +27,13 @@ angular.module('myApp')
             vm.DateEnd = data.DateEnd;
 
             // Set update indicator
-            vm.seller = false;
-            vm.update = false;
-            if (vm.getUserDetails().userName == vm.Product.Seller.UserName) {
-                vm.seller = true;
-                if (vm.Orders.length == 0) {
-                    vm.update = true;
-                }
-            }
+            vm.canOrder = userDetails.authorized && userDetails.userName !== vm.Product.Seller.UserName;
+            vm.canUpdate = userDetails.authorized &&
+                userDetails.userName === vm.Product.Seller.UserName &&
+                vm.Orders.length === 0;
+            vm.canFulfill = userDetails.authorized &&
+                userDetails.userName === vm.Product.Seller.UserName &&
+                vm.Orders.length > 0;
         });
     }
     load();

@@ -1,5 +1,5 @@
-<h1>New Product</h1>
-<table class="contentGroup mainContentGroup">
+<h1 class="action" data-ng-click="createNew = !createNew">New Product {{createNew? '-':'+'}}</h1>
+<table class="contentGroup mainContentGroup" data-ng-show="createNew">
     <tr>
         <td>
             <img class="productImage" src="./img/products/{{manageProduct.NewProduct.Image}}"/>
@@ -30,8 +30,8 @@
         </td>
     </tr>
 </table>
-<h1>{{manageProduct.getUserDetails().userName}}'s Products</h1>
-<table class="mainContentGroup">
+<h1 class="action" data-ng-click="showProducts = !showProducts">{{manageProduct.getUserDetails().userName}}'s Products {{showProducts? '-':'+'}}</h1>
+<table class="mainContentGroup" data-ng-init="showProducts=true" data-ng-show="showProducts">
     <tr>
         <td>
             <span class="label">Search:</span><input type="text" class="bigInput labelValue" data-ng-model="manageProduct.searchQuery" data-focus="true">

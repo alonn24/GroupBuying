@@ -149,7 +149,7 @@ namespace GroupBuyingLib.DAL
             // Get tables
             DataTable Products = DataProvider.Instance.getTable("Products");
             DataTable Users = DataProvider.Instance.getTable("Users");
-            DataTable Orders = DataProvider.Instance.getTable("Orders");
+            DataTable Orders = OrderDAL.getNotFulfilledOrders();
 
             // Get orders with users
             var query = from seller in Users.AsEnumerable()

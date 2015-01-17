@@ -13,6 +13,18 @@ namespace GroupBuyingLib.DAL
     public class OrderDAL
     {
         /// <summary>
+        /// Get not fulfilled orders
+        /// </summary>
+        /// <returns></returns>
+        public static DataTable getNotFulfilledOrders()
+        {
+            DataTable tblFiltered = DataProvider.Instance.getTable("Orders").AsEnumerable()
+            .Where(row => row.Field<int?>("priceFulfilled") == null)
+            .CopyToDataTable();
+            return tblFiltered;
+        }
+
+        /// <summary>
         /// Convert row to order
         /// </summary>
         /// <param name="row"></param>
@@ -69,7 +81,7 @@ namespace GroupBuyingLib.DAL
             // Get tables
             DataTable Products = ProductDAL.getActiveProductsTable();
             DataTable Users = DataProvider.Instance.getTable("Users");
-            DataTable Orders = DataProvider.Instance.getTable("Orders");
+            DataTable Orders = OrderDAL.getNotFulfilledOrders();
 
             // Get orders with users
             var query = from seller in Users.AsEnumerable()

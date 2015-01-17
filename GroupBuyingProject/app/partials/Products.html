@@ -36,7 +36,7 @@
             </td>
             <td class="contentGroup sideBar" data-ng-show="products.getUserDetails().authorized">
                 <h1>Cart</h1>
-                <input class="action" data-ng-show="selectedProducts.length > 0" type="button" value="Order"
+                <input class="action" data-ng-show="selectedProducts.length > 0" type="button" value="ORDER"
                        data-ng-click="products.orderOnClick()">
                 <div  class="dropArea" data-drop="true" ng-model='selectedProducts'
                     jqyoui-droppable="{multiple:true}" data-jqyoui-options="{revert: 'invalid'}">
@@ -46,8 +46,7 @@
                             ng-model="selectedProducts" jqyoui-draggable="{index: {{$index}},animate:true}">
                         <span class="content label" >Product {{product.ProductId}}</span>
                         <img class="smallProductImage" src="./img/products/{{product.Image}}"><br/>
-                        <input class="smallInput content" type="number" data-ng-model="product.Quantity" />
-                        <!--<input class="" type="checkbox" data-ng-model="product.shipping"><span class="label">Shipping</span>-->
+                        <input placeholder="1" class="smallInput content" type="number" data-ng-model="product.Quantity" />
                     </div>
                 </div>
             </td>
