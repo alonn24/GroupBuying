@@ -126,7 +126,7 @@ namespace GroupBuyingProject.Services
         ActionResponse<Product> CreateProduct(Product product);
 
         /// <summary>
-        /// RESTful API to create new product
+        /// RESTful API to remove a product
         /// </summary>
         [OperationContract]
         [WebInvoke(Method = "POST",
@@ -135,6 +135,17 @@ namespace GroupBuyingProject.Services
             BodyStyle = WebMessageBodyStyle.Bare,
             UriTemplate = "/RemoveProduct/{productId}")]
         ActionResponse<bool> RemoveProduct(string productId);
+
+        /// <summary>
+        /// RESTful API to fullfill products orders
+        /// </summary>
+        [OperationContract]
+        [WebInvoke(Method = "POST",
+            ResponseFormat = WebMessageFormat.Json,
+            RequestFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.Bare,
+            UriTemplate = "/FulfillProductOrders/{productId}")]
+        ActionResponse<bool>[] FulfillProductOrders(string productId, int price);
         #endregion
     }
 }

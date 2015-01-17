@@ -15,11 +15,10 @@ namespace GroupBuyingLib.DAL
         /// <summary>
         /// Get not fulfilled orders
         /// </summary>
-        /// <returns></returns>
         public static DataTable getNotFulfilledOrders()
         {
             DataTable tblFiltered = DataProvider.Instance.getTable("Orders").AsEnumerable()
-            .Where(row => row.Field<int?>("priceFulfilled") == null)
+            .Where(row => row.Field<int?>("priceFulfilled") == null && row.Field<bool>("isActive") == true)
             .CopyToDataTable();
             return tblFiltered;
         }
@@ -27,10 +26,6 @@ namespace GroupBuyingLib.DAL
         /// <summary>
         /// Convert row to order
         /// </summary>
-        /// <param name="row"></param>
-        /// <param name="buyer"></param>
-        /// <param name="product"></param>
-        /// <returns></returns>
         public static Order FromRow(DataRow row, User buyer, Product product)
         {
             Order returnOrder = new Order(
@@ -44,37 +39,60 @@ namespace GroupBuyingLib.DAL
         }
 
         /// <summary>
+        /// Return product orders
+        /// </summary>
+        public List<Order> GetProductOrders(int productId)
+        {
+            return  getOrdersWhere(o => o.Product.ProductId == productId);
+        }
+
+        /// <summary>
         /// Get buyer orders
         /// </summary>
         /// <returns></returns>
         public List<Order> GetUserOrders(string userName)
         {
-            List<Order> order = getAllOrders();
-            return order.Where(o => o.User.UserName == userName).ToList();
+            return getOrdersWhere(o => o.User.UserName == userName);
         }
 
         /// <summary>
         /// Get merchant orders
         /// </summary>
-        /// <param name="merchant"></param>
-        /// <returns></returns>
         public List<Order> GetMerchantOrders(string merchant) {
-            List<Order> orders = getAllOrders();
-            return orders.Where(o => o.Product.Seller.UserName == merchant).ToList();
+            return getOrdersWhere(o => o.Product.Seller.UserName == merchant);
         }
 
-        public int orderProducts(OrderRequest order) {
+        /// <summary>
+        /// Perform order
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns></returns>
+        public int order(OrderRequest order) {
             // Add product to db
             Object[] parameters = new Object[] {
                 order.Buyer, order.ProductId, order.Quantity, order.OrderDate
             };
             var res = DataProvider.Instance.executeCommand("INSERT INTO Orders" +
-                " ([Buyer], [ProductId], [Quantity], [OrderDate])" +
-                " VALUES (@p0, @p1, @p2, @p3)", parameters);
+                " ([Buyer], [ProductId], [Quantity], [OrderDate], [isActive])" +
+                " VALUES (@p0, @p1, @p2, @p3, true)", parameters);
             return (int)res;
         }
 
-        private List<Order> getAllOrders()
+        public void fulfill(Order order, int price) {
+            Object[] parameters = new Object[] {
+                price, order.OrderId
+            };
+            var res = DataProvider.Instance.executeCommand("UPDATE Orders" +
+                " SET [priceFulfilled]=@p0" +
+                " WHERE [OrderId]=@p1", parameters);
+        }
+
+        /// <summary>
+        /// Get orders after applying the filter
+        /// </summary>
+        /// <param name="filter">Filter order by</param>
+        /// <returns></returns>
+        private List<Order> getOrdersWhere(Func<Order, bool> filter)
         {
             List<Order> orders = new List<Order>(); // Return value
 
@@ -107,7 +125,7 @@ namespace GroupBuyingLib.DAL
                 Order order = FromRow(queryObj.Order, buyer, product);
                 orders.Add(order);
             }
-            return orders;
+            return orders.Where(filter).ToList();
         }
     }
 }

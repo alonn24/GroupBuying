@@ -48,7 +48,6 @@ namespace GroupBuyingProject.Services
         /// <returns></returns>
         public ActionResponse<User> GetUserData(string userName, string password)
         {
-            // Deal with HTML encode/decode parameters
             return new UserFacade().GetUserDetails(userName, password);
         }
 
@@ -58,7 +57,6 @@ namespace GroupBuyingProject.Services
         /// <returns></returns>
         public ActionResponse<bool> RegisterUser(User user)
         {
-            // Deal with HTML encode/decode parameters
             return new UserFacade().RegisterUser(user.UserName, user.Password, user.Email, "Default.jpg");
         }
         #endregion
@@ -72,9 +70,8 @@ namespace GroupBuyingProject.Services
         {
             string userName = this.GetUserName();
             if (userName == null)
-            {
                 return new ActionResponse<List<Order>>("Could not find user.");
-            }
+
             List<Order> list = new UserFacade().GetUserOrders(userName);
             return new ActionResponse<List<Order>>(list);
         }
@@ -86,9 +83,9 @@ namespace GroupBuyingProject.Services
         public ActionResponse<List<Order>> GetMerchantOrders()
         {
             string userName = this.GetUserName();
-            if (userName == null) { 
+            if (userName == null)
                 return new ActionResponse<List<Order>>("Could not find user.");
-            }
+            // Get orders
             List<Order> list = new UserFacade().GetMerchantOrders(userName);
             return new ActionResponse<List<Order>>(list);
         }
@@ -126,9 +123,7 @@ namespace GroupBuyingProject.Services
         public ActionResponse<bool>[] OrderProducts(OrderRequest[] orders)
         {
             if (!isAuthorized())
-            {
                 return new ActionResponse<bool>[] {new ActionResponse<bool>("User is not authorized.")};
-            }
             else
             {
                 string userName = GetUserName();
@@ -151,13 +146,9 @@ namespace GroupBuyingProject.Services
         /// <returns></returns>
         public ActionResponse<bool> UpdateProductDetails(Product product) {
             if (!isAuthorized())
-            {
                 return new ActionResponse<bool>("User is not authorized.");
-            }
             else
-            {
                 return new ProductFacade().UpdateProduct(product);
-            }
         }
 
         /// <summary>
@@ -166,13 +157,9 @@ namespace GroupBuyingProject.Services
         /// <returns></returns>
         public ActionResponse<Product> CreateProduct(Product product) {
             if (!isAuthorized())
-            {
                 return new ActionResponse<Product>("User is not authorized.");
-            }
             else
-            {
                 return new ProductFacade().CreateProduct(this.GetUserName(), product);
-            }
         }
 
         /// <summary>
@@ -184,14 +171,24 @@ namespace GroupBuyingProject.Services
         /// <returns></returns>
         public ActionResponse<bool> RemoveProduct(string productId) {
             if (!isAuthorized())
-            {
                 return new ActionResponse<bool>("User is not authorized.");
-            }
             else
-            {
                 return new ProductFacade().RemoveProduct(productId);
-            }
         }
+
+        /// <summary>
+        /// Fulfill products orders
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <param name="price"></param>
+        /// <returns></returns>
+        public ActionResponse<bool>[] FulfillProductOrders(string productId, int price) {
+            if (!isAuthorized())
+                return new ActionResponse<bool>[] { new ActionResponse<bool>("User is not authorized.") };
+            else
+                return new OrdersFacade().FulfillProductOrders(productId, price);
+        }
+
         #endregion
     }
 }

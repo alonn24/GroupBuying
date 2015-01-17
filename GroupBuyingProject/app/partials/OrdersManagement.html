@@ -1,0 +1,33 @@
+﻿<h1>Orders</h1>
+<section>
+    <span class="label">Search:</span>
+    <input type="text" class="bigInput labelValue" data-ng-model="searchQuery" data-focus="true">
+</section>
+
+<table>
+    <tr>
+        <th>
+            Product
+        </th><th>
+            Buyer
+        </th><th>
+            Quantity
+        </th><th>
+            Actions
+        </th>
+    </tr><tr ng-repeat="order in manageOrders.orders | filter:searchQuery">
+        <td class="card smallCard" ng-click="manageOrders.productClick(order.Product.ProductId)">
+            <div class="content">{{order.Product.Title}}</div>
+            <img ng-src="{{'./img/products/' + order.Product.Image}}" 
+                            class="productImage"/>
+        </td><td>
+            <div class="content">{{order.User.UserName}}</div>
+            <img ng-src="{{'./img/' + order.User.Profile}}" 
+                            class="mini_Profile"/><br/>
+        </td><td>
+            <span class="content">{{order.Quantity}}</span>
+        </td><td>
+            <input type="button" class="action" data-ng-click="manageOrders.removeOrder()" value="REMOVE" >
+        </td>
+    </tr>
+</table>

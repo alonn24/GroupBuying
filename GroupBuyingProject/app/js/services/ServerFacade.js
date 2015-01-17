@@ -49,6 +49,9 @@ angular.module('app.common')
         return this.doHTTPPost(baseUrl + 'RemoveProduct/' + productId);
     };
 
+    this.fulfillProductOrders = function (productId, price) {
+        return this.doHTTPPost(baseUrl + 'FulfillProductOrders/' + productId, price);
+    };
     this.doHTTPGet = function (url) {
         return $http({
             url: url,

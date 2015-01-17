@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\css\app.css" />
+    <Content Include="app\css\orders.css" />
     <Content Include="app\img\background.png" />
     <Content Include="app\img\backgrounf.jpg" />
     <Content Include="app\img\Default.jpg" />

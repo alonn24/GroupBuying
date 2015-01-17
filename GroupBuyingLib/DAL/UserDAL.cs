@@ -17,8 +17,6 @@ namespace GroupBuyingLib.DAL
         /// <summary>
         /// Convert row to user object
         /// </summary>
-        /// <param name="row"></param>
-        /// <returns></returns>
         public static User FromRow(DataRow row) {
             User returnUser = null;   // Return value
 
@@ -32,9 +30,9 @@ namespace GroupBuyingLib.DAL
         }
 
         /// <summary>
-        /// Get user details from DB
+        /// Get user details by user name and password
+        /// Used to validate user
         /// </summary>
-        /// <returns></returns>
         public User GetUserDetails(string username, string password)
         {
             User returnUser = null;   // Return value
@@ -57,9 +55,8 @@ namespace GroupBuyingLib.DAL
         }
 
         /// <summary>
-        /// Get user details from DB
+        /// Get user details by user name
         /// </summary>
-        /// <returns></returns>
         public User GetUserDetails(string username)
         {
             User returnUser = null;   // Return value
@@ -80,6 +77,9 @@ namespace GroupBuyingLib.DAL
             return returnUser;
         }
 
+        /// <summary>
+        /// Register a new user
+        /// </summary>
         public void RegisterUser(User user)
         {
             // Add user to db
@@ -87,7 +87,7 @@ namespace GroupBuyingLib.DAL
                 user.UserName, user.Password, user.Email, 
                 user.Profile, user.Authorized
             };
-            var res = DataProvider.Instance.executeCommand("INSERT INTO Users" + 
+            DataProvider.Instance.executeCommand("INSERT INTO Users" + 
                 " VALUES (@p0, @p1, @p2, @p3, @p4)", parameters);
 
         }

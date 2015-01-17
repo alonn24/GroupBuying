@@ -22,7 +22,7 @@ namespace GroupBuyingLib.BL
         }
 
         public List<Product> GetUserProducts(string userid) {
-            return new ProductDAL().GetUserProducts(userid);
+            return new ProductDAL().GetMerchantProducts(userid);
         }
 
         /// <summary>
@@ -34,8 +34,9 @@ namespace GroupBuyingLib.BL
         {
             // Get product from DAL
             ProductDAL productDAL = new ProductDAL();
+            OrderDAL orderDAL = new OrderDAL();
             Product product = productDAL.GetProductById(productId);
-            List<Order> productOrders = productDAL.GetProductOrders(productId);
+            List<Order> productOrders = orderDAL.GetProductOrders(productId);
 
             // Initiate details
             ProductDetails details = new ProductDetails(product);

@@ -1,4 +1,4 @@
-﻿<form data-ng-hide="logIn.getUserDetails().authorized" data-ng-submit="logIn.logIn()">
+﻿<form data-ng-if="!logIn.getUserDetails().authorized" data-ng-submit="logIn.logIn()">
     <table class="contentGroup">
         <tr>
             <td colspan="2">
@@ -27,7 +27,7 @@
          </tr>
     </table>
 </form>
-<div data-ng-show="logIn.getUserDetails().authorized">
+<div data-ng-if="logIn.getUserDetails().authorized">
     <table class="mainContentGroup">
         <tr>
             <td class="contentGroup mainContentGroup">
@@ -35,7 +35,7 @@
                 <span class="label">Email:</span><span class="labelValue"> {{logIn.getUserDetails().email}}</span><br />
                 <span class="label">Role:</span><span class="labelValue"> {{logIn.getUserDetails().role}}</span>
             </td><td rowspan="2">
-                <img src="./img/{{logIn.getUserDetails().profile}}" class="content profile"/>
+                <img ng-src="./img/{{logIn.getUserDetails().profile}}" class="content profile"/>
                 <a class="content action" data-ng-click="logIn.logOut()">[Log Out]</a>
             </td>
         </tr><tr ng-hide="orders.length == 0">
@@ -46,7 +46,7 @@
                     <span class="content label" >Product Id: {{order.Product.ProductId}}</span>
                     <span class="content label">{{order.Date | date}}</span>
                     <div>
-                        <img class="smallProductImage" src="./img/products/{{order.Product.Image}}"><br />
+                        <img class="smallProductImage" ng-src="./img/products/{{order.Product.Image}}"><br />
                         <span class="content label">{{order.Quantity}}</span>
                     </div>
                 </div>

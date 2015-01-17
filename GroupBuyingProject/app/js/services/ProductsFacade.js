@@ -34,17 +34,14 @@ angular.module('myApp')
     };
 
     this.createProduct = function (newProduct) {
-        var user = userDetails;
         return serverFacade.createProduct(newProduct);
     };
 
     this.removeProduct = function (productId) {
-        var user = userDetails;
-        return serverFacade.removeProduct(productId)
-        .then(function (data) {
-            if (data.Succeed) {
-                return data;
-            }
-        });
+        return serverFacade.removeProduct(productId);
+    };
+
+    this.fulfillProductOrders = function (productId, price) {
+        return serverFacade.fulfillProductOrders(productId, price);
     };
 });

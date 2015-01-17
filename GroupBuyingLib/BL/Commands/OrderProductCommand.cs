@@ -54,7 +54,7 @@ namespace GroupBuyingLib.BL.Commands
                 OrderDAL orderDAL = new OrderDAL();
                 try
                 {
-                    orderDAL.orderProducts(m_orderRequest);
+                    orderDAL.order(m_orderRequest);
                     Result = new ActionResponse<bool>(true);
                 }
                 catch (Exception ex)

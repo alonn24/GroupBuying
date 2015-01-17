@@ -78,7 +78,8 @@
             <table>
                 <tr>
                     <td>
-                        <img src="{{'./img/' + miniLogIn.getUserDetails().profile}}" class="mini_Profile"/><br/>
+                        <img ng-src="{{'./img/' + miniLogIn.getUserDetails().profile}}" 
+                            class="mini_Profile"/><br/>
                     </td><td>
                         <span class="label">Welcome {{miniLogIn.getUserDetails().userName}}!</span><br/>
                         <a class="content action" data-ng-click="miniLogIn.logOut()">[Log Out]</a>
@@ -91,7 +92,7 @@
     <app-messages></app-messages>
     <div data-ng-view="" class="mainContentGroup contentGroup"></div>
     <footer>
-        Footer
+        All Rights Reserved
     </footer>
 </body>
 </html>
