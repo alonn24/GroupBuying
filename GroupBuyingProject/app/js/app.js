@@ -19,6 +19,8 @@ config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/Product/:productId', { templateUrl: 'partials/ProductDetails.html', controller: 'productController as product' });
     // Manage all products page
     $routeProvider.when('/ProductsManagement', { templateUrl: 'partials/ProductsManagement.html', controller: 'manageProductController as manageProduct' });
+    // Manage all orders page
+    $routeProvider.when('/OrdersManagement', { templateUrl: 'partials/OrdersManagement.html', controller: 'manageOrdersController as manageOrders' });
     // Contacts page
     $routeProvider.when('/Contacts', { templateUrl: 'partials/Contacts.html', controller: 'logInController as logIn' });
     //$routeProvider.otherwise({ redirectTo: '/LogInPage' });

@@ -42,6 +42,7 @@
       'js/controllers/ProductsController.js',
       'js/controllers/ProductController.js',
       'js/controllers/ManageProductController.js',
+      'js/controllers/ManageOrdersController.js',
       'js/services/ServerFacade.js',
       'js/services/UserPermissions.js',
       'js/services/OrdersFacade.js',
@@ -64,6 +65,7 @@
             <li><a data-link-navigate="LogInPage">Home</a></li>
             <li><a data-link-navigate="Products">Products & Services</a></li>
             <li><a data-link-navigate="ProductsManagement" data-ng-show="logIn.getUserDetails().authorized">Products Management</a></li>
+            <li><a data-link-navigate="OrdersManagement" data-ng-show="logIn.getUserDetails().authorized">Orders Management</a></li>
             <li><a data-link-navigate="Contacts">Contact Us</a></li>
         </ul>
     </header>

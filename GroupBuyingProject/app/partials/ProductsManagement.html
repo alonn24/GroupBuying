@@ -1,62 +1,60 @@
-<div data-ng-show="manageProduct.getUserDetails().authorized">
-    <h1>New Product</h1>
-    <table class="contentGroup mainContentGroup">
-        <tr>
-            <td>
-                <img class="productImage" src="./img/products/{{manageProduct.NewProduct.Image}}"/>
-            </td>
-            <td class="contentGroup mainContentGroup">
-                <span class="label">Image:</span><select class="textInput labelValue" data-ng-model="manageProduct.NewProduct.Image" data-ng-init="manageProduct.NewProduct.Image = manageProduct.productImages[0]"
-                        data-ng-options="image for image in manageProduct.productImages"/>
-                <br/>
-                <span class="label">Title:</span>
-                <input type="text" class="textInput labelValue" data-ng-model="manageProduct.NewProduct.Title" data-focus="true"/>
-                <br/>
-                <span class="label">Seller:</span><span class="labelValue">{{ manageProduct.getUserDetails().userName }}</span>
-                <br/>
-                <span class="label">Price Range:</span>
-                <span>
-                    <input type="number" class="smallInput labelValue" data-ng-model="manageProduct.NewProduct.MinPrice"/>
-                    -
-                    <input type="number" class="smallInput labelValue" data-ng-model="manageProduct.NewProduct.MaxPrice"/>
-                    <span class="labelValue">NIS</span>
-                </span>
-                <br/>
-                <span class="label">Required Orders:</span>
-                <input type="number" class="smallInput labelValue" data-ng-model="manageProduct.NewProduct.RequiredOrders" />
-                <br />
-                <span class="label">Date Posted:</span><span class="labelValue">{{ Date.now() | date }}</span>
-                <br/>
-                <input type="button" class="action" data-ng-click="manageProduct.createOnClick()" value="Create">
-            </td>
-        </tr>
-    </table>
-    <h1>{{manageProduct.getUserDetails().userName}}'s Products</h1>
-    <table class="mainContentGroup">
-        <tr>
-            <td>
-                <span class="label">Search:</span><input type="text" class="bigInput labelValue" data-ng-model="manageProduct.searchQuery" data-focus="true">
-            </td>
-        </tr><tr>
-            <td>
-                <div class="card bigCard" data-ng-repeat="product in manageProduct.products | filter:manageProduct.searchQuery"
-                     title="Double click to watch product {{product.ProductId}} details." data-ng-dblclick="manageProduct.productOnClick(product.ProductId)">
-                    <span class="content label">Product Id: {{product.ProductId}}</span>
-                    <table>
-                        <tr>
-                            <td>
-                                <span class="label">Seller: </span><span class="labelValue cardLabelValue">{{product.Seller.UserName}}</span><br/>
-                                <span class="label">Title: </span><span class="labelValue cardLabelValue">{{product.Title}}</span><br/>
-                                <span class="label">Price Range: </span><span class="labelValue cardLabelValue">{{product.MinPrice}} - {{product.MaxPrice}} NIS</span><br/>
-                            </td>
-                        </tr><tr>
+<h1>New Product</h1>
+<table class="contentGroup mainContentGroup">
+    <tr>
+        <td>
+            <img class="productImage" src="./img/products/{{manageProduct.NewProduct.Image}}"/>
+        </td>
+        <td class="contentGroup mainContentGroup">
+            <span class="label">Image:</span><select class="textInput labelValue" data-ng-model="manageProduct.NewProduct.Image" data-ng-init="manageProduct.NewProduct.Image = manageProduct.productImages[0]"
+                    data-ng-options="image for image in manageProduct.productImages"/>
+            <br/>
+            <span class="label">Title:</span>
+            <input type="text" class="textInput labelValue" data-ng-model="manageProduct.NewProduct.Title" data-focus="true"/>
+            <br/>
+            <span class="label">Seller:</span><span class="labelValue">{{ manageProduct.getUserDetails().userName }}</span>
+            <br/>
+            <span class="label">Price Range:</span>
+            <span>
+                <input type="number" class="smallInput labelValue" data-ng-model="manageProduct.NewProduct.MinPrice"/>
+                -
+                <input type="number" class="smallInput labelValue" data-ng-model="manageProduct.NewProduct.MaxPrice"/>
+                <span class="labelValue">NIS</span>
+            </span>
+            <br/>
+            <span class="label">Required Orders:</span>
+            <input type="number" class="smallInput labelValue" data-ng-model="manageProduct.NewProduct.RequiredOrders" />
+            <br />
+            <span class="label">Date Posted:</span><span class="labelValue">{{ Date.now() | date }}</span>
+            <br/>
+            <input type="button" class="action" data-ng-click="manageProduct.createOnClick()" value="Create">
+        </td>
+    </tr>
+</table>
+<h1>{{manageProduct.getUserDetails().userName}}'s Products</h1>
+<table class="mainContentGroup">
+    <tr>
+        <td>
+            <span class="label">Search:</span><input type="text" class="bigInput labelValue" data-ng-model="manageProduct.searchQuery" data-focus="true">
+        </td>
+    </tr><tr>
+        <td>
+            <div class="card bigCard" data-ng-repeat="product in manageProduct.products | filter:manageProduct.searchQuery"
+                    title="Double click to watch product {{product.ProductId}} details." data-ng-dblclick="manageProduct.productOnClick(product.ProductId)">
+                <span class="content label">Product Id: {{product.ProductId}}</span>
+                <table>
+                    <tr>
                         <td>
-                            <img class="productImage" src="./img/products/{{product.Image}}"/>
+                            <span class="label">Seller: </span><span class="labelValue cardLabelValue">{{product.Seller.UserName}}</span><br/>
+                            <span class="label">Title: </span><span class="labelValue cardLabelValue">{{product.Title}}</span><br/>
+                            <span class="label">Price Range: </span><span class="labelValue cardLabelValue">{{product.MinPrice}} - {{product.MaxPrice}} NIS</span><br/>
                         </td>
-                    </tr>
-                    </table>
-                </div>
-            </td>
-        </tr>
-    </table>
-</div>
+                    </tr><tr>
+                    <td>
+                        <img class="productImage" src="./img/products/{{product.Image}}"/>
+                    </td>
+                </tr>
+                </table>
+            </div>
+        </td>
+    </tr>
+</table>
