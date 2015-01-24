@@ -53,5 +53,15 @@ namespace GroupBuyingLib.BL
                     .ToArray();
             }
         }
+
+        /// <summary>
+        /// Remove an order
+        /// </summary>
+        public ActionResponse<bool>  RemoveOrder(int orderId)
+        {
+            RemoveOrderCommand removeOrderCommand = new RemoveOrderCommand(orderId);
+            removeOrderCommand.execute();
+            return removeOrderCommand.Result;
+        }
     }
 }

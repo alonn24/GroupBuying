@@ -13,6 +13,7 @@
                 <input data-ng-show="product.canUpdate" type="text" class="textInput labelValue" data-ng-model="product.Product.Title" data-focus="true"/>
             <br/>
             <span class="label">Seller:</span><span class="labelValue">{{ product.Product.Seller.UserName }}</span>
+            <a class="labelValue"  ng-href="mailto:{{product.Product.Seller.Email}}">{{product.Product.Seller.Email}}</a>
             <br/>
             <span class="label">Price Range:</span>
                 <span data-ng-hide="product.canUpdate" class="labelValue">{{ product.Product.MinPrice }}-{{ product.Product.MaxPrice }} NIS</span>

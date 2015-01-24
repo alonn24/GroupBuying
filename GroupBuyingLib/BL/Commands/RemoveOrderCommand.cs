@@ -5,13 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using GroupBuyingLib.DAL;
 using GroupBuyingLib.Model;
-using GroupBuyingLib.Model.OrderLib;
 
 namespace GroupBuyingLib.BL.Commands
 {
-    class FulfillOrderCommand : ICommand<ActionResponse<bool>> {
-        private int m_price;
-        private Order m_orderToFulfill;
+    class RemoveOrderCommand : ICommand<ActionResponse<bool>> {
+        private int m_orderToRemove;
 
         /// <summary>
         /// Result
@@ -25,10 +23,9 @@ namespace GroupBuyingLib.BL.Commands
         /// <summary>
         /// Constractor
         /// </summary>
-        public FulfillOrderCommand(Order order, int price)
+        public RemoveOrderCommand(int orderId)
         {
-            m_orderToFulfill = order;
-            m_price = price;
+            m_orderToRemove = orderId;
         }
 
         /// <summary>
@@ -39,12 +36,12 @@ namespace GroupBuyingLib.BL.Commands
             OrderDAL orderDAL = new OrderDAL();
             try
             {
-                orderDAL.fulfill(m_orderToFulfill, m_price);
+                orderDAL.remove(m_orderToRemove);
                 Result = new ActionResponse<bool>(true);
             }
             catch (Exception ex)
             {
-                Result = new ActionResponse<bool>("Failed to fulfill order.");
+                Result = new ActionResponse<bool>("Failed to remove order.");
             }
         }
     }

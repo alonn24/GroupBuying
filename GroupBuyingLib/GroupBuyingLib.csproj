@@ -46,6 +46,7 @@
     <Compile Include="BL\Commands\ICommand.cs" />
     <Compile Include="BL\Commands\OrderProductCommand.cs" />
     <Compile Include="BL\Commands\RegisterUserCommand.cs" />
+    <Compile Include="BL\Commands\RemoveOrderCommand.cs" />
     <Compile Include="BL\Commands\UpdateProductCommand.cs" />
     <Compile Include="BL\OrdersFacade.cs" />
     <Compile Include="BL\ProductFacade.cs" />

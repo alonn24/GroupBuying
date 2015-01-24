@@ -32,22 +32,24 @@
         <tr>
             <td class="contentGroup mainContentGroup">
                 <h1>{{logIn.getUserDetails().userName}}'s details</h1>
-                <span class="label">Email:</span><span class="labelValue"> {{logIn.getUserDetails().email}}</span><br />
-                <span class="label">Role:</span><span class="labelValue"> {{logIn.getUserDetails().role}}</span>
+                <span class="label">Email:</span><span class="labelValue"> {{logIn.getUserDetails().email}}</span>
             </td><td rowspan="2">
                 <img ng-src="./img/{{logIn.getUserDetails().profile}}" class="content profile"/>
                 <a class="content action" data-ng-click="logIn.logOut()">[Log Out]</a>
             </td>
         </tr><tr ng-hide="orders.length == 0">
             <td class="contentGroup">
-                <h1>{{logIn.getUserDetails().userName}}'s orders</h1>
+                <h1>{{logIn.getUserDetails().userName}}'s active orders</h1>
                 <div class="card smallCard" ng-repeat="order in logIn.orders" data-ng-dblclick="logIn.orderLinkClick(order)"
                      title="Double click to watch order {{order.OrderId}} details.">
                     <span class="content label" >Product Id: {{order.Product.ProductId}}</span>
                     <span class="content label">{{order.Date | date}}</span>
-                    <div>
+                    <div class="content">
                         <img class="smallProductImage" ng-src="./img/products/{{order.Product.Image}}"><br />
                         <span class="content label">{{order.Quantity}}</span>
+                    </div>
+                    <div>
+                        <input type="button" class="action" data-ng-click="logIn.removeOrder(order.OrderId)" value="REMOVE" >
                     </div>
                 </div>
             </td>

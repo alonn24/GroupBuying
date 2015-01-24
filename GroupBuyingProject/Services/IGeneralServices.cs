@@ -94,6 +94,17 @@ namespace GroupBuyingProject.Services
         ActionResponse<bool>[] OrderProducts(OrderRequest[] orders);
 
         /// <summary>
+        /// RESTful API to remove order
+        /// </summary>
+        [OperationContract]
+        [WebInvoke(Method = "POST",
+            ResponseFormat = WebMessageFormat.Json,
+            RequestFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.Bare,
+            UriTemplate = "/RemoveOrder")]
+        ActionResponse<bool> RemoveOrder(int orderId);
+
+        /// <summary>
         /// RESTful API to get product details
         /// </summary>
         [OperationContract]

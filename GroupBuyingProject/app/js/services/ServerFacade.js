@@ -32,6 +32,10 @@ angular.module('app.common')
     this.orderProducts = function (orders) {
         return this.doHTTPPost(baseUrl + 'OrderProducts', orders);
     };
+    
+    this.removeOrder = function (orderId) {
+        return this.doHTTPPost(baseUrl + 'RemoveOrder', orderId);
+    };
 
     this.getProductDetails = function (productId) {
         return this.doHTTPGet(baseUrl + 'GetProductDetails/' + productId);

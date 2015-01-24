@@ -40,7 +40,15 @@ angular.module('myApp')
         ordersFacade.getUserOrders().then(function (orders) {
             vm.orders = orders;
         });
-    }
+    };
+
+    this.removeOrder = function (orderId) {
+        ordersFacade.removeOrder(orderId).then(function () {
+            appMessages.setMessage("Remove order successfully.");
+            vm.LoadUserOrders();
+        });
+    };
+
     // Startup code
     //~~~~~~~~~~~~~~
     vm.LoadUserOrders();

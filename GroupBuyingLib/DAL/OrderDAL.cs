@@ -78,6 +78,9 @@ namespace GroupBuyingLib.DAL
             return (int)res;
         }
 
+        /// <summary>
+        /// Fulfill an order
+        /// </summary>
         public void fulfill(Order order, int price) {
             Object[] parameters = new Object[] {
                 price, order.OrderId
@@ -85,6 +88,18 @@ namespace GroupBuyingLib.DAL
             var res = DataProvider.Instance.executeCommand("UPDATE Orders" +
                 " SET [priceFulfilled]=@p0" +
                 " WHERE [OrderId]=@p1", parameters);
+        }
+
+        /// <summary>
+        /// Remove an order
+        /// </summary>
+        public void remove(int orderId) {
+            Object[] parameters = new Object[] {
+                orderId
+            };
+            var res = DataProvider.Instance.executeCommand("UPDATE Orders" +
+                " SET [isActive]=false" +
+                " WHERE [OrderId]=@p0", parameters);
         }
 
         /// <summary>

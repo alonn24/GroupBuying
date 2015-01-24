@@ -132,6 +132,21 @@ namespace GroupBuyingProject.Services
         }
 
         /// <summary>
+        /// Remove order
+        /// </summary>
+        /// <param name="orderId"></param>
+        /// <returns></returns>
+        public ActionResponse<bool> RemoveOrder(int orderId)
+        {
+            if (!isAuthorized())
+                return new ActionResponse<bool>("User is not authorized.");
+            else
+            {
+                return new OrdersFacade().RemoveOrder(orderId);
+            }
+        }
+
+        /// <summary>
         /// Get product details
         /// </summary>
         /// <returns></returns>

@@ -18,5 +18,12 @@ angular.module('myApp')
 
     this.productClick = function (productId) {
         urlDispacher.navigateToProduct(productId);
-    }
+    };
+
+    this.removeOrder = function (orderId) {
+        ordersFacade.removeOrder(orderId).then(function () {
+            appMessages.setMessage("Remove order successfully.");
+            LoadUserOrders();
+        });
+    };
 });
