@@ -28,7 +28,7 @@ namespace GroupBuyingLib.Model.OrderLib
         /// <summary>
         /// Default constructor - must implement for serialization
         /// </summary>
-        public Order() {
+        private Order() {
             Date = DateTime.Now;
         }
 

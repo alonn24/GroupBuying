@@ -34,7 +34,7 @@ namespace GroupBuyingLib.Model.ProductLib
         /// <summary>
         /// Default constructor - must implement for serialization
         /// </summary>
-        public Product() {
+        private Product() {
             this.DatePosted = DateTime.Now;
         }
 

@@ -26,7 +26,7 @@ namespace GroupBuyingLib.Model.ProductLib
         /// <summary>
         /// Constractor
         /// </summary>
-        public ProductDetails() {
+        private ProductDetails() {
             this.DateEnd = DateTime.Now;
         }
         public ProductDetails(Product product) : this() {
