@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+  dslVersion="1.0.0.0"
+  Id="701b7fe3-9c0e-4d65-9d28-0057b7c20029"
+  name="GroupBuyingLib"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="4f92c80f-2e71-438a-9b01-6c9c329111df"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DGroupBuyingLib"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="148bd0b8-5a8a-4aeb-96d9-d03ac031dfb6"
+        LastKnownName="Model"
+        LastKnownLocation="Package1_1228.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="c8c17898-539e-4743-a846-dfe81ace539d"
+        LastKnownName="BL"
+        LastKnownLocation="Package_1230.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="eebeb9f3-c7ef-4367-be2e-4855cbf678cc"
+        LastKnownName="DAL"
+        LastKnownLocation="Package3_1230.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="912b7822-53e9-494b-87eb-0f421d53cfab"
+        name="GeneralServices"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

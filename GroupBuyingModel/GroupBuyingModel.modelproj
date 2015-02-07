@@ -22,60 +22,147 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
-    <Content Include="CreateProduct.usecasediagram">
+    <Content Include="Classes\BL.classdiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="CreateProduct.usecasediagram.layout">
+    <Content Include="Classes\BL.classdiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>CreateProduct.usecasediagram</DependentUpon>
+      <DependentUpon>Classes\BL.classdiagram</DependentUpon>
     </Content>
-    <Content Include="FinishOrder.usecasediagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="FinishOrder.usecasediagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>FinishOrder.usecasediagram</DependentUpon>
-    </Content>
-    <Content Include="LogIn.usecasediagram">
+    <Content Include="Classes\BLCommands.classdiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="LogIn.usecasediagram.layout">
+    <Content Include="Classes\BLCommands.classdiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>LogIn.usecasediagram</DependentUpon>
+      <DependentUpon>Classes\BLCommands.classdiagram</DependentUpon>
     </Content>
-    <Content Include="MakeOrder.usecasediagram">
+    <Content Include="Classes\DAL.classdiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="MakeOrder.usecasediagram.layout">
+    <Content Include="Classes\DAL.classdiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>MakeOrder.usecasediagram</DependentUpon>
+      <DependentUpon>Classes\DAL.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Classes\Model.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Classes\Model.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Classes\Model.classdiagram</DependentUpon>
     </Content>
     <Content Include="ModelDefinition\Package1_1216.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_1228.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_1230.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package2_1216.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package2_1230.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package3_1230.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package6_1230.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package_1216.uml">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="OrderRequest.usecasediagram">
+    <Content Include="ModelDefinition\Package_1228.uml">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="OrderRequest.usecasediagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>OrderRequest.usecasediagram</DependentUpon>
-    </Content>
-    <Content Include="UserProfile.usecasediagram">
+    <Content Include="ModelDefinition\Package_1230.uml">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="UserProfile.usecasediagram.layout">
+    <Content Include="Sequences\CreateProduct.sequencediagram">
       <SubType>Content</SubType>
-      <DependentUpon>UserProfile.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="Sequences\CreateProduct.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Sequences\CreateProduct.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Sequences\FulfillOrders.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Sequences\FulfillOrders.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Sequences\FulfillOrders.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Sequences\LogIn.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Sequences\LogIn.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Sequences\LogIn.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Sequences\OrderProducts.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Sequences\OrderProducts.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Sequences\OrderProducts.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Sequences\Register.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Sequences\Register.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Sequences\Register.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="UserCases\CreateProduct.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserCases\CreateProduct.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UserCases\CreateProduct.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="UserCases\FinishOrder.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserCases\FinishOrder.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UserCases\FinishOrder.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="UserCases\LogIn.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserCases\LogIn.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UserCases\LogIn.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="UserCases\MakeOrder.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserCases\MakeOrder.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UserCases\MakeOrder.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="UserCases\OrderRequest.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserCases\OrderRequest.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UserCases\OrderRequest.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="UserCases\UserProfile.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserCases\UserProfile.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UserCases\UserProfile.usecasediagram</DependentUpon>
     </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\GroupBuyingModel.uml">
       <SubType>Content</SubType>
     </Content>
+    <Folder Include="Classes" />
+    <Folder Include="Sequences" />
+    <Folder Include="UserCases" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/PROGRAM FILES (X86)/MICROSOFT VISUAL STUDIO 11.0/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/ReverseEngineeringLog.xslt"?>
+<Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log" Label="Code Generation/Text Transformation Log">
+  <MessageClass Name="Message" Label="Message" Option="Show informational messages" />
+  <MessageClass Name="Warning" Label="Warning" Option="Show warnings" />
+  <MessageClass Name="Error" Label="Error" Option="Show errors" />
+  <MessageClass Name="Property" Label="Property" Option="Show metadata" />
+  <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
+  <Message Timestamp="2015-02-07T12:31:55" Importance="High" Text="Reverse Engineering Started." />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'a25774df-928f-482e-ae9e-662f24148015' -  (ClassifierTemplateParameter)" />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Boolean' -  (PrimitiveType)" />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'deb9616f-6705-4dce-b85e-1579685a7979' -  (ClassifierTemplateParameter)" />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::GroupBuyingLib' -  (Package)" />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::GroupBuyingLib::BL' -  (Package)" />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Medium" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::GroupBuyingLib::BL::UserFacade' -  (Class)" />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::GroupBuyingLib::BL::UserFacade::GetMerchantOrders' -  (Operation)" />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::GroupBuyingLib::BL::UserFacade::GetMerchantOrders::merchant' -  (Parameter)" />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::GroupBuyingLib::BL::UserFacade::GetUserDetails' -  (Operation)" />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::GroupBuyingLib::BL::UserFacade::GetUserDetails::password' -  (Parameter)" />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::GroupBuyingLib::BL::UserFacade::GetUserDetails::userName' -  (Parameter)" />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::GroupBuyingLib::BL::UserFacade::GetUserOrders' -  (Operation)" />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::GroupBuyingLib::BL::UserFacade::GetUserOrders::userName' -  (Parameter)" />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::GroupBuyingLib::BL::UserFacade::RegisterUser' -  (Operation)" />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::GroupBuyingLib::BL::UserFacade::RegisterUser::email' -  (Parameter)" />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::GroupBuyingLib::BL::UserFacade::RegisterUser::password' -  (Parameter)" />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::GroupBuyingLib::BL::UserFacade::RegisterUser::profile' -  (Parameter)" />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::GroupBuyingLib::BL::UserFacade::RegisterUser::username' -  (Parameter)" />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::GroupBuyingLib::BL::UserFacade::UserFacade' -  (Operation)" />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::GroupBuyingLib::Model' -  (Package)" />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::GroupBuyingLib::Model::ActionResponse' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::GroupBuyingLib::Model::ActionResponse&lt;Boolean‎&gt;' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::GroupBuyingLib::Model::ActionResponse&lt;User‎&gt;' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::GroupBuyingLib::Model::OrderLib' -  (Package)" />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::GroupBuyingLib::Model::OrderLib::Order' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::GroupBuyingLib::Model::User' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::System' -  (Package)" />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::System::Collections' -  (Package)" />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::System::Collections::Generic' -  (Package)" />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::System::Collections::Generic::List' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'GroupBuyingModel::System::Collections::Generic::List&lt;Order‎&gt;' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'String' -  (PrimitiveType)" />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="High" Text="(1) type(s) fully reverse engineered." />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="High" Text="(7) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
+  <Message Timestamp="2015-02-07T12:31:56" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
+</Log>

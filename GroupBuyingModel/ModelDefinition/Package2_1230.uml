@@ -1,0 +1,1709 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+  dslVersion="1.0.0.0"
+  Id="5932cb73-3870-4aa5-97bf-079c9a148a4f"
+  name="ProductLib"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="ca6d059b-6cbc-41be-b5eb-4acaa2370b44"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DGroupBuyingLib.Model.ProductLib"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="56bda43c-4d0f-4a85-859e-5b4991e78dbf"
+        name="Product"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="b32ebe82-0aad-415d-9619-da9b568df8a8"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProduct"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="a8c7f464-fd06-4b1f-983a-d6db2025f880"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="708fe9c5-1d43-47f6-80bd-8310921aacbd">
+                <propertyInstance
+                  Id="67ba2435-033b-4975-b877-b526400b30fc"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="302f9d25-10d0-4afe-8e57-f7d1c46492f2">
+                <propertyInstance
+                  Id="bda55e45-0b97-4c0e-92d4-76126ca17ce0"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ba309062-7f1b-43cc-9b97-58414f10eaa4">
+                <propertyInstance
+                  Id="6853ac12-2645-42e4-86f9-d73c4eb9456b"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9d40aa40-cbbe-4b14-a1ff-90bc4528dc73">
+                <propertyInstance
+                  Id="55938aec-9eee-487f-b793-cfcfcc1ce4ac"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3b790a47-a7e0-4e6f-bb6e-ba7626fec109">
+                <propertyInstance
+                  Id="625f70e9-592f-4ca0-9773-ca687312276f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="d4fd372b-530c-4ad4-bc38-9ba68138cb88"
+            isDerived="false"
+            sourceEndRoleName="Product"
+            targetEndRoleName="Seller"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="8f78a0f7-714f-4af7-8dfe-362f1227e610"
+              LastKnownName="User"
+              LastKnownLocation="Package1_1228.uml" />
+            <description>Property Seller references type User.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="28c1b9b4-3ee2-445f-b092-508bcbb14a4d"
+                  name="Product"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="16c3610d-8e75-40e5-b6cb-52e6fb248fa4"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="536535f7-7b4b-4a64-b125-27f40f5ec63f"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="dcc37531-7b3b-4897-9f4b-008b33f7954e"
+                  name="Seller"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="5c1fe0a8-3433-47e8-8898-967ecf8d22c3"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="00eebfca-21b1-4db0-975a-2745b20c8466"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="eecd2a4f-d5a9-455c-b312-1ae495698be0"
+            name="ProductId"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="31ba6ad4-66ee-440f-ac0e-9ea582db0e2c"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProduct Member%3DProductId"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="548bc88d-ac35-4659-8443-410c929c6121"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8ec50832-9d86-499e-8ec6-0e0bbbcf9dba">
+                    <propertyInstance
+                      Id="6278e8e0-3a0e-4cb9-8fa4-65df78a124de"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="140b16ef-d94e-47db-90fa-e0e319be9a5d">
+                    <propertyInstance
+                      Id="ce2618ec-1bf7-4db6-9215-8db0f939dbf9"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="91ddf435-0140-49db-91d9-553a5aaaf63e">
+                    <propertyInstance
+                      Id="61acb857-f221-48c9-9c2a-6073a6efee84"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="80fc480c-5536-4c44-b672-595b543e797c">
+                    <propertyInstance
+                      Id="a068aca4-ec31-4ea0-88bc-54e2c75468af"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a7df8a9c-e8a5-4586-8a03-71403ebef955">
+                    <propertyInstance
+                      Id="edd9a838-2d3e-4c96-aac5-42b69eeb1185"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="83da087a-97aa-4171-bbaf-95f36668af20">
+                    <propertyInstance
+                      Id="decbf7d6-e6f0-4d9c-8d17-5b44fc724c60"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="12b70b70-1a5f-40c7-9edb-85cf2c2d205c">
+                    <propertyInstance
+                      Id="fadbf7d3-4d81-424f-8b0d-cd8831e5099c"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="GroupBuyingModel.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="cc9b3602-9c87-4a75-a487-cf65339ee7d8"
+            name="isActive"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="2c16d85c-7985-45ba-8804-eec05e779946"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProduct Member%3DisActive"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="4d030e52-3396-41c9-92e8-df75c2c2a8d4"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3388d0da-4188-418a-a859-ac42d79aea63">
+                    <propertyInstance
+                      Id="1b434d28-e945-4f7e-ab13-ed935ae301fa"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d5f4e437-03c7-45bd-8ab0-3a1a27c420e2">
+                    <propertyInstance
+                      Id="52706929-b0af-47db-ac8a-65a7b663d557"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b4cdcc44-f3f7-4feb-af33-595f84d4a12e">
+                    <propertyInstance
+                      Id="82a2acfc-3793-420b-861c-a9cb4cf74ec8"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6cd06cfe-825f-48b7-81eb-03196fee0bcc">
+                    <propertyInstance
+                      Id="919774e3-1373-4bec-bb71-b20ce6b6f9cf"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="06c12b90-3a4f-4a10-a950-6a100accab3a">
+                    <propertyInstance
+                      Id="f4713207-1348-49d4-aa0a-6821905960cc"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="54a139f3-7e98-4e6b-870c-7cebdd9d1f3c">
+                    <propertyInstance
+                      Id="4de78e52-1f8a-4922-832f-7aa10fc12b21"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9b678e03-6f59-4b7e-bdd2-dea354557113">
+                    <propertyInstance
+                      Id="b07cf0bf-b82e-46bb-ad65-4381535cd991"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </property>
+          <property
+            Id="70c3e82b-a9e3-4f00-a1da-16426911c165"
+            name="Title"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="66a42aba-461b-460e-8345-8c6863c4bbfc"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProduct Member%3DTitle"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="29760945-b368-4b15-9a70-6cce4c5a8383"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0de720c0-ed1a-4f5c-85c7-e800b7e24170">
+                    <propertyInstance
+                      Id="d7e1542c-fa1f-4dbe-a79c-acc3a7256fc1"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ec926ad2-0914-4c4d-ac36-9aef6324f749">
+                    <propertyInstance
+                      Id="95c44ec9-2114-4b57-b26c-c15e1b4a0bd9"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="83b9a722-b99d-47a6-a135-10488863dc4a">
+                    <propertyInstance
+                      Id="9f505581-75d8-4af0-ab1f-61a539ab57a1"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="289be1e5-6d1a-4fee-92e5-4af0b8c391a5">
+                    <propertyInstance
+                      Id="b60d1314-f98c-4822-848c-4349eff3d1a6"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2c5605e6-3733-497b-82cd-4077496ff8cd">
+                    <propertyInstance
+                      Id="ccb09698-45d5-40ae-bc0f-39d9c238d7ab"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="66c08d8f-c1ff-407f-805a-9a2000a8c3ea">
+                    <propertyInstance
+                      Id="cf4b3c21-95dc-49f3-b3c6-11f326bfe325"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5563a3ea-f1f6-46b2-81d4-e65849364d8d">
+                    <propertyInstance
+                      Id="6a4bcaf5-9ae7-409e-b712-1d2ba322221a"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="GroupBuyingModel.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ba62e759-748c-4e29-8310-e4bc54da03a2"
+            name="MaxPrice"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="b62699c5-2973-4bd7-9840-2d7d175036d5"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProduct Member%3DMaxPrice"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="35c4db57-332f-4765-8510-62b90072f13c"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="800ad4c8-521e-4d60-b3e4-18d62792ff66">
+                    <propertyInstance
+                      Id="639897a9-74e6-458a-baae-2ba73a50303a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9028e95b-a6b5-49d6-ba45-f20730046f8a">
+                    <propertyInstance
+                      Id="e70fa09a-1a47-4a6a-a326-e9d9263a453d"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fa61cd26-cd21-4527-9be8-3a5e97703339">
+                    <propertyInstance
+                      Id="9b855593-067d-4e55-a3e7-fbe6658f9248"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b253f963-b0dd-4d07-89ed-a1fcb4c1197f">
+                    <propertyInstance
+                      Id="b39f35c7-9360-4559-8a2b-f4c2c2f9e791"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="66b2c0b4-1774-439b-b896-2a3ea4ba2d63">
+                    <propertyInstance
+                      Id="5ffdc135-07f3-48a2-8df1-dce0e87a5102"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cb0717a7-1f5e-427f-9bf7-0eba7322c786">
+                    <propertyInstance
+                      Id="c7b08e47-523b-4d48-9f14-b488425ddb52"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="46ba4e2d-e1c0-43e5-89d2-9d5fa231a05c">
+                    <propertyInstance
+                      Id="888b0c96-8ef3-432e-984c-21e97a8c9b0f"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="GroupBuyingModel.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="83399fb9-d459-4803-9da6-a04779dae6a8"
+            name="MinPrice"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="7a1c08cf-6091-4727-98d6-fca8b4acfe2f"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProduct Member%3DMinPrice"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="424a4c64-d515-4ddb-acc4-f696de69c6c4"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="165c43d3-1218-4f39-a3a4-446636dfe1c0">
+                    <propertyInstance
+                      Id="e008e3bc-818b-4e39-b41f-c5f3b4d9fe44"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="718fb75d-e4a7-4f9c-8a8d-310064e74596">
+                    <propertyInstance
+                      Id="5b9f4aa7-0ea1-4260-a77c-769778c71122"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ed57b885-67d3-4622-bafc-1d1b86447e1e">
+                    <propertyInstance
+                      Id="fe34bcf0-eb9b-4930-9fe3-15e80aa5e986"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b1ab0336-2982-4b70-846e-cf780446cc9d">
+                    <propertyInstance
+                      Id="559ad899-1ae7-4dda-b1c2-cf3ab91e5ce6"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="38403f2b-0706-43e4-a02d-695cfb77466a">
+                    <propertyInstance
+                      Id="37cef69b-9734-43eb-bb29-4c2db9e87158"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bc7c9ee5-a523-45d6-8667-5afad83e1fe2">
+                    <propertyInstance
+                      Id="0e31b853-c9ba-44cb-bebb-4e16fe63d433"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7d996afd-687a-4401-af3a-a999ea82e1cc">
+                    <propertyInstance
+                      Id="7a507366-0b9a-4093-b604-819e4c324d1d"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="GroupBuyingModel.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="2a208345-3d9c-4eb0-bdc1-e94792139454"
+            name="RequiredOrders"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="5b3e63c4-7cf7-41db-bdce-92c780286dc1"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProduct Member%3DRequiredOrders"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="0d40110f-7ac6-472d-9d9c-d9fc0bf4a1c0"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1c550324-ab54-4674-9037-10564162f793">
+                    <propertyInstance
+                      Id="ab85718d-f2a6-44c4-9b62-653a43cfbd47"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9c5284f7-bcac-4740-8698-4b1696d3d96e">
+                    <propertyInstance
+                      Id="dd1a588c-a49c-4e64-8f74-a57a3397e7f7"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5f474f1f-3f95-4c22-94eb-6285891e5353">
+                    <propertyInstance
+                      Id="4afe9933-aaff-4d76-994d-2435a49b8245"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="57c233c2-4a13-41fb-b5ac-7b1317cf2fff">
+                    <propertyInstance
+                      Id="b3f38924-47dc-457a-8aea-c41f51e79462"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b442f670-7c1e-4033-b827-f59945dd43cd">
+                    <propertyInstance
+                      Id="d155b728-98d4-4983-a05e-a8d86f7211ad"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f8483fd4-204a-4e6e-9ea9-be0632659562">
+                    <propertyInstance
+                      Id="964146ac-e471-43a9-9f18-662315f867c7"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2dc2c2a4-393a-4045-bbd3-aaf5390f7081">
+                    <propertyInstance
+                      Id="d9aa9e0e-1a43-4cbc-893e-8420f5719123"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="GroupBuyingModel.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="13114e47-f602-49e7-8c4b-7e32f6c4204e"
+            name="Image"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="d092f065-bcc1-4718-b3da-07afa8ae9442"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProduct Member%3DImage"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="abd0800f-18bc-4145-90ee-5b6b8bed1649"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0b48e488-bdc8-45fc-88fe-bbea7e2f4917">
+                    <propertyInstance
+                      Id="ee338797-d588-4a5b-a276-ddcfb8ebdb60"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d8b1fc59-b8d8-4ee9-9e4f-a105db18dfea">
+                    <propertyInstance
+                      Id="94b0dda8-0f06-41f8-b5d1-1b434343af63"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="891df4a1-d5c5-4771-bdbb-9c1a5c84ffd1">
+                    <propertyInstance
+                      Id="e78617e3-a3e3-4c00-8190-bb5a59046d42"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="56c100df-55d7-4d3a-957a-aa93624a2a4e">
+                    <propertyInstance
+                      Id="abc851b3-ec75-47ef-8e73-f357c1818016"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ebba8b5d-1440-4c2e-8392-76f503507909">
+                    <propertyInstance
+                      Id="fb454033-0e53-4233-80b1-6a5d90abfca2"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="062d8366-b9b1-446d-9891-2b136f5efb20">
+                    <propertyInstance
+                      Id="f34514dd-7fe3-4a47-8971-7f3ef61c9bfd"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="619c1c6b-ed3f-4c1c-9cbb-ef88e5bcb2a4">
+                    <propertyInstance
+                      Id="693b99e1-2069-46a7-b948-c365fe537d0e"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="GroupBuyingModel.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="7332a2fb-f34b-48ff-a9d9-7dd5d29b7eb1"
+            name="Seller"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="a75e79e4-b69a-4784-aa81-e8816be43284"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProduct Member%3DSeller"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="baa4d453-473b-40b6-bd44-cbc52cd91101"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a54ecb8d-7813-4b55-9a4b-cea12217a163">
+                    <propertyInstance
+                      Id="c87f268d-d0ef-40cf-bbc0-4cc6f8bf13ad"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5b28b271-ce37-4945-b69b-154dde16f867">
+                    <propertyInstance
+                      Id="91f25c39-ba56-4264-a501-4c31aac41d04"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a232194b-dfc6-4753-bae5-809ca3a48dcf">
+                    <propertyInstance
+                      Id="da078cbc-a8d5-43b2-a415-56c51320e905"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="53b421b7-6c65-4650-b38b-f7b9d92a753d">
+                    <propertyInstance
+                      Id="59d979b9-dfc3-4cbf-8567-4296d52ca6d2"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="026858aa-c7a5-43a5-819d-d1533e6ad9be">
+                    <propertyInstance
+                      Id="f21b48df-03f6-4997-a581-f3d20e508d52"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="39d48d99-80b8-4337-9732-274f13643fe3">
+                    <propertyInstance
+                      Id="9070b82b-650f-48bd-bf4e-64952e34a74b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="da4b4adf-c761-46bf-a900-987c9fcc1073">
+                    <propertyInstance
+                      Id="5e8e1bea-a4db-4121-823a-3416cd03db61"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="8f78a0f7-714f-4af7-8dfe-362f1227e610"
+                LastKnownName="User"
+                LastKnownLocation="Package1_1228.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="07582524-a8f5-4844-b607-18ff11060e95"
+            name="DatePosted"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="caafeefb-fca5-4a64-a6c5-ee6889ea55f8"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProduct Member%3DDatePosted"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="6cd07ebd-070d-424b-b46d-e2d76ae063cc"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f4be767f-ae8b-4ccd-abfe-180d84fd10d6">
+                    <propertyInstance
+                      Id="397b66f7-9841-4718-8dd4-1dc6e93b5673"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b7489099-ec66-4196-bc1a-6638fe1bea1f">
+                    <propertyInstance
+                      Id="f04adfba-a516-4b36-864f-8fa58517e4d3"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="16dd8566-d263-4004-951d-ea456c78b4d1">
+                    <propertyInstance
+                      Id="6ee3cd4e-3a71-49da-a4a4-b4a7efe49cd9"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1bd9091d-5908-49da-abe5-b8de35efc25d">
+                    <propertyInstance
+                      Id="ed1bd759-e11c-4587-ab25-2a3ad33f3282"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dc1c23c4-b04d-444c-81c4-29c25f29d998">
+                    <propertyInstance
+                      Id="b54dbcff-7753-408c-87b2-c44846154e9e"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0b0a7df7-7239-422f-807c-2b12bafba524">
+                    <propertyInstance
+                      Id="c5a1dd63-aba7-490b-aa77-df3207a56d76"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="31d7dee1-48e0-46d9-8a6e-425997b95273">
+                    <propertyInstance
+                      Id="a5b31745-43c7-477b-a1b0-2366118be679"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="67e36097-ba10-45e3-8140-7983d03f0612"
+            name="Product"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="957a2e69-814b-4b0c-84fd-c87be6cd3fe8"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProduct Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="62b55a9e-51a7-4ec6-b165-1a131202b89d"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1c073999-5afd-439a-a517-0551ec294926">
+                    <propertyInstance
+                      Id="76c47f97-b22b-4f32-97d3-895e1a4c1569"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f198d56f-950a-47ab-928b-8140103efcbf">
+                    <propertyInstance
+                      Id="5564dcac-9183-42dd-8e01-ac94763d900c"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="84011db5-4ad3-47d4-9400-708af418f61a">
+                    <propertyInstance
+                      Id="ada4f88e-e639-4ad1-a550-ad989a2505d9"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a1fa352c-dc3b-4c07-8a8e-db8250b6fd39">
+                    <propertyInstance
+                      Id="7fe46942-73ae-4391-88a6-3bf7ee3d7f0b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e2610fb6-f125-4e3d-bbdb-b7e2a5bea47d">
+                    <propertyInstance
+                      Id="5d9f9ef0-c153-4392-b05b-0b8b3d13a800"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="771db75d-e71f-4f40-9736-67e2454b5117">
+                    <propertyInstance
+                      Id="8380a937-73ae-443a-a813-f6450fc6cfe5"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="bf35d1ba-d696-467a-8fcc-4b12255c5d0c"
+            name="Product"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="95527ac0-f360-41c1-858a-2a06203a94c2"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProduct Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model Type%3DUser)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8a3a047a-718d-48ee-bdc7-97a18e969b52"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8bb72852-4ecc-4c6d-942a-a8a930176158">
+                    <propertyInstance
+                      Id="339d2332-b39c-42c8-aa61-758ea5e2c083"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8b2f0ede-584d-454f-99c3-94f8ac83e80e">
+                    <propertyInstance
+                      Id="d99242a3-33c9-4a98-bc87-8d89f121e3b3"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="66243bc7-44d0-4f7e-b76f-71e05fa8eaf2">
+                    <propertyInstance
+                      Id="7e5186e6-3ff7-4b92-919c-569169289637"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ef263fd4-7976-4e42-9ff0-1155ef76a32d">
+                    <propertyInstance
+                      Id="f2ac94dd-8664-4ef3-beb6-9d786e491d26"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="86ab0b64-8560-4f4c-b72d-fb2da4d84e0b">
+                    <propertyInstance
+                      Id="490630b9-01da-4417-a0c9-8a4552e92a36"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1de99c71-3248-4575-b98b-1b1bc66f7382">
+                    <propertyInstance
+                      Id="e9723d32-b690-4725-89b6-a32e2ed32642"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="460fd963-d199-495d-a4e8-527de7a7cb50"
+                  name="productId"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="299f7f3d-2b93-40ce-974a-28ab2dc1d337"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProduct Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model Type%3DUser)]) ParameterIdentifier%3DproductId"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="GroupBuyingModel.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="78b161f2-39ad-4f74-9553-54a490702cfe"
+                  name="isActive"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="234c9308-2a98-49bd-ab95-17e468873b07"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProduct Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model Type%3DUser)]) ParameterIdentifier%3DisActive"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="GroupBuyingModel.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9065baa1-0e2c-479e-80b2-a0a35109d06d"
+                  name="title"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="93e6eb2a-b641-4d10-85db-fec016fc6752"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProduct Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model Type%3DUser)]) ParameterIdentifier%3Dtitle"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="GroupBuyingModel.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b587b15b-8aca-4117-b59b-f5b8a0548b3f"
+                  name="minPrice"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="92e556ad-e3bb-4ceb-a1a8-d20220dc3580"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProduct Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model Type%3DUser)]) ParameterIdentifier%3DminPrice"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="GroupBuyingModel.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7b3246a9-f1f9-46b3-ba22-8390a62af07f"
+                  name="maxPrice"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="f00ae333-1394-4e80-bd57-82df2beb3729"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProduct Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model Type%3DUser)]) ParameterIdentifier%3DmaxPrice"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="GroupBuyingModel.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="30aa376b-fabd-42ef-abd7-08e9a82654d3"
+                  name="requiredOrders"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="3ba867b0-584d-4566-b8b5-2df8ffd4e13d"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProduct Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model Type%3DUser)]) ParameterIdentifier%3DrequiredOrders"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="GroupBuyingModel.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="98939d3e-8ca0-49b1-94ab-6500e4293fd3"
+                  name="seller"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="83340518-2a0a-42c7-b152-8cc9a80bad2e"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProduct Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model Type%3DUser)]) ParameterIdentifier%3Dseller"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="8f78a0f7-714f-4af7-8dfe-362f1227e610"
+                      LastKnownName="User"
+                      LastKnownLocation="Package1_1228.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5d3248cb-f4e2-4587-b5eb-b0d44bd142b6"
+        name="ProductDetails"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="8a079790-e175-4bd4-8c5e-5a740ede9275"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProductDetails"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="e7b00d8c-5d5b-48f8-a1a8-5e27bd5b56f9"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="06ce1f3c-22b6-4356-8c05-8b74331e25db">
+                <propertyInstance
+                  Id="b07a48f1-ab3c-4fde-b000-4c47508b9d8c"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e85d8b21-bee9-41dd-a89c-88478af23fec">
+                <propertyInstance
+                  Id="dd6c3c2c-7c57-48c1-a776-b8cbfcf145de"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d8743f56-5614-4d82-a858-943dfbe19a29">
+                <propertyInstance
+                  Id="53ebe8ee-7396-43b1-99df-faf656137e9c"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="377efe4c-54e4-4e91-93ce-e232fba34d76">
+                <propertyInstance
+                  Id="d7ced14f-5886-4566-bbf7-b6d96c3e5990"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="80e587a1-b673-4162-9bc7-89e529214d67">
+                <propertyInstance
+                  Id="163b7104-4931-4f98-b976-5c0c64d0b62a"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="039040be-ccec-4ed6-931d-f87d7d3d3890"
+            isDerived="false"
+            sourceEndRoleName="ProductDetails"
+            targetEndRoleName="Product"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="56bda43c-4d0f-4a85-859e-5b4991e78dbf"
+              LastKnownName="Product"
+              LastKnownLocation="Package2_1230.uml" />
+            <description>Property Product references type Product.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="541653fb-07c4-4b0f-9957-8068b61e1b47"
+                  name="ProductDetails"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="dcc0c4a0-574b-4f6b-a7f8-6b8eadac8125"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="cc6fb4df-7d24-4f1b-ad0d-52c9e216ccac"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9b7da9a4-9a2e-459d-a3c9-8132a7a961e3"
+                  name="Product"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="62111231-ad0c-42a8-9305-41357b31344b"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="731ee904-f17c-4b13-b66e-603efe1b7843"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="786e0fd2-0ff5-4d94-a5a7-acc9a32e192f"
+            name="Product"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="da34af73-de55-4926-b25a-0f95d4a13119"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProductDetails Member%3DProduct"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="81270389-1bd7-4d4c-beb0-aca2f08fc017"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="30ad384c-3f52-4624-aa94-0abf1f67b55f">
+                    <propertyInstance
+                      Id="8d5a0144-6738-4ade-9c51-95a579fcb36b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="764ac65c-cf1c-4f65-a01c-c86149afbc02">
+                    <propertyInstance
+                      Id="9614e4d2-34d3-4d78-b200-52850fe06c12"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7146b270-5232-49d5-85a8-fc111d1ab07f">
+                    <propertyInstance
+                      Id="73a788f5-d9c1-4543-b8a1-c2a2cd2adacb"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="715a66c2-4470-44ed-ba7b-6e26cb5ce3bb">
+                    <propertyInstance
+                      Id="c28191ce-2a62-4cc5-b427-03018f409e6f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="49c82fbb-e825-4876-b99f-6a98031f978c">
+                    <propertyInstance
+                      Id="16db9af9-15db-4017-a6d3-e35046e2c8f1"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d2a60e3f-9b5b-4257-a281-8588993acc64">
+                    <propertyInstance
+                      Id="8499918a-f82d-43b1-87c7-ba94da8d1936"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5b3d69c3-4e2d-473c-928f-c0dbee2a69fd">
+                    <propertyInstance
+                      Id="f9a6e9d9-b679-494e-81c5-a7194aeb88a4"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="56bda43c-4d0f-4a85-859e-5b4991e78dbf"
+                LastKnownName="Product"
+                LastKnownLocation="Package2_1230.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="9a2b8fad-258d-4bed-8d5a-72a40614ed09"
+            name="Orders"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="eeb42d6c-9f0d-47f5-aa4f-067e233e1eed"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProductDetails Member%3DOrders"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="90c63bdf-f1d8-4034-aa2e-14cfe9c628c0"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3af58ae1-7155-497a-8f9d-b86423b9b3ce">
+                    <propertyInstance
+                      Id="0cba8d6e-61cb-4977-adcd-62874c374eb8"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8ce394c1-be3c-4967-b3ae-37b3976b5366">
+                    <propertyInstance
+                      Id="7d451190-5d50-4440-91d8-6c7d08cadb08"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="42f529cb-e9ed-40e2-9b0a-8143027c47af">
+                    <propertyInstance
+                      Id="8a991ab9-ccc1-4d41-ab68-6a7b5fa4399a"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c1fb976e-27c8-4662-89b5-053ec209aa62">
+                    <propertyInstance
+                      Id="480042b8-e24b-414a-8d14-32ef00dd1c2c"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="af9f9726-2187-446d-88f8-a8094c9bc81d">
+                    <propertyInstance
+                      Id="a84bf050-80ae-47b7-94e2-370e0478d683"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6af753d9-646a-4ae8-89c2-94c5238c4164">
+                    <propertyInstance
+                      Id="b98b5c72-2b26-4b3b-922a-05f0b3971bc8"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e56aa167-0e68-46d3-96be-def9dc719196">
+                    <propertyInstance
+                      Id="ce9625fb-572d-4c1d-8211-30340c22d938"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </property>
+          <property
+            Id="a252acbc-d976-431e-99dc-54390b59e128"
+            name="CurrentPrice"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="12537415-da0b-41fd-b507-6b71c736f97f"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProductDetails Member%3DCurrentPrice"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="09d0b31d-36e3-4fea-9527-b53c829999a4"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="26a94698-8e8c-47c6-ac5f-09210c5bd112">
+                    <propertyInstance
+                      Id="9ea6fc22-fe35-4f2e-b36b-5b2f795300c1"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="791c063c-573a-4657-96f1-800922549d16">
+                    <propertyInstance
+                      Id="a711bb34-4a58-4161-a88c-0f262b437fa1"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c7c63c18-e160-4106-b41c-a11b7f22148f">
+                    <propertyInstance
+                      Id="71ccb86c-d9b9-4fbe-a128-f5670f026ebc"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0381b967-6337-418d-a81d-468d18ffcc4e">
+                    <propertyInstance
+                      Id="b7fdb7ab-070c-41a8-98bc-30da13cab39f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0509d190-1880-47ab-aae0-0ff5bbfee70f">
+                    <propertyInstance
+                      Id="90f35512-0287-47c7-b5e8-0926dd037cc3"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="94ad55fd-dd46-46e6-9b02-1d736cbba9fc">
+                    <propertyInstance
+                      Id="3a0ae0b6-67a7-4970-a935-a1208762e0af"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a6a13e60-6741-4abc-b558-6dd4772fa91f">
+                    <propertyInstance
+                      Id="78025cfe-f591-4e9a-9831-0e159b4717e7"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="GroupBuyingModel.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="b7c9e158-944e-4115-9c53-b48f2128852d"
+            name="DateEnd"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="93bf430e-46c3-466b-a302-cd0f974126a8"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProductDetails Member%3DDateEnd"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="233478ee-8cf0-4055-b673-97cf8228e642"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="61befe1c-b9b0-4550-abdf-08f769ba3cdf">
+                    <propertyInstance
+                      Id="880a6e02-9392-41fe-a143-7f2125050653"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="eb67f94d-0619-4834-b6b3-db2b891f5247">
+                    <propertyInstance
+                      Id="d6d03cf3-b868-4f68-9eb8-0eda864931d2"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="20bb6403-0f71-497a-8804-e89fb310163b">
+                    <propertyInstance
+                      Id="e0b6ee8d-7a22-4004-89c0-cb2ffce1f5ee"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3e007774-c780-4d8c-954e-a950eaf00fd5">
+                    <propertyInstance
+                      Id="92e683d8-0229-4253-a2b6-095fcafc3203"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="125f9b90-e9f0-4f29-9243-2729f3888926">
+                    <propertyInstance
+                      Id="a8d03c09-2ebe-4167-b95a-049a2a3b6013"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="52026b7b-d43a-468d-b3d1-2965f138dd6b">
+                    <propertyInstance
+                      Id="13442d6e-0789-4afd-b959-b5bdd0d654d7"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7c0de494-c278-49c0-bec4-6257b842f9d0">
+                    <propertyInstance
+                      Id="dad0d4b6-bc73-4ba1-a8de-1745b8312a1a"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="028d67b3-22ad-494e-8426-46c3853f9f44"
+            name="ProductDetails"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="6bd81a68-0916-4f60-9aa0-a44e8a0ec48b"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProductDetails Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="c36bd7a1-9834-4216-9b09-89d7141069db"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6fd8b82a-8cba-4ced-8820-6428fa2c741b">
+                    <propertyInstance
+                      Id="62770e78-7fa7-4561-a502-668a71980574"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="515a3be7-405a-4e4e-844d-67d6103e3ee2">
+                    <propertyInstance
+                      Id="521fcea8-2f08-473b-9432-1ceb673aa152"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="df9be65a-c625-4a61-b064-ff676f8d4d31">
+                    <propertyInstance
+                      Id="ba5d7a81-e0e0-4579-bfc6-f297002e4ce7"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="94e92655-14ff-4e47-adca-f9c520461bcc">
+                    <propertyInstance
+                      Id="e23f050f-f5be-4d3e-b25f-234a8c6368d4"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6a91d42d-bda2-45c6-a0da-c8280b7e79bf">
+                    <propertyInstance
+                      Id="85f193af-72ca-4828-8abd-caa61f70d4b3"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="705eda78-4b73-4992-ad8a-40e31703f119">
+                    <propertyInstance
+                      Id="f712c2b2-28e8-4bee-98b3-05a600d3d590"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="21f18984-1b32-4c25-b72e-66c30f7fe259"
+            name="ProductDetails"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="5cde393e-84f9-4d0b-b7cb-481108bd897e"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProductDetails Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProduct)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8bd0877f-933a-493d-b84b-16c5db8dd4c6"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9f66f7d0-4d55-4bc1-b41d-d09ceb052822">
+                    <propertyInstance
+                      Id="2b5ae2d8-7bc0-4724-8fc8-64c84a94f146"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="75f51169-7547-40a6-b70c-e20b71632949">
+                    <propertyInstance
+                      Id="17a26d93-3bda-411d-b771-000a619452a4"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="43e4b914-9b0a-45d4-a852-1e654cbdebe2">
+                    <propertyInstance
+                      Id="2d5805a6-da68-4f9e-a0e8-8446f1ddcd7d"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e62394e1-bf22-4c15-ad6a-2f700df30df6">
+                    <propertyInstance
+                      Id="475cef0b-dc9d-401e-81af-6c4502b6ea5a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8b3b9c59-c1a7-43ad-be69-a07af47dd2ff">
+                    <propertyInstance
+                      Id="2c6db218-4cc5-457a-a0f6-d96666e6f9c1"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6b1384b5-22a9-41d8-aef8-cc9bc8161fd0">
+                    <propertyInstance
+                      Id="4507fccf-bbe1-43fb-a443-55868a6da64d"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="83ed9dcb-7c72-4777-96b2-3d00be9a0971"
+                  name="product"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="b38661ba-b84b-4b62-b2e4-7b0fff98c6e7"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProductDetails Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2Fworkspaces%2FVisualStudioWorkspaces%2FopenUWorkshop%2FGroupBuyingLib%2Fbin%2FDebug%2FGroupBuyingLib.dll Namespace%3DGroupBuyingLib.Model.ProductLib Type%3DProduct)]) ParameterIdentifier%3Dproduct"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="56bda43c-4d0f-4a85-859e-5b4991e78dbf"
+                      LastKnownName="Product"
+                      LastKnownLocation="Package2_1230.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
